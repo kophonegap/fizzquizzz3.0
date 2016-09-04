@@ -41,16 +41,3 @@ $(document).ready(function () {
 });
 
 
-function profileSection(){
-    alert('profile');
-    $('#fixed-tab-profile').show();
-}
-
-function boardSection(){
-    $('#fixed-tab-board').show();
-}
-
-
-function showProf(){
-    $('#fixed-tab-profile').show();
-}

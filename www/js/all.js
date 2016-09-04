@@ -13,7 +13,6 @@ $("#swipe_menu").swipe( {
 });
 });
 
-
 function playMovie() {
     /*$("video").on('click', function(){
 

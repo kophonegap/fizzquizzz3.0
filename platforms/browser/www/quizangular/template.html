@@ -1,0 +1,40 @@
+<div class="quiz-area" ng-show="inProgress">
+	<div ng-show="!quizOver">
+		<h5 id="question">{{question}}</h5>
+		<ul id="options">
+			<li ng-repeat="option in options">
+				<label>
+					<input type="radio" name="answer" value="{{option}}">
+					{{option}}
+				</label>
+			</li>
+		</ul>
+		<a ng-click="checkAnswer()" ng-show="answerMode" class="mdl-layout__tab mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Submit</a>
+
+		<div ng-show="!answerMode">
+
+			<span ng-show="correctAns" class="isIt">That is correct!</span>
+			<span ng-show="!correctAns" class="isIt">Sorry, that is an incorrect answer.</span>
+            <button ng-click="nextQuestion()" class="next-question mdl-button mdl-js-button mdl-button--colored">Next</button>
+
+
+
+
+		</div>
+	</div>
+
+	<div ng-show="quizOver">
+		<h2>Quiz is over</h2>
+		<button ng-click="reset()">Play again</button>
+        <button onclick="window.location='main.html'">Submit</button>
+	</div>
+<br />
+	<div id="score">
+		Score: {{score}}
+	</div>
+</div>
+
+<div class="intro" ng-show="!inProgress">
+	<h2>Ready?</h2>
+	<a id="startQuiz" ng-click="start()" class="mdl-layout__tab mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Start the Quiz</a>
+</div>

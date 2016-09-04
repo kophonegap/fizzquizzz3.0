@@ -1,15 +1,15 @@
 <div class="quiz-area" ng-show="inProgress">
 	<div ng-show="!quizOver">
-		<h5 id="question">{{question}}</h5>
+		<h5 id="question" class="animated fadeInBig">{{question}}</h5>
 		<ul id="options">
-			<li ng-repeat="option in options">
+			<li ng-repeat="option in options" class="animated fadeInLeftBig">
 				<label>
 					<input type="radio" name="answer" class="selections" value="{{option}}">
 					{{option}}
 				</label>
 			</li>
 		</ul>
-		<a ng-click="checkAnswer()" style="display: none !important;" ng-show="answerMode" id="show-dialog" type="button" class="mdl-layout__tab mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Submit</a>
+		<a ng-click="checkAnswer()" style="display: none !important;" ng-show="answerMode" id="show-dialog" type="button" class="animated fadeInLeftBig mdl-layout__tab mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Submit</a>
 
 		<dialog class="mdl-dialog">
 			<!--<h4 class="mdl-dialog__title">Allow data collection?</h4>-->
@@ -62,7 +62,7 @@
 	</div>
 </div>
 
-<div class="intro" ng-show="!inProgress">
+<div class="intro animated fadeInUpBig" ng-show="!inProgress">
 	<video width="100%" controls>
 		<source src="media/sample.mp4" type="video/mp4">
 		<!--  <source src="mov_bbb.ogg" type="video/ogg">-->

@@ -22,10 +22,10 @@ $(function() {
             $('#user_username').text(field.username);
 
             $('#user_password').text(field.password);
+            console.log('ID:', field.id);
+            console.log('User Name:', field.username);
 
-
-           console.log(field.username);
-            console.log (field.password);
+            console.log ('Password:', field.password);
             console.log (field.fname);
             console.log (field.lname);
             console.log (field.user_email);
@@ -37,15 +37,24 @@ $(function() {
 
 function update_user(){
     var username = $('#user_username').val();
-    var fname = $('#fname').val();
+    var fname = $('#first_name').val();
+    var lname = $('#last_name').val();
+    var user_email = $('#email').val();
 
-    $.post( base_url+'/update/user', { username: username, fname: fname })
+
+
+  //  $.post( base_url+'/update/user', { username: username, fname: fname, lname: lname, fname: fname })
+    $.post( base_url+'/update/user', { fname: fname, lname: lname, user_email: user_email })
         .done(function( data ) {
             if(data == 0){
                 $('#update_0').show();
             }else if(data == 1){
                 $('#update_1').show();
+                $('#user_name').val(field.username);
                 $('#user_firstname').text(fname);
+                $('#first_name').val(field.fname);
+                $('#last_name').val(field.lname);
+                $('#email').val(field.user_email);
                 //window.location.href = "user.html";
             }
         });

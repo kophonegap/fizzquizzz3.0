@@ -44,17 +44,19 @@ function update_user(){
 
 
   //  $.post( base_url+'/update/user', { username: username, fname: fname, lname: lname, fname: fname })
-    $.post( base_url+'/update/user', { fname: fname, lname: lname, user_email: user_email })
+    $.post( 'http://104.238.96.209/~project/db/update/user', { fname: fname, lname: lname, user_email: user_email })
         .done(function( data ) {
             if(data == 0){
                 $('#update_0').show();
             }else if(data == 1){
                 $('#update_1').show();
                 $('#user_name').val(field.username);
-                $('#user_firstname').text(fname);
+
                 $('#first_name').val(field.fname);
                 $('#last_name').val(field.lname);
                 $('#email').val(field.user_email);
+
+                $('#user_firstname').text(fname);
                 //window.location.href = "user.html";
             }
         });

@@ -16,5 +16,11 @@ $( document ).ready(function() {
     $('.startQuiz').on('click', function ( ) {
         $('#meSsage').hide();
     })
+
+    $('ul.answers > li, .responses').addClass('animated fadeInLeftBig');
+
+    $('.button').addClass('animated fadeInUpBig');
+
+
 });
 

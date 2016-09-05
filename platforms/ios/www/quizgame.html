@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/material-modal.css">
     <link rel="stylesheet" href="css/demo.min.css">
 
-
+    <link href="css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css">
     <link href="quizgame/css/reset.css" media="screen" rel="stylesheet" type="text/css">
     <link href="quizgame/css/slickQuiz.css" media="screen" rel="stylesheet" type="text/css">
     <link href="quizgame/css/master.css" media="screen" rel="stylesheet" type="text/css">
@@ -29,6 +29,8 @@
     <script src="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.min.js"></script>
 
 
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/material-modal.min.js"></script>
     <script src="js/material-modal.min.js"></script>
     <script src="js/jquery.touchSwipe.min.js"></script>
 
@@ -46,7 +48,14 @@
     <script src="js/all.js"></script>
     <script src="js/myApp.js"></script>
     <script src="js/user.js"></script>
+    <script>
 
+
+        $(function () {
+            $('#slickQuiz').slickQuiz();
+        });
+
+    </script>
 
 </head>
 <body id="slickQuiz">
@@ -71,13 +80,13 @@
 
 
             <button id="right_btn"
-                    class="mdl-button mdl-js-button mdl-button--icon ">
+                    class=" mdl-button btn bt-lg  btn btn-lgmdl-js-button mdl-button btn bt-lg--icon ">
                 <i class="material-icons">more_vert</i>
             </button>
 
             <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="right_btn">
                 <li class="mdl-menu__item">
-                    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                    <button class=" mdl-button btn bt-lg  btn btn-lgmdl-button btn bt-lg--icon mdl-js-button mdl-js-ripple-effect">
                         <i class="material-icons">perm_identity</i>
 
                     </button>
@@ -104,16 +113,15 @@
 
             <div class="page-content" style="padding: 20px 5px;>
 
-                <h1 class=" quizName
-            "><!-- where the quiz name goes --></h1>
+                <h1 class="quizName"><!-- where the quiz name goes --></h1>
 
-            <div class="quizArea">
-                <div class="quizHeader">
+            <div class="quizArea animated fadeInUpBig">
+                <div class="quizHeader" style="margin-bottom:40px;">
                     <!-- where the quiz main copy goes -->
 
-                    <a class="button startQuiz" href="">Get Started!</a>
-                </div>
 
+                </div>
+                <a class="button startQuiz btn btn-lg" href="">Get Started!</a>
                 <!-- where the quiz gets built -->
             </div>
 
@@ -125,6 +133,8 @@
 
                 <div class="quizResultsCopy">
                     <!-- where the quiz result copy goes -->
+                    <a class="button btn btn-lg" href="main.html">Submit</a>
+                    <br />
                 </div>
             </div>
 

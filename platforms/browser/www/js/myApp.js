@@ -33,9 +33,9 @@ $(document).ready(function () {
 
         }
 
-        $('#userProf').on('click, function(){
+        $('#userProf').on('click', function(){
 
-            window.location = 'main.html#userProf';
+            window.location = 'main.html';
             //$('.main-buttons li a').addClass('animated zoomIn');
         });
 

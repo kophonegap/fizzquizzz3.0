@@ -244,3 +244,8 @@ ul.answers > li > label {
 #question* > h3, .question h3, h3 {
     margin-bottm:20px;
 }
+
+#slickQuiz > div.mdl-layout__container > div > header > div > div.mdl-menu__container.is-upgraded.is-visible > ul > li:nth-child(1)
+{
+   background: #ddd;
+}

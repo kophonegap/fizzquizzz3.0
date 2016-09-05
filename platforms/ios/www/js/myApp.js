@@ -33,11 +33,12 @@ $(document).ready(function () {
 
         }
 
-       /* $('.main-buttons li a').on('click, function(){
+        $('#userProf').on('click, function(){
 
-            $('.main-buttons li a').addClass('animated zoomIn');
-        }*/
+            window.location = 'main.html#userProf';
+            //$('.main-buttons li a').addClass('animated zoomIn');
+        });
 
-});
+})
 
 

@@ -65,6 +65,9 @@ ol li { list-style-type: decimal; margin-left: 20px; }
     -moz-border-radius: 5px;
     border-radius: 5px;
 	text-decoration: none;
+    margin: 0 auto !important;
+    width: 100% !important;
+
 }
 .button:hover {
     background-color:rgb(209,0,99);
@@ -78,7 +81,7 @@ ol li { list-style-type: decimal; margin-left: 20px; }
 /* clearfix */
 .quizArea, .quizResults {
     zoom: 1;
-    padding: 20px;
+    padding: 0 20px;
 }
 .quizArea:before, .quizArea:after, .quizResults:before, .quizResults:after {
     content: "\0020";
@@ -167,4 +170,19 @@ ul.answers > li, .fast {
 
 a.button.checkAnswer.animated.fadeInUpBig.options.fast {
     display: none;
+}
+
+
+.questionCount {
+    margin-bottom: 30px;
+    font-style: normal;
+    color: #8e8e8e;
+}
+
+h3 {
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    color: #333 !important;
+    line-height: 20px;
+    text-align: center;
 }

@@ -1,8 +1,8 @@
 $(document).ready(function () {
     $('#loader').show();
-    setTimeout(myFunction, 3000);
+    setTimeout(myLoading, 3000);
 
-    function myFunction() {
+    function myLoading() {
 
         $('#loader').hide();
 
@@ -13,9 +13,9 @@ $(document).ready(function () {
 function loaderSpin() {
 
     $('#loader').show();
-    setTimeout(myFunction, 3000);
+    setTimeout(myLoading, 3000);
 
-    function myFunction() {
+    function myLoading() {
 
         $('#loader').hide();
 

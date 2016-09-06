@@ -1,6 +1,6 @@
-$(function() {
+//$(function() {
 //Enable swiping...
-$("#swipe_menu").swipe( {
+/* $("#swipe_menu").swipe( {
 	//Generic swipe handler for all directions
 	swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
 		 if(direction == 'right'){
@@ -13,13 +13,13 @@ $("#swipe_menu").swipe( {
 });
 });
 
-function playMovie() {
+function playMovie() { */
     /*$("video").on('click', function(){
 
 
     });*/
 
-}
+//}
 
 
 
@@ -121,16 +121,6 @@ noNet('http://104.238.96.209/~project/db/json.php',
 
 
 
-
-
-
-function hideProf(){
-    $('#fixed-tab-profile').hide();
-}
-
-function showProf(){
-    $('#fixed-tab-profile').show();
-}
 
 
 

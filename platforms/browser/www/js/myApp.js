@@ -39,6 +39,9 @@ $(document).ready(function () {
             //$('.main-buttons li a').addClass('animated zoomIn');
         });
 
+
+
 })
 
 
+$('ul.answers li input').addClass('checkAnswer');

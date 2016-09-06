@@ -1,0 +1,72 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "res/xml/config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"YoikScreenOrientation\"><param name=\"android-package\" value=\"net.yoik.cordova.plugins.screenorientation.YoikScreenOrientation\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.ko.fizzquizz"
+        },
+        "cordova-plugin-screen-orientation": {
+            "PACKAGE_NAME": "com.ko.fizzquizz"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.ko.fizzquizz"
+        }
+    },
+    "dependent_plugins": {},
+    "modules": [
+        {
+            "id": "cordova-plugin-inappbrowser.inappbrowser",
+            "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
+            "pluginId": "cordova-plugin-inappbrowser",
+            "clobbers": [
+                "cordova.InAppBrowser.open",
+                "window.open"
+            ]
+        },
+        {
+            "id": "cordova-plugin-screen-orientation.screenorientation",
+            "file": "plugins/cordova-plugin-screen-orientation/www/screenorientation.js",
+            "pluginId": "cordova-plugin-screen-orientation",
+            "clobbers": [
+                "cordova.plugins.screenorientation"
+            ]
+        },
+        {
+            "id": "cordova-plugin-screen-orientation.screenorientation.android",
+            "file": "plugins/cordova-plugin-screen-orientation/www/screenorientation.android.js",
+            "pluginId": "cordova-plugin-screen-orientation",
+            "merges": [
+                "cordova.plugins.screenorientation"
+            ]
+        }
+    ],
+    "plugin_metadata": {
+        "cordova-plugin-inappbrowser": "1.4.1-dev",
+        "cordova-plugin-screen-orientation": "1.4.2",
+        "cordova-plugin-whitelist": "1.2.2"
+    }
+}

@@ -148,3 +148,23 @@ input[type=radio], input[type=checkbox] {
     line-height: normal;
     padding-right: 20px;
 }
+
+.button:hover, .button:focus, a.button.checkAnswer:hover, a.button.checkAnswer:focus {
+    color: #fff !important;
+    text-transform: uppercase !important;
+    text-decoration: none !important;
+}
+
+
+ul.answers > li, .fast {
+    -webkit-animation-duration: 0.5s !important;
+    -webkit-animation-delay: 0.5s !important;
+    -webkit-animation-iteration-count: 1 !important;
+    animation-duration: 0.5s !important;
+    animation-delay: 0.5s !important;
+    animation-iteration-count: 1 !important;
+}
+
+a.button.checkAnswer.animated.fadeInUpBig.options.fast {
+    display: none;
+}

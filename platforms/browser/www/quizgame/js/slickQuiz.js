@@ -123,7 +123,7 @@
                                     optionId = inputName + '_' + i.toString();
 
                                 // If question has >1 true answers, use checkboxes; otherwise, radios
-                                var input = '<input id="' + optionId + '" name="' + inputName
+                                var input = '<input class="checkAnswer" id="' + optionId + '" name="' + inputName
                                     + '" type="' + (truths > 1 ? 'checkbox' : 'radio') + '" />';
 
                                 var optionLabel = '<label for="' + optionId + '">' + answer.option + '</label>';
@@ -151,16 +151,16 @@
 
                         // Appends check answer / back / next question buttons
                         if (plugin.config.backButtonText && plugin.config.backButtonText != '') {
-                            questionHTML.append('<a href="" class="button backToQuestion">' + plugin.config.backButtonText + '</a>');
+                            questionHTML.append('<a href="#" class="button backToQuestion">' + plugin.config.backButtonText + '</a>');
                         }
 
                         // If response messaging is disabled or hidden until the quiz is completed,
                         // make the nextQuestion button the checkAnswer button, as well
                         if (plugin.config.disableResponseMessaging || plugin.config.completionResponseMessaging) {
-                            questionHTML.append('<a href="" class="button nextQuestion checkAnswer">' + plugin.config.nextQuestionText + '</a>');
+                            questionHTML.append('<a href="#" class="button nextQuestion checkAnswer">' + plugin.config.nextQuestionText + '</a>');
                         } else {
-                            questionHTML.append('<a href="" class="button nextQuestion">' + plugin.config.nextQuestionText + '</a>');
-                            questionHTML.append('<a href="" class="button checkAnswer">' + plugin.config.checkAnswerText + '</a>');
+                            questionHTML.append('<a href="#" class="button nextQuestion">' + plugin.config.nextQuestionText + '</a>');
+                            questionHTML.append('<a href="#" class="button checkAnswer">' + plugin.config.checkAnswerText + '</a>');
                         }
 
                         // Append question & answers to quiz

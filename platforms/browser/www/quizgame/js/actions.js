@@ -17,9 +17,9 @@ $( document ).ready(function() {
         $('#meSsage').hide();
     })
 
-    $('ul.answers > li, .responses').addClass('animated fadeInLeftBig');
+    $('ul.answers > li, .responses').addClass('animated fadeInLeftBig options fast');
 
-    $('.button').addClass('animated fadeInUpBig');
+    $('.button').addClass('animated fadeInUpBig options fast');
 
 
 });

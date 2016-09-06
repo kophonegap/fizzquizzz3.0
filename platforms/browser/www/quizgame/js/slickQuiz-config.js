@@ -40,7 +40,7 @@ var quizJSON = {
             "q": "In which of these places can you purchase a car?",
             "a": [
                 {"option": "The Zoo",        "correct": false},
-                {"option": "Ebay",           "correct": true},
+                {"option": "Ebay",           "correct": false},
                 {"option": "Grocery Store",  "correct": false},
                 {"option": "Used Car Lot",   "correct": true} // no comma here
             ],
@@ -57,12 +57,12 @@ var quizJSON = {
             "incorrect": "<p><span>ERRRR!</span> What planet Earth are <em>you</em> living on?!?</p>" // no comma here
         },
         { // Question 5
-            "q": "Where are you right now? Select ALL that apply.",
+            "q": "What planet are you in right now?",
             "a": [
                 {"option": "Planet Earth",   "correct": true},
                 {"option": "Pluto",          "correct": false},
-                {"option": "At a computer",  "correct": true},
-                {"option": "The Milky Way",  "correct": true} // no comma here
+                {"option": "At a computer",  "correct": false},
+                {"option": "The Milky Way",  "correct": false} // no comma here
             ],
             "correct": "<p><span>Brilliant!</span> You're seriously a genius, (wo)man.</p>",
             "incorrect": "<p><span>Not Quite.</span> You're actually on Planet Earth, in The Milky Way, At a computer. But nice try.</p>" // no comma here

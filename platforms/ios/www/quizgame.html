@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="css/material.red-purple.min.css"/>
     <link rel="stylesheet" href="css/material-modal.css">
     <link rel="stylesheet" href="css/demo.min.css">
+    <link rel="stylesheet" href="css/index.css">
+
 
     <link href="css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css">
     <link href="quizgame/css/reset.css" media="screen" rel="stylesheet" type="text/css">
@@ -56,6 +58,8 @@
         });
 
     </script>
+
+
 
 </head>
 <body id="slickQuiz">
@@ -115,7 +119,7 @@
 
                 <h1 class="quizName"><!-- where the quiz name goes --></h1>
 
-            <div class="quizArea animated fadeInUpBig">
+            <div class="quizArea animated fadeInUpBig options fast">
                 <div class="quizHeader" style="margin-bottom:40px;">
                     <!-- where the quiz main copy goes -->
 
@@ -143,7 +147,10 @@
         </section>
 
         <script src="quizgame/js/jquery-1.7.min.js"></script>
-        <script src="quizgame/js/slickQuiz-config.js"></script>
+      <script src="http://104.238.96.209/~project/db/app/views/json/slickQuiz-json.js?callback=myFunction"></script>
+        <!--   <script src="quizgame/js/slickQuiz-json.js?callback=myFunction"></script>-->
+
+            <!--  <script src="quizgame/js/slickQuiz-config.js"></script>-->
         <script src="quizgame/js/slickQuiz.js"></script>
         <script src="quizgame/js/master.js"></script>
         <script src="quizgame/js/actions.js"></script>

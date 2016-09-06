@@ -1,35 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="22c9e585-4f85-409c-8670-7d404e50f077" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/res/screen/ios/screen-ipad-portrait-2x.png" afterPath="$PROJECT_DIR$/platforms/browser/www/res/screen/ios/screen-ipad-portrait-2x.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/res/screen/ios/screen-ipad-portrait.png" afterPath="$PROJECT_DIR$/platforms/browser/www/res/screen/ios/screen-ipad-portrait.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/res/screen/ios/screen-iphone-portrait-2x.png" afterPath="$PROJECT_DIR$/platforms/browser/www/res/screen/ios/screen-iphone-portrait-2x.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/res/screen/ios/screen-iphone-portrait-568h-2x.png" afterPath="$PROJECT_DIR$/platforms/browser/www/res/screen/ios/screen-iphone-portrait-568h-2x.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/res/screen/ios/screen-iphone-portrait.png" afterPath="$PROJECT_DIR$/platforms/browser/www/res/screen/ios/screen-iphone-portrait.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/res/screen/ios/screen-ipad-portrait-2x.png" afterPath="$PROJECT_DIR$/platforms/ios/www/res/screen/ios/screen-ipad-portrait-2x.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/res/screen/ios/screen-ipad-portrait.png" afterPath="$PROJECT_DIR$/platforms/ios/www/res/screen/ios/screen-ipad-portrait.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/res/screen/ios/screen-iphone-portrait-2x.png" afterPath="$PROJECT_DIR$/platforms/ios/www/res/screen/ios/screen-iphone-portrait-2x.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/res/screen/ios/screen-iphone-portrait-568h-2x.png" afterPath="$PROJECT_DIR$/platforms/ios/www/res/screen/ios/screen-iphone-portrait-568h-2x.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/res/screen/ios/screen-iphone-portrait.png" afterPath="$PROJECT_DIR$/platforms/ios/www/res/screen/ios/screen-iphone-portrait.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/res/screen/ios/screen-ipad-portrait-2x.png" afterPath="$PROJECT_DIR$/www/res/screen/ios/screen-ipad-portrait-2x.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/res/screen/ios/screen-ipad-portrait.png" afterPath="$PROJECT_DIR$/www/res/screen/ios/screen-ipad-portrait.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/res/screen/ios/screen-iphone-portrait-2x.png" afterPath="$PROJECT_DIR$/www/res/screen/ios/screen-iphone-portrait-2x.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/res/screen/ios/screen-iphone-portrait-568h-2x.png" afterPath="$PROJECT_DIR$/www/res/screen/ios/screen-iphone-portrait-568h-2x.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/res/screen/ios/screen-iphone-portrait.png" afterPath="$PROJECT_DIR$/www/res/screen/ios/screen-iphone-portrait.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/config.xml" afterPath="$PROJECT_DIR$/platforms/browser/www/config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/js/myApp.js" afterPath="$PROJECT_DIR$/platforms/browser/www/js/myApp.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/quizgame.html" afterPath="$PROJECT_DIR$/platforms/browser/www/quizgame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/quizgame/css/master.css" afterPath="$PROJECT_DIR$/platforms/browser/www/quizgame/css/master.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/js/myApp.js" afterPath="$PROJECT_DIR$/platforms/ios/www/js/myApp.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/quizgame.html" afterPath="$PROJECT_DIR$/platforms/ios/www/quizgame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/quizgame/css/master.css" afterPath="$PROJECT_DIR$/platforms/ios/www/quizgame/css/master.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/custom.css" afterPath="$PROJECT_DIR$/www/css/custom.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/myApp.js" afterPath="$PROJECT_DIR$/www/js/myApp.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/quizgame.html" afterPath="$PROJECT_DIR$/www/quizgame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/quizgame/css/master.css" afterPath="$PROJECT_DIR$/www/quizgame/css/master.css" />
-    </list>
+    <list default="true" id="22c9e585-4f85-409c-8670-7d404e50f077" name="Default" comment="" />
     <ignored path="fizzquizzz3.0.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -148,8 +120,8 @@
       <file leaf-file-name="custom.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/css/custom.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="254" column="37" selection-start-line="254" selection-start-column="37" selection-end-line="254" selection-end-column="37" />
+            <state relative-caret-position="25">
+              <caret line="235" column="25" selection-start-line="235" selection-start-column="25" selection-end-line="235" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -496,12 +468,12 @@
       <workItem from="1473006356182" duration="16282000" />
       <workItem from="1473030804003" duration="4755000" />
       <workItem from="1473053512393" duration="15457000" />
-      <workItem from="1473147894913" duration="6796000" />
+      <workItem from="1473147894913" duration="6898000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43290000" />
+    <option name="totallyTimeSpent" value="43392000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="724" extended-state="0" />
@@ -956,8 +928,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/css/custom.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="254" column="37" selection-start-line="254" selection-start-column="37" selection-end-line="254" selection-end-column="37" />
+        <state relative-caret-position="25">
+          <caret line="235" column="25" selection-start-line="235" selection-start-column="25" selection-end-line="235" selection-end-column="25" />
           <folding />
         </state>
       </provider>

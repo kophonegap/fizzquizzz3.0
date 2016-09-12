@@ -59,7 +59,7 @@ ol li { list-style-type: decimal; margin-left: 20px; }
     text-align:center;
     text-transform:uppercase;
     color:#ffffff;
-    background-color:rgb(209,0,99);
+    background-color:rgb(209,0,0);
     border: 1px solid #fff;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -70,7 +70,7 @@ ol li { list-style-type: decimal; margin-left: 20px; }
 
 }
 .button:hover {
-    background-color:rgb(209,0,99);
+    background-color:rgb(209,0,0);
     border: 2px solid #d10000;
 }
 

@@ -16,7 +16,7 @@ $(function () {
             $('#password').val(field.password);
             $('#firstname').val(field.fname);
             $('#lastname').val(field.lname);
-            $('#email').val(field.user_email);
+            $('#email').val(field.email);
 
 
             // $('#user_id').text(field.id);
@@ -25,7 +25,7 @@ $(function () {
             $('#user_password').text(field.password);
             $('#user_firstname').text(field.fname);
             $('#user_lastname').text(field.lname);
-            $('#user_email').text(field.user_email);
+            $('#user_email').text(field.email);
             $('#user_privilege').text(field.privilege);
 
 
@@ -35,7 +35,7 @@ $(function () {
             console.log('Password:', field.password);
             console.log(field.fname);
             console.log(field.lname);
-            console.log(field.user_email);
+            console.log(field.email);
 
         });
     });
@@ -77,7 +77,7 @@ function update_user() {
                  $('#password').val(field.password);
                  $('#firstname').val(field.fname);
                  $('#lastname').val(field.lname);
-                 $('#email').val(field.user_email);
+                 $('#email').val(field.email);
                  */
 
                 /* $('#user_id').text(field.id);
@@ -86,7 +86,7 @@ function update_user() {
                  $('#user_password').text(field.password);
                  $('#user_firstname').text(field.fname);
                  $('#user_lastname').text(field.lname);
-                 $('#user_email').text(field.user_email);
+                 $('#user_email').text(field.email);
                  $('#user_privilege').text(field.privilege);
                  */
                 //window.location.href = "user.html";
@@ -114,7 +114,7 @@ function update_user() {
  $('#user_name').val(field.username);
  $('#first_name').val(field.fname);
  $('#last_name').val(field.lname);
- $('#email').val(field.user_email);
+ $('#email').val(field.email);
 
  $('#user_firstname').text(fname);
  //window.location.href = "user.html";
@@ -123,4 +123,5 @@ function update_user() {
 
  }
  */
- 
+
+

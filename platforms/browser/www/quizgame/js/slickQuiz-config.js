@@ -1,7 +1,18 @@
 // Setup your quiz text and questions here
-
+/*$(document).ready(function () {
+    $.ajax({
+        type: 'GET',
+        url: 'http://104.238.96.209/~project/db/jsoncode',
+        data: { get_param: 'value' },
+        success: function (data) {
+            var questions = data;
+            alert(data);
+            //$('#cand').html(data);
+        }
+    });
+});*/
 // NOTE: pay attention to commas, IE struggles with those bad boys
-
+//[{"id":1,"question":"What is the first letter in the Alphabet?","question_id":1,"option":"Z","is_correct":0},{"id":2,"question":"What is the first letter in the Alphabet?","question_id":1,"option":"N","is_correct":0},{"id":3,"question":"What is the first letter in the Alphabet?","question_id":1,"option":"O","is_correct":0},{"id":4,"question":"What is the first letter in the Alphabet?","question_id":1,"option":"A","is_correct":1}]
 var quizJSON = {
     "info": {
         "name":    "Test Your Knowledge!!",

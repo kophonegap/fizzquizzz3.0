@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="origin-when-crossorigin">
+<title>Edit: qt_ans - Adminer</title>
+<link rel="stylesheet" type="text/css" href="Edit_%20qt_ans%20-%20Adminer_files/adminer.css">
+<script type="text/javascript" src="Edit_%20qt_ans%20-%20Adminer_files/adminer.js"></script>
+<link rel="shortcut icon" type="image/x-icon" href="http://104.238.96.209/%7Eproject/db/adminer.php?file=favicon.ico&amp;version=4.2.4">
+<link rel="apple-touch-icon" href="http://104.238.96.209/%7Eproject/db/adminer.php?file=favicon.ico&amp;version=4.2.4">
+
+<script>try {  for(var lastpass_iter=0; lastpass_iter < document.forms.length; lastpass_iter++){    var lastpass_f = document.forms[lastpass_iter];    if(typeof(lastpass_f.lpsubmitorig)=="undefined"){      if (typeof(lastpass_f.submit) == "function") {        lastpass_f.lpsubmitorig = lastpass_f.submit;        lastpass_f.submit = function(){          var form = this;          try {            if (document.documentElement && 'createEvent' in document)            {              var forms = document.getElementsByTagName('form');              for (var i=0 ; i<forms.length ; ++i)                if (forms[i]==form)                {                  var element = document.createElement('lpformsubmitdataelement');                  element.setAttribute('formnum',i);                  element.setAttribute('from','submithook');                  document.documentElement.appendChild(element);                  var evt = document.createEvent('Events');                  evt.initEvent('lpformsubmit',true,false);                  element.dispatchEvent(evt);                  break;                }            }          } catch (e) {}          try {            form.lpsubmitorig();          } catch (e) {}        }      }    }  }} catch (e) {}</script></head><body class="ltr js" onkeydown="bodyKeydown(event);" onclick="bodyClick(event);">
+<script type="text/javascript">
+document.body.className = document.body.className.replace(/ nojs/, ' js');
+var offlineMessage = 'You are offline.';
+</script>
+
+<div id="help" class="jush-sql jsonly hidden" onmouseover="helpOpen = 1;" onmouseout="helpMouseout(this, event);"></div>
+
+<div id="content">
+<p id="breadcrumb"><a href="http://104.238.96.209/%7Eproject/db/adminer.php">MySQL</a> » <a href="http://104.238.96.209/%7Eproject/db/adminer.php?username=project_tms_user" accesskey="1" title="Alt+Shift+1">Server</a> » <a href="http://104.238.96.209/%7Eproject/db/adminer.php?username=project_tms_user&amp;db=project_profile">project_profile</a> » <a href="http://104.238.96.209/%7Eproject/db/adminer.php?username=project_tms_user&amp;db=project_profile&amp;select=qt_ans">qt_ans</a> » Edit
+</p><h2>Edit: qt_ans</h2>
+<div id="ajaxstatus" class="jsonly hidden"></div>
+<form action="" method="post" enctype="multipart/form-data" id="form">
+<table onkeydown="return editingKeydown(event);" cellspacing="0">
+<tbody><tr><th><span title="int(11)">id</span></th><td class="function"><select name="function[id]" onchange="functionChange(this);" onmouseover="helpMouseover(this, event, getTarget(event).value.replace(/^SQL$/, ''), 1);" onmouseout="helpMouseout(this, event);"><option selected="selected"></option><option>+</option><option>-</option><option>SQL</option></select></td><td><input value="27" maxlength="11" name="fields[id]" type="number">
+</td></tr><tr><th><span title="int(11)">qt</span></th><td class="function"><select name="function[qt]" onchange="functionChange(this);" onmouseover="helpMouseover(this, event, getTarget(event).value.replace(/^SQL$/, ''), 1);" onmouseout="helpMouseout(this, event);"><option selected="selected"></option><option>+</option><option>-</option><option>SQL</option></select></td><td><input value="5" maxlength="11" name="fields[qt]" type="number">
+</td></tr><tr><th><span title="text">option</span></th><td class="function"><select name="function[option]" onchange="functionChange(this);" onmouseover="helpMouseover(this, event, getTarget(event).value.replace(/^SQL$/, ''), 1);" onmouseout="helpMouseout(this, event);"><option selected="selected"></option><option>concat</option><option>SQL</option></select></td><td><textarea name="fields[option]" cols="50" rows="12">1 cling</textarea>
+</td></tr><tr><th><span title="varchar(10)">option_id</span></th><td class="function"><select name="function[option_id]" onchange="functionChange(this);" onmouseover="helpMouseover(this, event, getTarget(event).value.replace(/^SQL$/, ''), 1);" onmouseout="helpMouseout(this, event);"><option selected="selected"></option><option>md5</option><option>sha1</option><option>password</option><option>encrypt</option><option>uuid</option><option>concat</option><option>SQL</option></select></td><td><input value="false" maxlength="10" name="fields[option_id]">
+</td></tr><tr><th><span title="text">correct</span></th><td class="function"><select name="function[correct]" onchange="functionChange(this);" onmouseover="helpMouseover(this, event, getTarget(event).value.replace(/^SQL$/, ''), 1);" onmouseout="helpMouseout(this, event);"><option selected="selected"></option><option>concat</option><option>SQL</option></select></td><td><textarea name="fields[correct]" cols="50" rows="12">Correct: In Convenience Retail, a maximum of 2 clings can be placed on a cooler door.</textarea>
+</td></tr><tr><th><span title="text">incorrect</span></th><td class="function"><select name="function[incorrect]" onchange="functionChange(this);" onmouseover="helpMouseover(this, event, getTarget(event).value.replace(/^SQL$/, ''), 1);" onmouseout="helpMouseout(this, event);"><option selected="selected"></option><option>concat</option><option>SQL</option></select></td><td><textarea name="fields[incorrect]" cols="50" rows="12">Incorrect: In Convenience Retail, a maximum of 2 clings can be placed on a cooler door.</textarea>
+</td></tr></tbody></table>
+<p>
+<input class=" default" value="Save" type="submit">
+<input name="insert" value="Save and continue edit" onclick='return !ajaxForm(this.form, "Saving...", this)' title="Ctrl+Shift+Enter" type="submit">
+<input name="delete" value="Delete" onclick="return confirm('Are you sure?');" type="submit">
+<input name="referer" value="http://104.238.96.209/~project/db/adminer.php?username=project_tms_user&amp;db=project_profile&amp;select=qt_ans" type="hidden">
+<input name="save" value="1" type="hidden">
+<input name="token" value="480133:229600" type="hidden">
+</p></form>
+</div>
+
+<form lpformnum="189" action="" method="post">
+<p class="logout">
+<input name="logout" value="Logout" id="logout" type="submit">
+<input name="token" value="480133:229600" type="hidden">
+</p>
+</form>
+<div id="menu">
+<h1>
+<a href="https://www.adminer.org/" target="_blank" id="h1">Adminer</a> <span class="version">4.2.4</span>
+<a href="https://www.adminer.org/#download" target="_blank" id="version">4.2.5</a>
+</h1>
+<script type="text/javascript" src="Edit_%20qt_ans%20-%20Adminer_files/adminer_002.js"></script>
+<script type="text/javascript">
+var jushLinks = { sql: [ 'adminer.php?username=project_tms_user&db=project_profile&table=$&', /\b(area|category|incentive|messageofday|other|qt_ans|qt_info|quest|question|questions|question_category|sets|tbl_options|tbl_questions|unit|user|user_ans|user_results)\b/g ] };
+jushLinks.bac = jushLinks.sql;
+jushLinks.bra = jushLinks.sql;
+jushLinks.sqlite_quo = jushLinks.sql;
+jushLinks.mssql_bra = jushLinks.sql;
+bodyLoad('5.5');
+</script>
+<form lpformnum="190" action="">
+<p id="dbs">
+<input name="username" value="project_tms_user" type="hidden"><span title="database">DB</span>: <select name="db" onmousedown="dbMouseDown(event, this);" onchange="dbChange(this);"><option value=""></option><option>information_schema</option><option>project_local_tms</option><option>project_materialpress</option><option selected="selected">project_profile</option><option>project_sync001</option></select><input value="Use" class="hidden" type="submit">
+</p></form>
+<p class="links"><a href="http://104.238.96.209/%7Eproject/db/adminer.php?username=project_tms_user&amp;db=project_profile&amp;sql=">SQL command</a>
+<a href="http://104.238.96.209/%7Eproject/db/adminer.php?username=project_tms_user&amp;db=project_profile&amp;import=">Import</a>
+<a href="http://104.238.96.209/%7Eproject/db/adminer.php?username=project_tms_user&amp;db=project_profile&amp;dump=" id="dump">Export</a>
+<a href="http://104.238.96.209/%7Eproject/db/adminer.php?username=project_tms_user&amp;db=project_profile&amp;create=">Create table</a>
+</p><p id="tables" onmouseover="menuOver(this, event);" onmouseout="menuOut(this);">
+<a href="http://104.238.96.209/%7Eproject/db/adminer.php?username=project_tms_user&amp;db=project_profile&amp;select=area" class="select">select</a> <a href="http://104.238.96.209/%7Eproject/db/adminer.php?username=project_tms_user&amp;db=project_profile&amp;table=area" title="Show structure">area</a><br>
+<a href="http://104.238.96.209/%7Eproject/db/adminer.php?username=project_tms_user&amp;db=project_profile&amp;select=category" class="select">select</a> <a href="http://104.238.96.209/%7Eproject/db/adminer.php?username=project_tms_user&amp;db=project_profile&amp;table=category" title="Show structure">category</a><br>
+<a href="http://104.238.96.209/%7Eproject/db/adminer.php?username=project_tms_user&amp;db=project_profile&amp;select=incentive" class="select">select</a> <a href="http://104.238.96.209/%7Eproject/db/adminer.php?username=project_tms_user&amp;db=project_profile&amp;table=incentive" title="Show structure">incentive</a><br>
+<a href="http://104.238.96.209/%7Eproject/db/adminer.php?username=project_tms_user&amp;db=project_profile&amp;select=messageofday" class="select">select</a> <a href="http://104.238.96.209/%7Eproject/db/adminer.php?username=project_tms_user&amp;db=project_profile&amp;table=messageofday" title="Show structure">messageofday</a><br>
+<a href="http://104.238.96.209/%7Eproject/db/adminer.php?username=project_tms_user&amp;db=project_profile&amp;select=other" class="select">select</a> <a href="http://104.238.96.209/%7Eproject/db/adminer.php?username=project_tms_user&amp;db=project_profile&amp;table=other" title="Show structure">other</a><br>
+<a href="http://104.238.96.209/%7Eproject/db/adminer.php?username=project_tms_user&amp;db=project_profile&amp;select=qt_ans" class="active select">select</a> <a href="http://104.238.96.209/%7Eproject/db/adminer.php?username=project_tms_user&amp;db=project_profile&amp;table=qt_ans" title="Show structure">qt_ans</a><br>
+<a href="http://104.238.96.209/%7Eproject/db/adminer.php?username=project_tms_user&amp;db=project_profile&amp;select=qt_info" class="select">select</a> <a href="http://104.238.96.209/%7Eproject/db/adminer.php?username=project_tms_user&amp;db=project_profile&amp;table=qt_info" title="Show structure">qt_info</a><br>
+<a href="http://104.238.96.209/%7Eproject/db/adminer.php?username=project_tms_user&amp;db=project_profile&amp;select=quest" class="select">select</a> <a href="http://104.238.96.209/%7Eproject/db/adminer.php?username=project_tms_user&amp;db=project_profile&amp;table=quest" title="Show structure">quest</a><br>
+<a href="http://104.238.96.209/%7Eproject/db/adminer.php?username=project_tms_user&amp;db=project_profile&amp;select=question" class="select">select</a> <a href="http://104.238.96.209/%7Eproject/db/adminer.php?username=project_tms_user&amp;db=project_profile&amp;table=question" title="Show structure">question</a><br>
+<a href="http://104.238.96.209/%7Eproject/db/adminer.php?username=project_tms_user&amp;db=project_profile&amp;select=questions" class="select">select</a> <a href="http://104.238.96.209/%7Eproject/db/adminer.php?username=project_tms_user&amp;db=project_profile&amp;table=questions" title="Show structure">questions</a><br>
+<a href="http://104.238.96.209/%7Eproject/db/adminer.php?username=project_tms_user&amp;db=project_profile&amp;select=question_category" class="select">select</a> <a href="http://104.238.96.209/%7Eproject/db/adminer.php?username=project_tms_user&amp;db=project_profile&amp;table=question_category" title="Show structure">question_category</a><br>
+<a href="http://104.238.96.209/%7Eproject/db/adminer.php?username=project_tms_user&amp;db=project_profile&amp;select=sets" class="select">select</a> <a href="http://104.238.96.209/%7Eproject/db/adminer.php?username=project_tms_user&amp;db=project_profile&amp;table=sets" title="Show structure">sets</a><br>
+<a href="http://104.238.96.209/%7Eproject/db/adminer.php?username=project_tms_user&amp;db=project_profile&amp;select=tbl_options" class="select">select</a> <a href="http://104.238.96.209/%7Eproject/db/adminer.php?username=project_tms_user&amp;db=project_profile&amp;table=tbl_options" title="Show structure">tbl_options</a><br>
+<a href="http://104.238.96.209/%7Eproject/db/adminer.php?username=project_tms_user&amp;db=project_profile&amp;select=tbl_questions" class="select">select</a> <a href="http://104.238.96.209/%7Eproject/db/adminer.php?username=project_tms_user&amp;db=project_profile&amp;table=tbl_questions" title="Show structure">tbl_questions</a><br>
+<a href="http://104.238.96.209/%7Eproject/db/adminer.php?username=project_tms_user&amp;db=project_profile&amp;select=unit" class="select">select</a> <a href="http://104.238.96.209/%7Eproject/db/adminer.php?username=project_tms_user&amp;db=project_profile&amp;table=unit" title="Show structure">unit</a><br>
+<a href="http://104.238.96.209/%7Eproject/db/adminer.php?username=project_tms_user&amp;db=project_profile&amp;select=user" class="select">select</a> <a href="http://104.238.96.209/%7Eproject/db/adminer.php?username=project_tms_user&amp;db=project_profile&amp;table=user" title="Show structure">user</a><br>
+<a href="http://104.238.96.209/%7Eproject/db/adminer.php?username=project_tms_user&amp;db=project_profile&amp;select=user_ans" class="select">select</a> <a href="http://104.238.96.209/%7Eproject/db/adminer.php?username=project_tms_user&amp;db=project_profile&amp;table=user_ans" title="Show structure">user_ans</a><br>
+<a href="http://104.238.96.209/%7Eproject/db/adminer.php?username=project_tms_user&amp;db=project_profile&amp;select=user_results" class="select">select</a> <a href="http://104.238.96.209/%7Eproject/db/adminer.php?username=project_tms_user&amp;db=project_profile&amp;table=user_results" title="Show structure">user_results</a><br>
+</p></div>
+<script type="text/javascript">setupSubmitHighlight(document);</script>
+</body></html>

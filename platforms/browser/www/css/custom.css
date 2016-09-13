@@ -119,11 +119,18 @@ div.mdl-card__title-text {
 .demo-card-wide a {
     display: block;
 }
+#left_btn {
+    position: absolute;
+    top: 15px;
+    left: 0px;
+    color: rgba(255,255,255, 0.5);
+}
 
 #right_btn {
     position: absolute;
     top: 15px;
-    right: 15px;
+    right: 0px;
+
 }
 
 div#swipe_menu {

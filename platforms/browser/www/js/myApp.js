@@ -88,6 +88,9 @@ function loadQuestions(){
 }
 
 
+$('#left_buton').on('click', function () {
+    window.location = 'main.html';
 
+})
 //loadQuestions();
 

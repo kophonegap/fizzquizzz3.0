@@ -1,5 +1,12 @@
 var resource = require('./resources.js'); //access the server urls, folders, and resources
 
+
+var ref = cordova.InAppBrowser.open('http://apache.org', '_blank', 'location=yes');
+var myCallback = function(event) { alert(event.url); }
+//ref.addEventListener('loadstart', myCallback);
+///ref.removeEventListener('loadstart', myCallback);
+
+
 function modupdate() {
 	var user = sessionStorage.getItem("user");
 

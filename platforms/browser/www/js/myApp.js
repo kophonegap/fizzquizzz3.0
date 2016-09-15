@@ -33,7 +33,7 @@ $(document).ready(function () {
 
         }
 
-        $('#userProf').on('click', function(){
+        $('#userProf', '#left_btn').on('click', function(){
 
             window.location = 'main.html';
             //$('.main-buttons li a').addClass('animated zoomIn');

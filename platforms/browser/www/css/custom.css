@@ -119,18 +119,11 @@ div.mdl-card__title-text {
 .demo-card-wide a {
     display: block;
 }
-#left_btn {
-    position: absolute;
-    top: 15px;
-    left: 0px;
-    color: rgba(255,255,255, 0.5);
-}
 
 #right_btn {
     position: absolute;
     top: 15px;
-    right: 0px;
-
+    right: 15px;
 }
 
 div#swipe_menu {
@@ -542,3 +535,16 @@ a:hover, a:focus {
 .mdl-select__expandable-holder .mdl-select__label:after {
     bottom: 0;
 }
+
+
+.quizArea, .quizResults {
+    zoom: 1;
+    padding: 0 20px;
+    margin: 10% auto !important;
+}
+
+
+.startQuiz {
+    margin-top: 40% !important;
+}
+

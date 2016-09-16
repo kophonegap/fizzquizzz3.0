@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
     $('#loader').show();
     setTimeout(myLoading, 3000);
@@ -34,7 +33,7 @@ $(document).ready(function () {
 
         }
 
-        $('#userProf', '#left_btn').on('click', function(){
+        $('#userProf').on('click', function(){
 
             window.location = 'main.html';
             //$('.main-buttons li a').addClass('animated zoomIn');
@@ -53,7 +52,8 @@ function loadQuestions(){
 
     $.ajax({
         type: 'GET',
-        url: 'http://104.238.96.209/~project/db/jsoncode',
+
+        url: 'http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/index.php/jsoncode',
         data: { get_param: 'value' },
         success: function (data) {
             // quizJSON = data;
@@ -89,9 +89,6 @@ function loadQuestions(){
 }
 
 
-$('#left_buton').on('click', function () {
-    window.location = 'main.html';
 
-})
 //loadQuestions();
 

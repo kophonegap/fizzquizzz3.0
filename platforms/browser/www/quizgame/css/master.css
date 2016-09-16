@@ -51,6 +51,8 @@ ul { list-style-type: circle; }
 ol { list-style-type: decimal; }
 ol li { list-style-type: decimal; margin-left: 20px; }
 */
+
+
 .button {
     float: left;
     min-width: 250px;
@@ -139,8 +141,9 @@ ul.responses li.correct p span {
 }
 .quizResultsCopy {
     margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
 }
-
 
 /************* Custom ***********/
 

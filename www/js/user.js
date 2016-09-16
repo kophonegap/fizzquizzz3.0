@@ -3,7 +3,7 @@ function log_out() {
     window.location.replace("index.html");
 }
 
-var base_url = "http://104.238.96.209/~project/db";
+var base_url = "http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/index.php";
 
 $(function () {
     var user = localStorage.getItem('userlogin');
@@ -105,7 +105,7 @@ function update_user() {
  var user_email = $('#email').val();
 
  //  $.post( base_url+'/update/user', { username: username, fname: fname, lname: lname, fname: fname })
- $.post('http://104.238.96.209/~project/db/update/user', {username: username, password: password, fname: fname})
+ $.post('http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/index.php/update/user', {username: username, password: password, fname: fname})
  .done(function ( data ) {
  if (data == 0) {
  $('#update_0').show();

@@ -28,7 +28,7 @@ function fillmod() {
     //document.getElementById("mod_video").innerHTML = "";
 
     $.ajax({
-        url:'http://104.238.96.209/~project/db/media/1',
+        url:'http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/media/index.php/media/1',
         dataType: 'jsonp',
         jsonp: 'jsoncallback',
         timeout: 5000,
@@ -108,7 +108,7 @@ function noNet(path, success, error)
 
 
 
-noNet('http://104.238.96.209/~project/db/json.php',
+noNet('http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/json.php',
          function(data) {
 				for(i = 0; i < data.length; i++) {
 					//document.getElementById("result1").innerHTML += '<li> ' + data[i]['name'] + '</li>';

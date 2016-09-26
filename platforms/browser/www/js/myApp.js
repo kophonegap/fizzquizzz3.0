@@ -24,6 +24,8 @@ function loaderSpin() {
 }
 
 
+
+
 $(document).ready(function () {
 
     setTimeout(buttonAnimate, 3000);
@@ -39,13 +41,17 @@ $(document).ready(function () {
             //$('.main-buttons li a').addClass('animated zoomIn');
         });
 
+    $('#playBtn').on('click', function() {
+        $('#videoPlayer').hide();
+        $('#playBack').hide();
+
+    })
 
 
-})
+});
 
 
 $('ul.answers li input').addClass('checkAnswer');
-
 
 
 function loadQuestions(){
@@ -92,3 +98,42 @@ function loadQuestions(){
 
 //loadQuestions();
 
+
+
+
+$(function() {
+
+
+    $("#aunit").change(function() {
+
+        var $dropdown = $(this);
+
+        $.getJSON("json/data.json", function(data) {
+
+            var key = $dropdown.val();
+            var vals = [];
+
+            switch(key) {
+                case 'west':
+                    vals = data.west.split(",");
+                    break;
+                case 'central':
+                    vals = data.central.split(",");
+                    break;
+                case 'east':
+                    vals = data.east.split(",");
+                    break;
+                case 'base':
+                    vals = ['Please choose from above'];
+            }
+
+            var $jsontwo = $("#reg_area");
+            $jsontwo.empty();
+            $.each(vals, function(index, value) {
+                $jsontwo.append("<option>" + value + "</option>");
+            });
+
+        });
+    });
+
+});

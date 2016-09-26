@@ -31,7 +31,7 @@ var quizJSON = {
 "correct":false
 }
 ],
-"correct":"<p><span>That's right!</span> 237mL glass is not considered to be Sparkling IC</p>",
+"correct":"<span>That's right!</span> 237mL glass is not considered to be Sparkling IC",
 "incorrect":"<p><span>Uhh no.</span> 237mL glass is not considered to be Sparkling IC</p>"
 },
 {

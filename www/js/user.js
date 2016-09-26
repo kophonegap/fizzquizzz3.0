@@ -17,6 +17,10 @@ $(function () {
             $('#firstname').val(field.fname);
             $('#lastname').val(field.lname);
             $('#email').val(field.email);
+            $('#division').val(field.divison);
+            $('#aunit').val(field.aunit);
+            $('#reg_area').val(field.area);
+
 
 
             // $('#user_id').text(field.id);
@@ -36,6 +40,10 @@ $(function () {
             console.log(field.fname);
             console.log(field.lname);
             console.log(field.email);
+            console.log(field.division);
+            console.log(field.aunit);
+            console.log(field.area);
+           // console.log(field.lang);
 
         });
     });

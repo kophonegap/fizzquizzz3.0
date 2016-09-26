@@ -10,8 +10,8 @@
             checkAnswerText:  'Answer',
             nextQuestionText: 'Next',
             backButtonText: '',
-            randomSort: false,
-            randomSortQuestions: false,
+            randomSort: true,
+            randomSortQuestions: true,
             randomSortAnswers: false,
             preventUnanswered: false,
             completionResponseMessaging: false,
@@ -46,7 +46,7 @@
             checker:         '#' + selector + ' .checkAnswer',
             next:            '#' + selector + ' .nextQuestion',
             back:            '#' + selector + ' .backToQuestion'
-        }
+        };
 
         var targets = {
             quizName:        '#' + selector + ' .quizName',
@@ -56,7 +56,7 @@
             quizHeader:      '#' + selector + ' .quizHeader',
             quizScore:       '#' + selector + ' .quizScore',
             quizLevel:       '#' + selector + ' .quizLevel'
-        }
+        };
 
         // Set via json option or quizJSON variable (see slickQuiz-config.js)
         var quizValues = (plugin.config.json ? plugin.config.json : typeof quizJSON != 'undefined' ? quizJSON : null);
@@ -76,6 +76,11 @@
         // Count the number of questions
         var questionCount = questions.length;
 
+        // Count the number of questions
+        var questionDateFrom = dateFrString;
+        var questionDateTo = dateToString24;
+       
+        
         plugin.method = {
             // Sets up the questions and answers based on above array
             setupQuiz: function() {
@@ -94,6 +99,9 @@
 
                         var questionHTML = $('<li class="question" id="question' + (count - 1) + '"></li>');
                         questionHTML.append('<div class="questionCount">Question <span class="current">' + count + '</span> of <span class="total">' + questionCount + '</span></div>');
+                        questionHTML.append('<div class="questionDateFrom">From <span class="total">' + questionDateFrom + '</span>');
+                        questionHTML.append('<div class="questionDateTo">To <span class="total">' + questionDateTo + '</span>');
+
                         questionHTML.append('<h3>' + count + '. ' + question.q + '</h3>');
 
                         // Count the number of true values
@@ -105,7 +113,7 @@
                                     truths++;
                                 }
                             }
-                        };
+                        }
 
                         // prepare a name for the answer inputs based on the question
                         var inputName  = 'question' + (count - 1);
@@ -144,7 +152,17 @@
                             var responseHTML = $('<ul class="responses"></ul>');
                             responseHTML.append('<li class="correct">' + question.correct + '</li>');
                             responseHTML.append('<li class="incorrect">' + question.incorrect + '</li>');
-
+                            responseHTML.append('<div class="answerResult animated fadeInBottomBig options fast">' +
+                                '<div class="unit-ans-result">' +
+                                    '<div class="bottles scoring"></div>' +
+                                '<div class="score">' +
+                                        'You got' +
+                                    '<span>3</span>' +
+                                    'Bottles' +
+                                '</div>' +
+                            '</div>' +
+                        '</div>'
+                        );
                             // Append responses to question
                             questionHTML.append(responseHTML);
                         }
@@ -167,8 +185,8 @@
                         quiz.append(questionHTML);
 
                         count++;
-                    };
-                };
+                    }
+                }
 
                 // Add the quiz content to the page
                 $(targets.quizArea).append(quiz);
@@ -339,7 +357,7 @@
                         $('#' + selector + ' .questions .question, #' + selector + ' .questions .responses').show();
                         $(targets.quizResults).append($('#' + selector + ' .questions')).fadeIn(500);
                     } else {
-                        $(targets.quizResults).fadeIn(500);
+                       $(targets.quizResults).fadeIn(500);
                     }
                 });
             },
@@ -421,10 +439,10 @@
                 e.preventDefault();
                 plugin.method.nextQuestion(this);
             });
-        }
+        };
 
         plugin.init();
-    }
+    };
 
     $.fn.slickQuiz = function(options) {
         return this.each(function() {

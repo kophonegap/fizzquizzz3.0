@@ -169,7 +169,7 @@
                     </li>
                     <li>
 
-                        <a href="fizzquizz.html" style="min-width: 100%;" class="button btn btn-lg mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Get Started!</a>
+                        <a href="fizzquizz.html" style="min-width: 100%;" class="button btn btn-lg mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Get Started</a>
 
                         <!-- <a href="quiz.html" target="_blank" location="no"
                             class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
@@ -202,7 +202,7 @@
                     </div>
 
                     <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" id="password">
+                        <input class="mdl-textfield__input" type="password" id="password">
                         <label class="mdl-textfield__label" for="password"></label>
                     </div>
 
@@ -220,7 +220,31 @@
                         <input class="mdl-textfield__input" type="text" id="email">
                         <label class="mdl-textfield__label" for="email"></label>
                     </div>
-                    <div id="update_1" style="display:none; width: 100%; color: lawngreen;">Update Successful</div>
+
+                <div class="mdl-textfield mdl-js-textfield">
+                    <input class="mdl-textfield__input" type="text" id="division">
+                    <label class="mdl-textfield__label" for="division"></label>
+                </div>
+
+                <div class="mdl-textfield mdl-js-textfield">
+                    <input class="mdl-textfield__input" type="text" id="unit">
+                    <label class="mdl-textfield__label" for="unit"></label>
+                </div>
+
+
+                <div class="mdl-textfield mdl-js-textfield">
+                    <input class="mdl-textfield__input" type="text" id="area">
+                    <label class="mdl-textfield__label" for="area"></label>
+                </div>
+
+
+
+
+
+                <div style='clear:both;'></div>
+
+
+                <div id="update_1" style="display:none; width: 100%; color: lawngreen;">Update Successful</div>
                     <div id="update_0" style="display:none;">Error</div>
                     <button type='button' class="mdl-layout__tab mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored"
                             onclick="update_user();">
@@ -293,7 +317,7 @@
         <section class="mdl-layout__tab-panel " id="fixed-tab-board" style="padding: 20px 5px;">
             <div class="page-content">
 
-                <table class="mdl-data-table mdl-shadow--2dp">
+               <!-- <table class="mdl-data-table mdl-shadow--2dp">
                     <thead>
                     <tr>
                         <th>#</th>
@@ -319,7 +343,165 @@
                     </tr>
 
                     </tbody>
-                </table>
+                </table>-->
+
+                <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+                    <div class="mdl-tabs__tab-bar">
+                        <a href="#starks-panel" class="mdl-tabs__tab is-active">Individual</a>
+                        <a href="#lannisters-panel" class="mdl-tabs__tab">Unit</a>
+                        <a href="#targaryens-panel" class="mdl-tabs__tab">Area</a>
+                    </div>
+
+                    <div class="mdl-tabs__panel is-active" id="starks-panel">
+                        <h5>Overall</h5>
+                        <table class="mdl-data-table mdl-shadow--2dp">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th class="mdl-data-table__cell--non-numeric">Name</th>
+                                <th class="mdl-data-table__cell--non-numeric">Sales Area</th>
+                                <th>Bottles</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1
+                                </td>
+                                <td class="mdl-data-table__cell--non-numeric">Raymund</td>
+                                <td class="mdl-data-table__cell--non-numeric">B/H/K/ CE</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>2
+                                </td>
+                                <td class="mdl-data-table__cell--non-numeric">Rommel</td>
+                                <td class="mdl-data-table__cell--non-numeric">B/H/K/ CE</td>
+                                <td>0</td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                        <h5>Current Session</h5>
+                        <table class="mdl-data-table mdl-shadow--2dp">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th class="mdl-data-table__cell--non-numeric">Name</th>
+                                <th class="mdl-data-table__cell--non-numeric">Sales Area</th>
+                                <th>Bottles</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1
+                                </td>
+                                <td class="mdl-data-table__cell--non-numeric">Raymund</td>
+                                <td class="mdl-data-table__cell--non-numeric">B/H/K/ CE</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>2
+                                </td>
+                                <td class="mdl-data-table__cell--non-numeric">Rommel</td>
+                                <td class="mdl-data-table__cell--non-numeric">B/H/K/ CE</td>
+                                <td>0</td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mdl-tabs__panel" id="lannisters-panel">
+
+                        <h5>Overall</h5>
+                        <table class="mdl-data-table mdl-shadow--2dp">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th class="mdl-data-table__cell--non-numeric">Sales Unit</th>
+                                <th class="mdl-data-table__cell--non-numeric">Unit</th>
+                                <th>Bottles</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1
+                                </td>
+                                <td class="mdl-data-table__cell--non-numeric">Coastal BC</td>
+                                <td class="mdl-data-table__cell--non-numeric">West</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>2
+                                </td>
+                                <td class="mdl-data-table__cell--non-numeric">Maritimes</td>
+                                <td class="mdl-data-table__cell--non-numeric">East</td>
+                                <td>0</td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mdl-tabs__panel" id="targaryens-panel">
+                        <h5>Overall</h5>
+                        <table class="mdl-data-table mdl-shadow--2dp">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th class="mdl-data-table__cell--non-numeric">Sales Area</th>
+                                <th class="mdl-data-table__cell--non-numeric">Unit</th>
+                                <th>Bottles</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1
+                                </td>
+                                <td class="mdl-data-table__cell--non-numeric">Coastal BC</td>
+                                <td class="mdl-data-table__cell--non-numeric">West</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>2
+                                </td>
+                                <td class="mdl-data-table__cell--non-numeric">Maritimes</td>
+                                <td class="mdl-data-table__cell--non-numeric">East</td>
+                                <td>0</td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                        <br />
+<h5>Current Session</h5>
+                        <table class="mdl-data-table mdl-shadow--2dp">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th class="mdl-data-table__cell--non-numeric">Sales Area</th>
+                                <th class="mdl-data-table__cell--non-numeric">Unit</th>
+                                <th>Bottles</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1
+                                </td>
+                                <td class="mdl-data-table__cell--non-numeric">Coastal BC</td>
+                                <td class="mdl-data-table__cell--non-numeric">West</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>2
+                                </td>
+                                <td class="mdl-data-table__cell--non-numeric">Maritimes</td>
+                                <td class="mdl-data-table__cell--non-numeric">East</td>
+                                <td>0</td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
 
             </div>
         </section>

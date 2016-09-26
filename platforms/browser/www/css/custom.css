@@ -440,12 +440,12 @@ a:hover, a:focus {
 .mdl-select__label {
     bottom: 0;
     color: rgba(0,0,0, 0.26);
-    font-size: 16px;
+    font-size: 12px;
     left: 0;
     right: 0;
     pointer-events: none;
     position: absolute;
-    top: 24px;
+    top: 0px;
     width: 100%;
     overflow: hidden;
     white-space: nowrap;
@@ -539,7 +539,7 @@ a:hover, a:focus {
 
 .quizArea, .quizResults {
     zoom: 1;
-    padding: 0 20px;
+    padding: 0 10px;
     margin: 10% auto !important;
 }
 
@@ -547,4 +547,84 @@ a:hover, a:focus {
 .startQuiz {
     margin-top: 40% !important;
 }
+.quizResults {
+    zoom: 1;
+    background: url("img/prize-image.png");
+    padding: 40px;
+    height: 320px;
+    width: 280px;
+    color: #fff;
+    margin: 0 auto !important;
+    border-radius: 3px;
+    box-shadow: 1px 2px 5px 2px #8d8d8d;
+}
 
+#playBack, #videoPlayer {
+    display: block;
+}
+
+.bottles {
+    margin-bottom: 20px ;
+}
+
+.quizLevel {
+    font-size: 5em;
+}
+.earned{
+    margin-bottom: 20px ;
+}
+#endQuiBtn {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.scoring {
+    width: 150px;
+    border: 0px solid;
+    text-align: center;
+    padding: 10px;
+}
+
+
+#sendScore {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    padding: 15px;
+}
+
+a.button.nextQuestion {
+    position: absolute;
+    bottom: 30px;
+    margin: 0 -10px 0 -15px !important;
+}
+/*
+a.button.nextQuestion {
+    position: absolute;
+    bottom: 30px;
+    width: auto !important;
+}
+*/
+
+.answerResult {
+    margin: 0 auto;
+    width:150px;
+}
+.unit-ans-result .bottles {
+    background: url(img/coke-bottle.png);
+    height: 90px;
+    border: 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    margin-bottom: 10px;
+}
+.unit-ans-result .score {
+    color: #888;
+    font-size: 10px;
+    text-align: center;
+    text-transform: uppercase;
+}

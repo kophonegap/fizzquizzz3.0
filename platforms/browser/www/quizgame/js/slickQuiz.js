@@ -10,8 +10,8 @@
             checkAnswerText:  'Answer',
             nextQuestionText: 'Next',
             backButtonText: '',
-            randomSort: true,
-            randomSortQuestions: true,
+            randomSort: false,
+            randomSortQuestions: false,
             randomSortAnswers: false,
             preventUnanswered: false,
             completionResponseMessaging: false,
@@ -79,8 +79,8 @@
         // Count the number of questions
         var questionDateFrom = dateFrString;
         var questionDateTo = dateToString24;
-       
-        
+       // var unitResult = '3';
+
         plugin.method = {
             // Sets up the questions and answers based on above array
             setupQuiz: function() {
@@ -99,6 +99,7 @@
 
                         var questionHTML = $('<li class="question" id="question' + (count - 1) + '"></li>');
                         questionHTML.append('<div class="questionCount">Question <span class="current">' + count + '</span> of <span class="total">' + questionCount + '</span></div>');
+                        // Custom
                         questionHTML.append('<div class="questionDateFrom">From <span class="total">' + questionDateFrom + '</span>');
                         questionHTML.append('<div class="questionDateTo">To <span class="total">' + questionDateTo + '</span>');
 
@@ -152,13 +153,14 @@
                             var responseHTML = $('<ul class="responses"></ul>');
                             responseHTML.append('<li class="correct">' + question.correct + '</li>');
                             responseHTML.append('<li class="incorrect">' + question.incorrect + '</li>');
-                            responseHTML.append('<div class="answerResult animated fadeInBottomBig options fast">' +
+                            responseHTML.append('<div class="answerResult correct animated fadeInBottomBig options fast">' +
                                 '<div class="unit-ans-result">' +
                                     '<div class="bottles scoring"></div>' +
-                                '<div class="score">' +
-                                        'You got' +
-                                    '<span>3</span>' +
-                                    'Bottles' +
+                                '<div id="scored" class="score">' +
+                                   /*     'You got' +
+                                    ' <span>3</span> ' +
+                                    'Bottles' + */
+                               unitResult +
                                 '</div>' +
                             '</div>' +
                         '</div>'

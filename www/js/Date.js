@@ -131,8 +131,8 @@ var dateto2 = new Date();
 
 var today = new Date();
 
-var dateFrString = date.format("dd-m-yy");
-//var dateFrString = '23-9-16';
+//var dateFrString = date.format("dd-m-yy");
+var dateFrString = '27-9-16';
 
 dateto.setDate(dateto.getDate() + 1);
 var dateToString24 = dateto.format("dd-m-yy");
@@ -143,7 +143,7 @@ var dateToString48 = dateto2.format("dd-m-yy");
 //dateToString.setDate(dateto.getDate() + 1);
 
 //dateto = date.setDate(date.getDate() + 1);
-today.setDate(today.getDate() + 3);
+//today.setDate(today.getDate() + 3);
 var dateStringToday = today.format("dd-m-yy");
 // add a day
 
@@ -157,9 +157,12 @@ var dateStringToday = today.format("dd-m-yy");
 
 if (dateStringToday >= dateFrString  && dateStringToday <= dateToString24) {
     console.log('3 points' );
+    var unitResult = 'You got 3 Bottles';
 } else if (dateStringToday >= dateFrString  && dateStringToday <= dateToString48) {
     console.log('2 points' + dateStringToday + ' ' + dateFrString + ' ' + dateToString24);
+     var unitResult = 'You got 2 Bottles';
 } else {
-console.log('1 point');
+console.log('1 Bottle');
+    var unitResult = 'You got 1 Bottle';
     //alert('1 point ');
 }

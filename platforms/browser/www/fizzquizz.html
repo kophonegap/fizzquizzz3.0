@@ -35,25 +35,27 @@
 
     <script src='js/all.js'></script>
     <script src='js/myApp.js'></script>
-    <script src='js/Date.js'></script>
+
     <script src='js/user.js'></script>
 
-
+    <script src='js/Date.js'></script>
     <script>
-      /*  function playMessage() {
+        /*  function playMessage() {
 
          document.getElementById('player').play();
 
          }
 
-*/
+         */
 
 
         $(function () {
             $('#slickQuiz').slickQuiz();
-           //  playMessage();
+            //  playMessage();
         });
         loaderSpin();
+
+
     </script>
 
 
@@ -116,7 +118,8 @@
 
 
 
-         <input name='questions' id='cand' type='text' />
+         <input name=' questions
+            ' id='cand' type='text' />
 
 
             <div class='quizArea animated fadeInUpBig options fast'>
@@ -141,7 +144,7 @@
 
                 <script>
 
-                 //  document.getElementById('player').play();
+                    //  document.getElementById('player').play();
 
                     $('video').bind('webkitendfullscreen', function () {
                         $(this).hide();
@@ -151,74 +154,70 @@
                     });
 
 
+                    $('video').on('ended', function () {
+                        $(this).hide();
+                        $('#pauseBtn').hide();
+                        $('#playBtn').hide();
 
-                    $('video').on('ended',function(){
-                     $(this).hide();
-                     $('#pauseBtn').hide();
-                     $('#playBtn').hide();
-
-                     });
-
-
-
-
-
-
-
+                    });
 
 
                 </script>
 
-
+                <!-- <div id="scored" class="score">score</div>-->
                 <a id='playGameBtn' class='button startQuiz btn btn-lg' href='#'>Play</a>
                 <!-- where the quiz gets built -->
             </div>
-           <!-- <div class='answerResult'>
-                <div class='unit-ans-result'>
+            <!-- <div class='answerResult'>
+                 <div class='unit-ans-result'>
 
 
-                    <div class='bottles scoring'></div>
-                    <div class='score'>
-                        You got
-                        <span>3</span>
-                        Bottles
-                    </div>
-                </div>
--->
-
-            </div>
-            <div class='quizResults'>
-                <div class='quizScore scoring'>SCORE:
-                    <span><!-- where the quiz score goes --></span>
-                </div>
-
-                <div class='earned scoring'><strong>YOU'VE EARNED</strong></div>
-                <div class='quizLevel scoring'>
-                    <span> <!-- where the quiz ranking level goes --></span>
-
-                </div>
-                <div class='bottles scoring'>BOTTLES</div>
-
-                <!--<div class='quizResultsCopy'>-->
-                    <!-- where the quiz result copy goes -->
-
-
-               <!-- </div>-->
-
-                <div id='endQuiBtn'>
-                    <a id='sendScore' class='button btn btn-lg' href='index.html'>Submit</a>
-                </div>
-            </div>
+                     <div class='bottles scoring'></div>
+                     <div class='score'>
+                         You got
+                         <span>3</span>
+                         Bottles
+                     </div>
+                 </div>
+ -->
 
         </div>
+        <div class='quizResults'>
+            <div class='quizScore scoring'>SCORE:
+                <span><!-- where the quiz score goes --></span>
+            </div>
+
+            <div class='earned scoring'><strong>YOU'VE EARNED</strong></div>
+            <div class='quizLevel scoring'>
+                <span> <!-- where the quiz ranking level goes --></span>
+
+            </div>
+            <div class='bottles scoring'>BOTTLES</div>
+
+            <!--<div class='quizResultsCopy'>-->
+            <!-- where the quiz result copy goes -->
 
 
-        <script src='quizgame/js/jquery-1.7.min.js'></script>
+            <!-- </div>-->
+
+            <div id='endQuiBtn'>
+                <a id='sendScore' class='button btn btn-lg' href='index.html'>Submit</a>
+            </div>
+        </div>
+
+    </main>
+
+
+</div>
+</div>
+
+
+<script src='quizgame/js/jquery-1.7.min.js'></script>
 
 <script>
 
-    $('#playGameBtn').on('click',function(){
-       // alert('clicked');
+    $('#playGameBtn').on('click', function () {
+        // alert('clicked');
         $('#videoPlayer').addClass('hide');
         $('#pauseBtn').addClass('hide');
         $('#playBtn').addClass('hide');
@@ -227,21 +226,21 @@
     });
 
 </script>
-        <!--<script src='http://104.238.96.209/~project/db/app/views/json/slickQuiz-json.js?callback=myFunction'></script>-->
+<!--<script src='http://104.238.96.209/~project/db/app/views/json/slickQuiz-json.js?callback=myFunction'></script>-->
 
-        <!-- <script src='http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/slickQuiz-json.js?callback=myFunction'></script>-->
+<!-- <script src='http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/slickQuiz-json.js?callback=myFunction'></script>-->
 
-        <script src='quizgame/js/fizzquizz.js'></script>
-        <!-- <script src='quizgame/js/slickQuiz-config.js'></script> -->
+<script src='quizgame/js/fizzquizz.js'></script>
+<!-- <script src='quizgame/js/slickQuiz-config.js'></script> -->
 
 
-        <script src='quizgame/js/slickQuiz.js'></script>
-        <script src='quizgame/js/master.js'></script>
-        <script src='quizgame/js/actions.js'></script>
+<script src='quizgame/js/slickQuiz.js'></script>
 
-    </main>
 
-</div>
+<script src='quizgame/js/master.js'></script>
+<script src='quizgame/js/actions.js'></script>
+
+
 
 
 </body>

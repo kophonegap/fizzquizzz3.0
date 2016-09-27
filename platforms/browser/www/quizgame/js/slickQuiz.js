@@ -1,3 +1,5 @@
+function mySlickQuiz(  ) {
+
 (function($){
 
 
@@ -123,20 +125,21 @@
     var today = new Date();
     //var dateFromString = questions.date_published;
     //var dateFrString = date.format("dd-m-yy");
-        var dateFrString = '27-9-16';
+    var dateFrString = date.format("dd-m-yy");
+    // var dateFrString = '29-9-16';
     //var dateFrString = dateFromString;
 
-        dateto.setDate(dateto.getDate() + 1);
-        var dateToString24 = dateto.format("dd-m-yy");
+    dateto.setDate(dateto.getDate() + 1);
+    var dateToString24 = dateto.format("dd-m-yy");
 
-        dateto2.setDate(dateto2.getDate() + 2);
+    dateto2.setDate(dateto2.getDate() + 2);
 
-        var dateToString48 = dateto2.format("dd-m-yy");
+    var dateToString48 = dateto2.format("dd-m-yy");
     //dateToString.setDate(dateto.getDate() + 1);
 
     //dateto = date.setDate(date.getDate() + 1);
     //today.setDate(today.getDate() + 3);
-        var dateStringToday = today.format("dd-m-yy");
+    var dateStringToday = today.format("dd-m-yy");
     // add a day
 
 
@@ -147,17 +150,17 @@
     //(dateStringToday <= dateToString )
 
 
-        if (dateStringToday >= dateFrString  && dateStringToday <= dateToString24) {
-            console.log('3 points' );
-            var unitResult = 'You got 3 Bottles';
-        } else if (dateStringToday >= dateFrString  && dateStringToday <= dateToString48) {
-            console.log('2 points' + dateStringToday + ' ' + dateFrString + ' ' + dateToString24);
-            var unitResult = 'You got 2 Bottles';
-        } else {
-            console.log('1 Bottle');
-            var unitResult = 'You got 1 Bottle';
-            //alert('1 point ');
-        }
+    if (dateStringToday >= dateFrString  && dateStringToday <= dateToString24) {
+        console.log('3 points' );
+        var unitResult = 'You got 3 Bottles';
+    } else if (dateStringToday >= dateFrString  && dateStringToday <= dateToString48) {
+        console.log('2 points' + dateStringToday + ' ' + dateFrString + ' ' + dateToString24);
+        var unitResult = 'You got 2 Bottles';
+    } else {
+        console.log('1 Bottle');
+        var unitResult = 'You got 1 Bottle';
+        //alert('1 point ');
+    }
 
     /*************** DATE *********************/
     // Setup Sexy Quiz
@@ -165,7 +168,7 @@
 
     $.slickQuiz = function(element, options) {
         var $element = $(element),
-             element = element;
+            element = element;
 
         var plugin = this;
 
@@ -225,8 +228,8 @@
         var quizValues = (plugin.config.json ? plugin.config.json : typeof quizJSON != 'undefined' ? quizJSON : null);
 
         var questions = plugin.config.randomSort || plugin.config.randomSortQuestions ?
-                        quizValues.questions.sort(function() { return (Math.round(Math.random())-0.5); }) :
-                        quizValues.questions;
+            quizValues.questions.sort(function() { return (Math.round(Math.random())-0.5); }) :
+            quizValues.questions;
 
         var levels = {
             1: quizValues.info.level1, // 80-100%
@@ -241,7 +244,7 @@
 
         /*// Count the number of questions */
         var dateFromString = questions.date_published;
-       // var questionDateFrom = dateFrString;
+        // var questionDateFrom = dateFrString;
         var questionDateFrom = dateFromString;
         var questionDateTo = dateToString24;
 
@@ -266,7 +269,7 @@
                         // Custom
                         questionHTML.append('<div class="questionDateFrom">From <span class="total">' + questionDateFrom + '</span>');
                         questionHTML.append('<div class="questionDateTo">To <span class="total">' + questionDateTo + '</span>');
-                       // questionHTML.append('<div class="questionDatePublished">To <span class="total">' + dateFromString + '</span>');
+                        // questionHTML.append('<div class="questionDatePublished">To <span class="total">' + dateFromString + '</span>');
 
                         questionHTML.append('<h3>' + count + '. ' + question.q + '</h3>');
 
@@ -321,16 +324,16 @@
                             responseHTML.append('<li class="date">' + question.date_published + '</li>');
                             responseHTML.append('<div class="answerResult correct animated fadeInBottomBig options fast">' +
                                 '<div class="unit-ans-result">' +
-                                    '<div class="bottles scoring"></div>' +
+                                '<div class="bottles scoring"></div>' +
                                 '<div id="scored" class="score">' +
-                                   /*     'You got' +
-                                    ' <span>3</span> ' +
-                                    'Bottles' + */
-                               unitResult +
+                                /*     'You got' +
+                                 ' <span>3</span> ' +
+                                 'Bottles' + */
+                                unitResult +
                                 '</div>' +
-                            '</div>' +
-                        '</div>'
-                        );
+                                '</div>' +
+                                '</div>'
+                            );
                             // Append responses to question
                             questionHTML.append(responseHTML);
                         }
@@ -488,7 +491,7 @@
                         prevQuestion.fadeIn(500);
                     });
 
-                // Back to question from responses
+                    // Back to question from responses
                 } else {
                     questionLI.find('.responses').fadeOut(300, function(){
                         questionLI.removeClass('correctResponse');
@@ -525,7 +528,7 @@
                         $('#' + selector + ' .questions .question, #' + selector + ' .questions .responses').show();
                         $(targets.quizResults).append($('#' + selector + ' .questions')).fadeIn(500);
                     } else {
-                       $(targets.quizResults).fadeIn(500);
+                        $(targets.quizResults).fadeIn(500);
                     }
                 });
             },
@@ -621,3 +624,5 @@
         });
     }
 })(jQuery);
+
+}

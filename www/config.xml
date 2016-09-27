@@ -1,6 +1,6 @@
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.ko.fizzquiz-alpha"
-        version="1.0.1">
-    <name>Fizz Quiz alpha</name>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.ko.fizzquizz"
+        version="1.0.5">
+    <name>Fizz Quizz</name>
     <description>Newsletter App</description>
     <author href="http://phonegap.com" email="support@phonegap.com">SDC Manila Team</author>
     <content src="index.html"/>

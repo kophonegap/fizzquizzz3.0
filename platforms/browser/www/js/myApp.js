@@ -59,7 +59,7 @@ function loadQuestions(){
     $.ajax({
         type: 'GET',
 
-        url: 'http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/index.php/jsoncode',
+        url: 'http://104.238.96.209/~project/db/jsoncode',
         data: { get_param: 'value' },
         success: function (data) {
             // quizJSON = data;

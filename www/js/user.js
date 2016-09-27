@@ -3,7 +3,7 @@ function log_out() {
     window.location.replace("index.html");
 }
 
-var base_url = "http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/index.php";
+var base_url = "http://104.238.96.209/~project/db";
 
 $(function () {
     var user = localStorage.getItem('userlogin');

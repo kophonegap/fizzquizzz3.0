@@ -108,7 +108,7 @@ function noNet(path, success, error)
 
 
 
-noNet('http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/json.php',
+noNet('http://104.238.96.209/~project/db/json.php',
          function(data) {
 				for(i = 0; i < data.length; i++) {
 					//document.getElementById("result1").innerHTML += '<li> ' + data[i]['name'] + '</li>';

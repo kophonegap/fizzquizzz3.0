@@ -130,9 +130,10 @@ var dateto = new Date();
 var dateto2 = new Date();
 
 var today = new Date();
-
+//var dateFromString = questions.date_published;
 //var dateFrString = date.format("dd-m-yy");
 var dateFrString = '27-9-16';
+//var dateFrString = dateFromString;
 
 dateto.setDate(dateto.getDate() + 1);
 var dateToString24 = dateto.format("dd-m-yy");

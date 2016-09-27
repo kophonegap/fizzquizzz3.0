@@ -641,6 +641,8 @@ a.button.nextQuestion {
     z-index: 2002;
 }
 
-.questionDateFrom, .questionDateTo {
+.questionDateFrom, .questionDateTo, li.date {
     display: none;
 }
+
+

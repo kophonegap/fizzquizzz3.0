@@ -3,12 +3,12 @@ function log_out() {
     window.location.replace("index.html");
 }
 
-var base_url = "http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/index.php";
+var base_url = "http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver";
 
 $(function () {
     var user = localStorage.getItem('userlogin');
 
-    $.getJSON(base_url + '/get_user_details/' + user, function ( result ) {
+    $.getJSON(base_url + '/index.php/get_user_details/' + user, function ( result ) {
         $.each(result, function ( i, field ) {
             // $("#output").append("<tr><td>Username:  "+ field.username + " </td></tr><tr><td>Password: "+ field.password + "</td></tr>");
             //  $('#userid').val(field.id);
@@ -61,7 +61,7 @@ function update_user() {
     var area = $('#area').val();
     // var privilege = $('#user_privilege').val();
 
-    $.post(base_url + '/update/user', {
+    $.post(base_url + '/index.php/update/user', {
         username: username,
         password: password,
         fname: fname,

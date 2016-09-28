@@ -649,3 +649,12 @@ a.button.nextQuestion {
 .quizLevel span {
     display: none;
 }
+
+
+table#table_users{
+    width: 100% !important;
+}
+
+.dataTables_length, .dataTables_filter, .dataTables_info, .dataTables_paginate  {
+    display: none !important;
+}

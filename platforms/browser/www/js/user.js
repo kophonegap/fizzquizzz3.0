@@ -8,6 +8,13 @@ var base_url = "http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquiz
 $(function () {
     var user = localStorage.getItem('userlogin');
 
+    /*if (userlogin != 'blank') {
+        window.location.replace("main.html");
+    }
+
+*/
+
+
     $.getJSON(base_url + '/index.php/get_user_details/' + user, function ( result ) {
         $.each(result, function ( i, field ) {
             // $("#output").append("<tr><td>Username:  "+ field.username + " </td></tr><tr><td>Password: "+ field.password + "</td></tr>");

@@ -363,6 +363,7 @@ function mySlickQuiz() {
                                     '</div>' +
                                     '</div>' +
                                     '</div>'
+
                                 );
                                 // Append responses to question
                                 questionHTML.append(responseHTML);
@@ -550,6 +551,8 @@ function mySlickQuiz() {
                     console.log(score);
                     console.log(overallScore);
                     $('#redeemScore').html(overallScore);
+                    $('#redeemScoreInput').val(overallScore);
+
                     $(targets.quizScore + ' span').html(score + ' / ' + questionCount);
                     $(targets.quizLevel + ' span').html(levelText);
                     $(targets.quizLevel).addClass('level' + levelRank);

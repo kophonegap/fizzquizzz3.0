@@ -32,8 +32,8 @@ var quizJSON = {
                     "correct":false
                 }
             ],
-            "correct":"<p><span>That's right!</span> 237mL glass is not considered to be Sparkling IC</p>",
-            "incorrect":"<p><span>Uhh no.</span> 237mL glass is not considered to be Sparkling IC</p>"
+            "correct":"<p><span>Correct!</span> 237mL glass is not considered to be Sparkling IC</p>",
+            "incorrect":"<p><span>Wrong!</span> 237mL glass is not considered to be Sparkling IC</p>"
 
         },
         {
@@ -57,8 +57,8 @@ var quizJSON = {
                     "correct":false
                 }
             ],
-            "correct":"<p><span>Holy bananas!</span> The Small Format Director needs to approve an equipment swap before the work order is placed through coketech.ca.</p>",
-            "incorrect":"<p><span>Fail.</span>  The Small Format Director needs to approve an equipment swap before the work order is placed through coketech.ca.</p>"
+            "correct":"<p><span>Correct!</span> The Small Format Director needs to approve an equipment swap before the work order is placed through coketech.ca.</p>",
+            "incorrect":"<p><span>Wrong!</span>  The Small Format Director needs to approve an equipment swap before the work order is placed through coketech.ca.</p>"
 
         },
         {
@@ -82,8 +82,8 @@ var quizJSON = {
                     "correct":false
                 }
             ],
-            "correct":"<p><span>Nice!</span> The minimum order size required for a Convenience Retail customer located within 90km of the Distribution Centre is $250.</p>",
-            "incorrect":"<p><span>No.</span> The minimum order size required for a Convenience Retail customer located within 90km of the Distribution Centre is $250.</p>",
+            "correct":"<p><span>Correct!</span> The minimum order size required for a Convenience Retail customer located within 90km of the Distribution Centre is $250.</p>",
+            "incorrect":"<p><span>Wrong!</span> The minimum order size required for a Convenience Retail customer located within 90km of the Distribution Centre is $250.</p>",
             "dateFrString":"27-9-16"
         },
         {
@@ -107,8 +107,8 @@ var quizJSON = {
                     "correct":false
                 }
             ],
-            "correct":"<p><span>Good Job!</span> The minimum order size required for an FSOP customer located within 90km of the Distribution Centre  is $190.</p>",
-            "incorrect":"<p><span>ERRRR!</span> The minimum order size required for an FSOP customer located within 90km of the Distribution Centre  is $190.</p>"
+            "correct":"<p><span>Correct!</span> The minimum order size required for an FSOP customer located within 90km of the Distribution Centre  is $190.</p>",
+            "incorrect":"<p><span>Wrong!</span> The minimum order size required for an FSOP customer located within 90km of the Distribution Centre  is $190.</p>"
         },
 
 
@@ -138,7 +138,7 @@ var quizJSON = {
                     "correct":false
                 }
             ],
-            "correct":"<p><span>Good Job!</span> The minimum order size required for a Grocery or Mass customer is $1725.</p>",
+            "correct":"<p><span>Correct!</span> The minimum order size required for a Grocery or Mass customer is $1725.</p>",
             "incorrect":"<p><span>Wrong!</span> The minimum order size required for a Grocery or Mass customer is $1725.</p>"
         },
 
@@ -163,7 +163,7 @@ var quizJSON = {
                     "correct":false
                 }
             ],
-            "correct":"<p><span>Good Job!</span> The most profitable package on an end cap should be merchandised on the middle shelf.</p>",
+            "correct":"<p><span>Correct!</span> The most profitable package on an end cap should be merchandised on the middle shelf.</p>",
             "incorrect":"<p><span>Wrong!</span> The most profitable package on an end cap should be merchandised on the middle shelf. </p>"
         },
 
@@ -188,7 +188,7 @@ var quizJSON = {
                     "correct":false
                 }
             ],
-            "correct":"<p><span>Good Job!</span> The priority SKUs in an HMR/Deli are 1 Litre, 6 x 237mL Glass and 414mL.</p>",
+            "correct":"<p><span>Correct!</span> The priority SKUs in an HMR/Deli are 1 Litre, 6 x 237mL Glass and 414mL.</p>",
             "incorrect":"<p><span>Wrong!</span> The priority SKUs in an HMR/Deli are 1 Litre, 6 x 237mL Glass and 414mL.    </p>"
         },
         {
@@ -212,8 +212,11 @@ var quizJSON = {
                     "correct":false
                 }
             ],
-            "correct":"<p><span>Good Job!</span> In Convenience Retail, a maximum of 2 clings can be placed on a cooler door.</p>",
+            "correct":"<p><span>Correct!</span> In Convenience Retail, a maximum of 2 clings can be placed on a cooler door.</p>",
             "incorrect":"<p><span>Wrong!</span>In Convenience Retail, a maximum of 2 clings can be placed on a cooler door.  </p>"
         }
     ]
 };
+function myFunction() {
+    quizJSON;
+}

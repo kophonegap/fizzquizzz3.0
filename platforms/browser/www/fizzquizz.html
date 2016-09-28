@@ -39,6 +39,9 @@
     <script src='js/user.js'></script>
 
     <script>
+
+       // var base_url = "http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver";
+
         function playMessage() {
 
         // document.getElementById('player').play();
@@ -128,7 +131,7 @@
                  </div> -->
 
                 <video id='videoPlayer' width='100%' height='auto' autoplay id='player'>
-                    <source src='http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/media/sample2.mp4'>
+                    <source src= 'http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/media/sample2.mp4'>
                     <meta property='og:video:secure_url' content='http://'>
                     <meta property='og:video:type' content='video/mp4'>
 
@@ -189,6 +192,13 @@
             <div class='quizLevel scoring'>
                 <h2 id="redeemScore"> <!-- where the quiz ranking level goes --></h2>
             <span></span>
+                <input type="hidden" id="user_id" name="user_id" /></input>
+                <input type="hidden" id="redeemScoreInput" name="redeemScoreInput" /></input>
+                <script>
+                    localStorage.setItem('redeemScoreInput', redeemScoreInput);
+                    console.log('redeemScoreInput: ' + redeemScoreInput);
+
+                </script>
             </div>
             <div class='bottles scoring'>BOTTLES</div>
 
@@ -207,7 +217,7 @@
 
 
 </div>
-</div>
+<!--</div>-->
 
 
 <script src='quizgame/js/jquery-1.7.min.js'></script>
@@ -226,14 +236,14 @@
 </script>
 <!--<script src='http://104.238.96.209/~project/db/app/views/json/slickQuiz-json.js?callback=myFunction'></script>-->
 
- <script src='http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/slickQuiz-json.js?callback=myFunction'></script>
+ <script src= "http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/slickQuiz-json.js?callback=myFunction"></script>
 
-<script src='http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/slickQuiz.js?callback=mySlickQuiz'></script>
+<!--<script src= "http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/slickQuiz.js?callback=mySlickQuiz"></script>-->
 <!--<script src='quizgame/js/fizzquizz.js'></script>-->
-<!-- <script src='quizgame/js/slickQuiz-config.js'></script>
+<!-- <script src='quizgame/js/slickQuiz-config.js'></script>-->
 
 
-<script src='quizgame/js/slickQuiz.js?callback=mySlickQuiz'></script>-->
+<script src='quizgame/js/slickQuiz.js?callback=mySlickQuiz'></script>
 <script>mySlickQuiz();</script>
 <!--
 <script src='js/Date.js'></script>-->

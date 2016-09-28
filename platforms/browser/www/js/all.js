@@ -1,5 +1,6 @@
 //$(function() {
 //Enable swiping...
+var base_url = "http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver";
 /* $("#swipe_menu").swipe( {
 	//Generic swipe handler for all directions
 	swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
@@ -28,7 +29,7 @@ function fillmod() {
     //document.getElementById("mod_video").innerHTML = "";
 
     $.ajax({
-        url:'http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/media/index.php/media/1',
+        url:base_url + '/app/views/media/index.php/media/1',
         dataType: 'jsonp',
         jsonp: 'jsoncallback',
         timeout: 5000,
@@ -108,7 +109,7 @@ function noNet(path, success, error)
 
 
 
-noNet('http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/json.php',
+noNet(base_url +'/json.php',
          function(data) {
 				for(i = 0; i < data.length; i++) {
 					//document.getElementById("result1").innerHTML += '<li> ' + data[i]['name'] + '</li>';

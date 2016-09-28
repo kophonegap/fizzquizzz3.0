@@ -46,6 +46,13 @@
     <script src="js/user.js"></script>
 
 
+    <script charset="utf-8" src="controllers/config.js"></script>
+    <script charset="utf-8" src="controllers/users.js"></script>
+
+   <!-- <script charset="utf-8" src="http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/admins/controllers/users.js?callback=tableUsers"></script>-->
+    <script charset="utf-8" src="//cdn.datatables.net/1.10.0/js/jquery.dataTables.js"></script>
+    <script charset="utf-8" src="//cdn.jsdelivr.net/jquery.validation/1.13.1/jquery.validate.min.js"></script>
+
 </head>
 <body>
 <div id="loader" style="display: none;">
@@ -353,7 +360,55 @@
                     </div>
 
                     <div class="mdl-tabs__panel is-active" id="starks-panel">
-                        <h5>Overall</h5>
+                        <table id="table_users" class="mdl-data-table mdl-shadow--2dp">
+                        <thead>
+                        <tr>
+                            <th>ID#</th>
+                           <!-- <th>Username</th>-->
+                            <th>Name</th>
+                           <!-- <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Priviledge</th> -->
+                            <th>Area</th>
+                            <th>Unit</th>
+                            <!--<th></th>-->
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+
+                  <!--  <div class="mdl-tabs__panel is-active" id="starks-panel">
+                        <!-- <h5>Overall</h5> -->
+                   <!--    <table class="mdl-data-table mdl-shadow--2dp">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th class="mdl-data-table__cell--non-numeric">Name</th>
+                                <th class="mdl-data-table__cell--non-numeric">Sales Area</th>
+                                <th>Bottles</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1
+                                </td>
+                                <td class="mdl-data-table__cell--non-numeric">Raymund</td>
+                                <td class="mdl-data-table__cell--non-numeric">B/H/K/ CE</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>2
+                                </td>
+                                <td class="mdl-data-table__cell--non-numeric">Rommel</td>
+                                <td class="mdl-data-table__cell--non-numeric">B/H/K/ CE</td>
+                                <td>0</td>
+                            </tr>
+
+                            </tbody>
+                        </table> -->
+                      <!--  <h5>Current Session</h5>
                         <table class="mdl-data-table mdl-shadow--2dp">
                             <thead>
                             <tr>
@@ -380,35 +435,30 @@
                             </tr>
 
                             </tbody>
-                        </table>
-                        <h5>Current Session</h5>
-                        <table class="mdl-data-table mdl-shadow--2dp">
-                            <thead>
-                            <tr>
-                                <th>#</th>
-                                <th class="mdl-data-table__cell--non-numeric">Name</th>
-                                <th class="mdl-data-table__cell--non-numeric">Sales Area</th>
-                                <th>Bottles</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>1
-                                </td>
-                                <td class="mdl-data-table__cell--non-numeric">Raymund</td>
-                                <td class="mdl-data-table__cell--non-numeric">B/H/K/ CE</td>
-                                <td>0</td>
-                            </tr>
-                            <tr>
-                                <td>2
-                                </td>
-                                <td class="mdl-data-table__cell--non-numeric">Rommel</td>
-                                <td class="mdl-data-table__cell--non-numeric">B/H/K/ CE</td>
-                                <td>0</td>
-                            </tr>
+                        </table>-->
 
-                            </tbody>
-                        </table>
+                        <!--  <div class="panel-body">
+                       <!--  <table id="table_users" class="table datatable_simple table-striped">
+                              <thead>
+                              <tr>
+                                 <!-- <th>ID</th>
+                                  <th>Username</th>-->
+                                   <!-- <th>First Name</th>
+                                    <!-- <th>Last Name</th>
+                                  <th>Email</th>
+                                  <th>Priviledge</th>-->
+                        <!--   <th>Division</th>
+                          <th>Unit</th>
+                         <th></th>-->
+
+                              <!--  </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>-->
+
+
                     </div>
                     <div class="mdl-tabs__panel" id="lannisters-panel">
 

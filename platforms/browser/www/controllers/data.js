@@ -1,31 +1,18 @@
 $(document).ready(function(){
-var base_url2 = 'http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/admins';
+
   // On page load: datatable
-  var table_users = $('#table_users').dataTable({
-    "ajax": base_url2 + "/services/users.php?job=get_users",
+  var table_companies = $('#table_companies').dataTable({
+    "ajax": base_url + "/services/data.php?job=get_companies",
     "columns": [
-      { "data": "id" },
-      /* { "data": "username",   "sClass": "username" },*/
-      { "data": "fname",   "sClass": "fname" },
-      /*  { "data": "lname",   "sClass": "lname" },
-     { "data": "email",   "sClass": "email" },
-  { "data": "privilege",   "sClass": "privilege" },*/
-
-     /* { "data": "division",   "sClass": "division" },*/
-      { "data": "aunit",   "sClass": "aunit" },
-     { "data": "area",   "sClass": "area" }
-      //  { "data": "lang",   "sClass": "lang" },
-      /*   { "data": "remember_token",   "sClass": "remember_token" },
-          { "data": "created_at",   "sClass": "created_at" },
-            { "data": "updated_at",   "sClass": "updated_at" },*/
-
-    /*  { "data": "fname" },
-      { "data": "lname",        "sClass": "integer" },
-      { "data": "email",    "sClass": "integer" },
-      { "data": "division",      "sClass": "integer" },
-      { "data": "aunit",     "sClass": "integer" },
-      { "data": "area" },*/
-    /*  { "data": "functions",      "sClass": "functions" }*/
+      { "data": "rank" },
+      { "data": "company_name",   "sClass": "company_name" },
+      { "data": "industries" },
+      { "data": "revenue",        "sClass": "integer" },
+      { "data": "fiscal_year",    "sClass": "integer" },
+      { "data": "employees",      "sClass": "integer" },
+      { "data": "market_cap",     "sClass": "integer" },
+      { "data": "headquarters" },
+      { "data": "functions",      "sClass": "functions" }
     ],
     "aoColumnDefs": [
       { "bSortable": false, "aTargets": [-1] }
@@ -48,7 +35,7 @@ var base_url2 = 'http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzqui
   jQuery.validator.setDefaults({
     success: 'valid',
     rules: {
-      email: {
+      fiscal_year: {
         required: true,
         min:      2000,
         max:      2025
@@ -64,8 +51,8 @@ var base_url2 = 'http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzqui
       $(element).parent('.field_container').addClass('valid').removeClass('error');
     }
   });
-  var form_user = $('#form_user');
-  form_user.validate();
+  var form_company = $('#form_company');
+  form_company.validate();
 
   // Show message
   function show_message(message_text, message_type){
@@ -124,50 +111,38 @@ var base_url2 = 'http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzqui
     $('input').blur();
   }
 
-  // Add user button
-  $(document).on('click', '#add_user', function(e){
+  // Add company button
+  $(document).on('click', '#add_company', function(e){
     e.preventDefault();
-    $('.lightbox_content h2').text('Add user');
-    $('#form_user button').text('Add user');
-    $('#form_user').attr('class', 'form add');
-    $('#form_user').attr('data-id', '');
-    $('#form_user .field_container label.error').hide();
-    $('#form_user .field_container').removeClass('valid').removeClass('error');
-    $('#form_user #id').val('');
-    $('#form_user #username').val('');
-      $('#form_user #fname').val('');
-        $('#form_user #lname').val('');
-          $('#form_user #email').val('');
-
-              $('#form_user #privilege').val('');
-            $('#form_user #division').val('');
-              $('#form_user #aunit').val('');
-              /*  $('#form_user #area').val('');
-              //    $('#form_user #lang').val('');
-                  $('#form_user #remember_token').val('');
-                    $('#form_user #created_at').val('');
-                      $('#form_user #updated_at').val('');*/
-    /*$('#form_user #fname').val('');
-    $('#form_user #lname').val('');
-    $('#form_user #email').val('');
-    $('#form_user #division').val('');
-    $('#form_user #aunit').val('');
-    $('#form_user #area').val('');*/
+    $('.lightbox_content h2').text('Add company');
+    $('#form_company button').text('Add company');
+    $('#form_company').attr('class', 'form add');
+    $('#form_company').attr('data-id', '');
+    $('#form_company .field_container label.error').hide();
+    $('#form_company .field_container').removeClass('valid').removeClass('error');
+    $('#form_company #rank').val('');
+    $('#form_company #company_name').val('');
+    $('#form_company #industries').val('');
+    $('#form_company #revenue').val('');
+    $('#form_company #fiscal_year').val('');
+    $('#form_company #employees').val('');
+    $('#form_company #market_cap').val('');
+    $('#form_company #headquarters').val('');
     show_lightbox();
   });
 
-  // Add user submit form
-  $(document).on('submit', '#form_user.add', function(e){
+  // Add company submit form
+  $(document).on('submit', '#form_company.add', function(e){
     e.preventDefault();
     // Validate form
-    if (form_user.valid() == true){
-      // Send user information to database
+    if (form_company.valid() == true){
+      // Send company information to database
       hide_ipad_keyboard();
       hide_lightbox();
       show_loading_message();
-      var form_data = $('#form_user').serialize();
+      var form_data = $('#form_company').serialize();
       var request   = $.ajax({
-        url:          base_url2 + '/services/users.php?job=add_user',
+        url:          base_url + '/services/data.php?job=add_company',
         cache:        false,
         data:         form_data,
         dataType:     'json',
@@ -177,10 +152,10 @@ var base_url2 = 'http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzqui
       request.done(function(output){
         if (output.result == 'success'){
           // Reload datable
-          table_users.api().ajax.reload(function(){
+          table_companies.api().ajax.reload(function(){
             hide_loading_message();
-            var username = $('#username').val();
-            show_message("user '" + username + "' added successfully.", 'success');
+            var company_name = $('#company_name').val();
+            show_message("Company '" + company_name + "' added successfully.", 'success');
           }, true);
         } else {
           hide_loading_message();
@@ -194,14 +169,14 @@ var base_url2 = 'http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzqui
     }
   });
 
-  // Edit user button
+  // Edit company button
   $(document).on('click', '.function_edit a', function(e){
     e.preventDefault();
-    // Get user information from database
+    // Get company information from database
     show_loading_message();
     var id      = $(this).data('id');
     var request = $.ajax({
-      url:          base_url2 + '/services/users.php?job=get_user',
+      url:          base_url + '/services/data.php?job=get_company',
       cache:        false,
       data:         'id=' + id,
       dataType:     'json',
@@ -210,25 +185,20 @@ var base_url2 = 'http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzqui
     });
     request.done(function(output){
       if (output.result == 'success'){
-        $('.lightbox_content h2').text('Edit user');
-        $('#form_user button').text('Edit user');
-        $('#form_user').attr('class', 'form edit');
-        $('#form_user').attr('data-id', id);
-        $('#form_user .field_container label.error').hide();
-        $('#form_user .field_container').removeClass('valid').removeClass('error');
-        $('#form_user #id').val(output.data[0].id);
-        $('#form_user #username').val(output.data[0].username);
-        $('#form_user #fname').val(output.data[0].fname);
-        $('#form_user #lname').val(output.data[0].lname);
-        $('#form_user #email').val(output.data[0].email);
-          $('#form_user #privilege').val(output.data[0].privilege);
-        $('#form_user #division').val(output.data[0].division);
-        $('#form_user #aunit').val(output.data[0].aunit);
-      /*  $('#form_user #area').val(output.data[0].area);
-        //  $('#form_user #lang').val(output.data[0].lang);
-        $('#form_user #remember_token').val(output.data[0].remember_token);
-        $('#form_user #created_at').val(output.data[0].created_at);
-        $('#form_user #updated_at').val(output.data[0].updated_at);*/
+        $('.lightbox_content h2').text('Edit company');
+        $('#form_company button').text('Edit company');
+        $('#form_company').attr('class', 'form edit');
+        $('#form_company').attr('data-id', id);
+        $('#form_company .field_container label.error').hide();
+        $('#form_company .field_container').removeClass('valid').removeClass('error');
+        $('#form_company #rank').val(output.data[0].rank);
+        $('#form_company #company_name').val(output.data[0].company_name);
+        $('#form_company #industries').val(output.data[0].industries);
+        $('#form_company #revenue').val(output.data[0].revenue);
+        $('#form_company #fiscal_year').val(output.data[0].fiscal_year);
+        $('#form_company #employees').val(output.data[0].employees);
+        $('#form_company #market_cap').val(output.data[0].market_cap);
+        $('#form_company #headquarters').val(output.data[0].headquarters);
         hide_loading_message();
         show_lightbox();
       } else {
@@ -242,19 +212,19 @@ var base_url2 = 'http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzqui
     });
   });
 
-  // Edit user submit form
-  $(document).on('submit', '#form_user.edit', function(e){
+  // Edit company submit form
+  $(document).on('submit', '#form_company.edit', function(e){
     e.preventDefault();
     // Validate form
-    if (form_user.valid() == true){
-      // Send user information to database
+    if (form_company.valid() == true){
+      // Send company information to database
       hide_ipad_keyboard();
       hide_lightbox();
       show_loading_message();
-      var id        = $('#form_user').attr('data-id');
-      var form_data = $('#form_user').serialize();
+      var id        = $('#form_company').attr('data-id');
+      var form_data = $('#form_company').serialize();
       var request   = $.ajax({
-        url:          base_url2 + '/services/users.php?job=edit_user&id=' + id,
+        url:          base_url + '/services/data.php?job=edit_company&id=' + id,
         cache:        false,
         data:         form_data,
         dataType:     'json',
@@ -264,10 +234,10 @@ var base_url2 = 'http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzqui
       request.done(function(output){
         if (output.result == 'success'){
           // Reload datable
-          table_users.api().ajax.reload(function(){
+          table_companies.api().ajax.reload(function(){
             hide_loading_message();
-            var username = $('#username').val();
-            show_message("user '" + username + "' edited successfully.", 'success');
+            var company_name = $('#company_name').val();
+            show_message("Company '" + company_name + "' edited successfully.", 'success');
           }, true);
         } else {
           hide_loading_message();
@@ -281,15 +251,15 @@ var base_url2 = 'http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzqui
     }
   });
 
-  // Delete user
+  // Delete company
   $(document).on('click', '.function_delete a', function(e){
     e.preventDefault();
-    var username = $(this).data('name');
-    if (confirm("Are you sure you want to delete '" + username + "'?")){
+    var company_name = $(this).data('name');
+    if (confirm("Are you sure you want to delete '" + company_name + "'?")){
       show_loading_message();
       var id      = $(this).data('id');
       var request = $.ajax({
-        url:          base_url2 + '/services/users.php?job=delete_user&id=' + id,
+        url:          base_url + '/services/data.php?job=delete_company&id=' + id,
         cache:        false,
         dataType:     'json',
         contentType:  'application/json; charset=utf-8',
@@ -298,9 +268,9 @@ var base_url2 = 'http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzqui
       request.done(function(output){
         if (output.result == 'success'){
           // Reload datable
-          table_users.api().ajax.reload(function(){
+          table_companies.api().ajax.reload(function(){
             hide_loading_message();
-            show_message("user '" + username + "' deleted successfully.", 'success');
+            show_message("Company '" + company_name + "' deleted successfully.", 'success');
           }, true);
         } else {
           hide_loading_message();

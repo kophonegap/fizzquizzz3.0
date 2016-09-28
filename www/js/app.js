@@ -52,7 +52,7 @@ function register(){
  	}else{
 
 
-$.post( "http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/index.php/register/user", { username: username, password: password, fname: fname, lname: lname, email:email, division:division, aunit:aunit, area:area })
+$.post( base_url + '/index.php/register/user', { username: username, password: password, fname: fname, lname: lname, email:email, division:division, aunit:aunit, area:area })
   .done(function( data ) {
 		if(data == 0){
 	 		if(username == ''){ $('#reg_username_err').show(); }
@@ -126,7 +126,7 @@ function login(){
 }
 */
 
-$.post( "http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/index.php/loginuser", { username: user_name_input, password: user_pass_input })
+$.post( base_url + '/index.php/loginuser', { username: user_name_input, password: user_pass_input })
   .done(function( data ) {
 		if(data == 0){
 	 		$('#login_username_error').show(); 

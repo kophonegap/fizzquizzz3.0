@@ -127,7 +127,7 @@
 
                  </div> -->
 
-                <video id='videoPlayer' width='100%' height='auto' id='player'>
+                <video id='videoPlayer' width='100%' height='auto' autoplay id='player'>
                     <source src='http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/media/sample2.mp4'>
                     <meta property='og:video:secure_url' content='http://'>
                     <meta property='og:video:type' content='video/mp4'>
@@ -142,7 +142,7 @@
 
                 <script>
 
-                    //  document.getElementById('player').play();
+                 //    document.getElementById('video').play();
 
                     $('video').bind('webkitendfullscreen', function () {
                         $(this).hide();
@@ -187,8 +187,8 @@
 
             <div class='earned scoring'><strong>YOU'VE EARNED</strong></div>
             <div class='quizLevel scoring'>
-                <span> <!-- where the quiz ranking level goes --></span>
-
+                <h2 id="redeemScore"> <!-- where the quiz ranking level goes --></h2>
+            <span></span>
             </div>
             <div class='bottles scoring'>BOTTLES</div>
 
@@ -227,16 +227,17 @@
 <!--<script src='http://104.238.96.209/~project/db/app/views/json/slickQuiz-json.js?callback=myFunction'></script>-->
 
  <script src='http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/slickQuiz-json.js?callback=myFunction'></script>
-<!--<script src='http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/slickQuiz.js?callback=mySlickQuiz'></script>-->
 
+<script src='http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/slickQuiz.js?callback=mySlickQuiz'></script>
 <!--<script src='quizgame/js/fizzquizz.js'></script>-->
-<!-- <script src='quizgame/js/slickQuiz-config.js'></script>-->
-<script src='quizgame/js/slickQuiz.js?callback=mySlickQuiz'></script>
+<!-- <script src='quizgame/js/slickQuiz-config.js'></script>
 
-<!--<script src='quizgame/js/slickQuiz.js'></script>-->
+
+<script src='quizgame/js/slickQuiz.js?callback=mySlickQuiz'></script>-->
+<script>mySlickQuiz();</script>
 <!--
 <script src='js/Date.js'></script>-->
-<script>mySlickQuiz();</script>
+
 
 <script src='quizgame/js/master.js'></script>
 <script src='quizgame/js/actions.js'></script>

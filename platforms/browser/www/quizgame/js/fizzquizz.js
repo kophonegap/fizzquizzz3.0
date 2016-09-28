@@ -37,7 +37,7 @@ var quizJSON = {
 
         },
         {
-            "date_published":"27-9-16",
+            "date_published":"28-9-16",
             "q":"Who needs to approve any equipment swap before the work order is placed through coketech.ca?",
             "a":[
                 {
@@ -62,7 +62,7 @@ var quizJSON = {
 
         },
         {
-            "date_published":"27-9-16",
+            "date_published":"28-9-16",
             "q":"What is the minimum order size required for a Convenience Retail customer located within 90km of the Distribution Centre before we should key an order?",
             "a":[
                 {
@@ -87,7 +87,7 @@ var quizJSON = {
             "dateFrString":"27-9-16"
         },
         {
-            "date_published":"27-9-16",
+            "date_published":"28-9-16",
             "q":"What is the minimum order size required for an FSOP customer located within 90km of the Distribution Centre before we should key an order?",
             "a":[
                 {
@@ -217,6 +217,3 @@ var quizJSON = {
         }
     ]
 };
-
-
-

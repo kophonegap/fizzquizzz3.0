@@ -641,8 +641,11 @@ a.button.nextQuestion {
     z-index: 2002;
 }
 
-.questionDateFrom, .questionDateTo, li.date {
+.questionDateFrom, .questionDateTo, div.date {
     display: none;
 }
 
 
+.quizLevel span {
+    display: none;
+}

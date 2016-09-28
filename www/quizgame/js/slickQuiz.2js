@@ -4,6 +4,8 @@ function mySlickQuiz() {
 
 
 
+
+
         /*************** DATE *********************/
         var dateFormat = function () {
             var token = /d{1,4}|m{1,4}|yy(?:yy)?|([HhMsTt])\1?|[LloSZ]|"[^"]*"|'[^']*'/g,
@@ -118,51 +120,52 @@ function mySlickQuiz() {
         };
 
 
+      /*
+        ​var date = new Date();
+        var yesterday = date - 1000 * 60 * 60 * 24 * 2;   // current date's milliseconds - 1,000 ms * 60 s * 60 mins * 24 hrs * (# of days beyond one to go back)
+        yesterday = new Date(yesterday);
+        console.log(yesterday);​
+        */
+
         var date = new Date();
-        var dateto = new Date();
-        var dateto2 = new Date();
-        var dateto3 = new Date();
+
 
         var today = new Date();
         //var dateFromString = questions.date_published;
         //var dateFrString = date.format("dd-m-yy");
-       // var dateFrString = date.format("dd-m-yy");
+        //var dateFrString = date.format("dd-m-yy");
          var dateFrString = '28-9-16';
-        var dateToString = '30-9-16';
-        // var dateFrString = '29-9-16';
-        //var dateFrString = dateFromString;
+
+        var dateto = new Date();
+        var dateto2 = new Date();
+        var dateto3 = new Date();
 
 
-        date.setDate(date.getDate() + 0);
-        dateto.setDate(dateto.getDate() + 1);
-        dateto2.setDate(dateto2.getDate() + 2);
-        dateto3.setDate(dateto3.getDate() + 3);
-        var dateToStringNow = date.format("dd-m-yy");
+        console.log('dateFrString:' + dateFrString);
+        //var dateFrString = dateFromString;;
+
+        var dateStringToday = today.format("dd-m-yy");
+        console.log('dateStringToday:' + dateStringToday);
+
+        dateto.setDate(date.getDate() + 1);
         var dateToString24 = dateto.format("dd-m-yy");
+        console.log('dateToString24:' + dateToString24);
+
+
+
+        dateto2.setDate(date.getDate() + 2);
         var dateToString48 = dateto2.format("dd-m-yy");
-        var dateToString72 = dateto3.format("dd-m-yy");
-        console.log('dateFrString: ' + dateFrString);
-        localStorage.setItem('dateFrString', dateFrString);
-        console.log('dateToStringNow: ' + dateToStringNow);
-        localStorage.setItem('dateToStringNow', dateToStringNow);
-        console.log('dateToString24: ' + dateToString24);
-        localStorage.setItem('dateToString24', dateToString24);
-        console.log('dateToString48: ' + dateToString48);
-        localStorage.setItem('dateToString48', dateToString48);
-        console.log('dateToString72: ' + dateToString72);
-        localStorage.setItem('dateToString72', dateToString72);
-
-
-        //dateto2.setDate(dateto2.getDate() + 2);
-
-        //var dateToString48 = dateto2.format("dd-m-yy");
         //dateToString.setDate(dateto.getDate() + 1);
+        console.log('dateToString48:' + dateToString48);
+
+
+        dateto3.setDate(date.getDate() + 3);
+        var dateToString72 = dateto3.format("dd-m-yy");
+        console.log('dateToString72:' + dateToString72);
+
 
         //dateto = date.setDate(date.getDate() + 1);
         //today.setDate(today.getDate() + 3);
-        var dateStringToday = today.format("dd-m-yy");
-        // add a day
-
 
 
         //var dateStringFrom = today.format("dd-m-yy");
@@ -170,25 +173,41 @@ function mySlickQuiz() {
         //if dateFrString >= today && today <= dateToString
         //(dateStringToday <= dateToString )
 
-        var dateToString24Compare = localStorage.getItem(dateToString24);
-        console.log(dateToString24Compare);
-        if (dateStringToday == dateFrString) {
-            console.log('3 points' );
+       /* if (dateFrString == dateStringToday) {
             var unitResult = 'You got 3 Bottles';
-            var timesScore = 3;
-        } else if (dateStringToday == dateToString24  && dateStringToday == dateToString24Compare) {
-            console.log('2 points');
+        }
+        else if (dateFrString < dateStringToday && dateToString24 > dateFrString) {
             var unitResult = 'You got 2 Bottles';
-            var timesScore = 2;
-
-        } else {
-            console.log('1 Bottle');
+        }
+      //  else if ((dateFrString < dateStringToday && dateToString24 > dateStringToday) && (dateFrString < dateToString24 && dateStringToday > dateToString48)) {
+        else if (dateFrString < dateStringToday && dateToString24 > dateFrString) {
             var unitResult = 'You got 1 Bottle';
-            var timesScore = 1;
-
-            //alert('1 point ');
+        }
+        else {
+            var unitResult = 'You got 1 Bottle';
         }
 
+      /*  if  (dateFrString >= dateToString48 ) {
+            var unitResult = 'You got 2 Bottles';
+        }
+
+        if (dateFrString >= dateToString72)  {
+
+            var unitResult = 'You got 1 Bottle';
+        }
+*/
+        /* if (dateStringToday >= dateFrString  && dateStringToday <= dateToString24) {
+             //console.log('3 points' );
+             var unitResult = 'You got 3 Bottles';
+         } else if (dateStringToday >= dateFrString  && dateStringToday <= dateToString48) {
+            // console.log('2 points' + dateStringToday + ' ' + dateFrString + ' ' + dateToString24);
+             var unitResult = 'You got 2 Bottles';
+         } else {
+            // console.log('1 Bottle');
+             var unitResult = 'You got 1 Bottle';
+             //alert('1 point ');
+         }*/
+         //console.log(unitResult);
         /*************** DATE *********************/
         // Setup Sexy Quiz
 
@@ -270,10 +289,13 @@ function mySlickQuiz() {
             var questionCount = questions.length;
 
             /*// Count the number of questions */
-            var dateFromString = questions.date_published;
+           // var dateFromString = questions.date_published;
             // var questionDateFrom = dateFrString;
-            var questionDateFrom = dateFromString;
-            var questionDateTo = dateToString24;
+          //  var questionDateFrom = dateFromString;
+           // var questionDateTo = dateToString24;
+
+          // var dateToString24 =
+
 
             plugin.method = {
                 // Sets up the questions and answers based on above array
@@ -294,8 +316,8 @@ function mySlickQuiz() {
                             var questionHTML = $('<li class="question" id="question' + (count - 1) + '"></li>');
                             questionHTML.append('<div class="questionCount">Question <span class="current">' + count + '</span> of <span class="total">' + questionCount + '</span></div>');
                             // Custom
-                            questionHTML.append('<div class="questionDateFrom">From <span class="total">' + questionDateFrom + '</span>');
-                            questionHTML.append('<div class="questionDateTo">To <span class="total">' + questionDateTo + '</span>');
+                          //  questionHTML.append('<div class="questionDateFrom">From <span class="total">' + questionDateFrom + '</span>');
+                           // questionHTML.append('<div class="questionDateTo">To <span class="total">' + questionDateTo + '</span>');
                             // questionHTML.append('<div class="questionDatePublished">To <span class="total">' + dateFromString + '</span>');
 
                             questionHTML.append('<h3>' + count + '. ' + question.q + '</h3>');
@@ -352,14 +374,102 @@ function mySlickQuiz() {
                                 /**********************************************/
 
                                 responseHTML.append('<div class="date">' + question.date_published + '</div>');
+
+                                /************* COUNT DOWN *****************/
+
+
+                                var minutes = 1000 * 60;
+                                var hours = minutes * 60;
+                                var days = hours * 24;
+                                var years = days * 365;
+
+
+function redeamPoints(  ) {
+
+
+    if (localStorage.getItem('time')) {
+        var old_time = localStorage.getItem('time');
+    } else {
+        var n = new Date().getTime();
+        localStorage.setItem('time', n);
+        var old_time = localStorage.getItem('time');
+    }
+
+    function timeSince( date ) {
+
+        var seconds = Math.floor((new Date() - date) / 1000);
+
+        var interval = Math.floor(seconds / 31536000);
+
+        if (interval > 1) {
+            return interval + " years";
+        }
+        interval = Math.floor(seconds / 2592000);
+        if (interval > 1) {
+            return interval + " months";
+        }
+        interval = Math.floor(seconds / 86400);
+        if (interval > 1) {
+            if (interval <= 1) {
+                console.log('less than 1 day');
+                var unitResult = '3';
+                $('#scored span').text(unitResult);
+                console.log('3');
+            }
+            else if (interval == 2) {
+                console.log('less than 2 days');
+                var unitResult = '2';
+                $('#scored').html(unitResult);
+                console.log('3');
+            }
+            else {
+                console.log('more than 2 days');
+                var unitResult = '1';
+                $('#scored').html(unitResult);
+                console.log('1');
+            }
+            return interval + " days";
+        }
+        interval = Math.floor(seconds / 3600);
+        if (interval > 1) {
+            if (interval <= 24) {
+                console.log('less than 24 hrs');
+                var unitResult = '3';
+                $('#scored').html(unitResult);
+                console.log('3');
+            }
+            return interval + " hours";
+        }
+        interval = Math.floor(seconds / 60);
+        if (interval > 1) {
+
+            var unitResult = '3';
+            $('#scored').text(unitResult);
+            console.log('less than 5 min');
+            localStorage.setItem('unitResult', unitResult);
+
+            return interval + " minutes";
+        }
+        return Math.floor(seconds) + " seconds";
+    }
+
+    console.log(timeSince(old_time));
+    var unitResult = timeSince(old_time);
+
+    $('#scored').text(localStorage.getItem(unitResult));
+   // alert(unitResult);
+    var unitResults = localStorage.getItem(unitResult);
+}
+                                redeamPoints();
+                                /************* COUNT DOWN END *****************/
                                 responseHTML.append('<div class="answerResult correct animated fadeInBottomBig options fast">' +
                                     '<div class="unit-ans-result">' +
                                     '<div class="bottles scoring"></div>' +
-                                    '<div id="scored" class="score">' +
-                                    /*     'You got' +
-                                     ' <span>3</span> ' +
-                                     'Bottles' + */
-                                    unitResult +
+                                    '<div class="score">' +
+                                        'You got' +
+                                     ' <span id="scored">unitResults</span> ' +
+                                     'Bottles' +
+
                                     '</div>' +
                                     '</div>' +
                                     '</div>'
@@ -545,11 +655,7 @@ function mySlickQuiz() {
                     var score     = $('#' + selector + ' .correctResponse').length,
                         levelRank = plugin.method.calculateLevel(score),
                         levelText = levels[levelRank];
-                    var overallScore = score * timesScore;
 
-                    console.log(score);
-                    console.log(overallScore);
-                    $('#redeemScore').html(overallScore);
                     $(targets.quizScore + ' span').html(score + ' / ' + questionCount);
                     $(targets.quizLevel + ' span').html(levelText);
                     $(targets.quizLevel).addClass('level' + levelRank);
@@ -660,3 +766,5 @@ function mySlickQuiz() {
     })(jQuery);
 
 }
+
+

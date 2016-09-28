@@ -3,7 +3,7 @@ function log_out() {
     window.location.replace("index.html");
 }
 
-var base_url = "http://104.238.96.209/~project/db";
+var base_url = "http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/index.php";
 
 $(function () {
     var user = localStorage.getItem('userlogin');
@@ -17,9 +17,9 @@ $(function () {
             $('#firstname').val(field.fname);
             $('#lastname').val(field.lname);
             $('#email').val(field.email);
-            $('#division').val(field.divison);
-            $('#aunit').val(field.aunit);
-            $('#reg_area').val(field.area);
+            $('#division').val(field.division);
+            $('#unit').val(field.aunit);
+            $('#area').val(field.area);
 
 
 
@@ -56,6 +56,9 @@ function update_user() {
     var fname = $('#firstname').val();
     var lname = $('#lastname').val();
     var user_email = $('#email').val();
+    var division = $('#division').val();
+    var aunit = $('#unit').val();
+    var area = $('#area').val();
     // var privilege = $('#user_privilege').val();
 
     $.post(base_url + '/update/user', {
@@ -74,8 +77,8 @@ function update_user() {
 
                 //$('#user_id').text(id);
 
-                /*$('#user_name').text(username);
-                 $('#user_password').text(password);*/
+                /*$('#user_name').text(username);*/
+                 $('#user_password').text(password);
                 $('#user_firstname').text(fname);
                 $('#user_lastname').text(lname);
                 $('#user_email').text(user_email);

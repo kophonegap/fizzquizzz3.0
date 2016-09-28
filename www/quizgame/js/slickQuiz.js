@@ -1,4 +1,4 @@
-function mySlickQuiz(  ) {
+function mySlickQuiz() {
 
 (function($){
 
@@ -321,7 +321,10 @@ function mySlickQuiz(  ) {
                             var responseHTML = $('<ul class="responses"></ul>');
                             responseHTML.append('<li class="correct">' + question.correct + '</li>');
                             responseHTML.append('<li class="incorrect">' + question.incorrect + '</li>');
-                            responseHTML.append('<li class="date">' + question.date_published + '</li>');
+
+                            /**********************************************/
+
+                            responseHTML.append('<div class="date">' + question.date_published + '</div>');
                             responseHTML.append('<div class="answerResult correct animated fadeInBottomBig options fast">' +
                                 '<div class="unit-ans-result">' +
                                 '<div class="bottles scoring"></div>' +

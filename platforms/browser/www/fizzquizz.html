@@ -12,10 +12,10 @@
             var attempted = localStorage.getItem('attempts');
             if (attempted < 1) {
 
-
+                $('#playQuiz').removeAttr('disabled');
             window.open("http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/media/video.php?media_id=102516","_blank","location=no","closebuttoncaption=Return");
 
-                $('#playQuiz').attr('disabled','false');
+                //$('#playQuiz').attr('disabled','');
 
         } else {
                 alert('Thank you taking the quiz! Looking forward for the nexts.');

@@ -152,10 +152,3 @@ $.post( base_url + '/index.php/loginuser', { username: user_name_input, password
 }
 
 
-
-
-
-
-
-
- 

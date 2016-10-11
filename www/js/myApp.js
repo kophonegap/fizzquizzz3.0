@@ -41,9 +41,10 @@ $(document).ready(function () {
             //$('.main-buttons li a').addClass('animated zoomIn');
         });
 
-    $('#playBtn').on('click', function() {
+    $('#playGameBtn').on('click', function() {
         $('#videoPlayer').hide();
         $('#playBack').hide();
+        window.location='';
 
     })
 

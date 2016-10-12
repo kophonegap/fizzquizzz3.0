@@ -30,7 +30,7 @@ $(function () {
 
 
 
-            // $('#user_id').text(field.id);
+            //$('#user_id').text(field.id);
             $('#user_name').text(field.username);
             $('#user_username').text(field.username);
             $('#user_password').text(field.password);
@@ -50,6 +50,7 @@ $(function () {
             console.log(field.division);
             console.log(field.aunit);
             console.log(field.area);
+           localStorage.setItem('user_id', field.id);
            // console.log(field.lang);
 
         });
@@ -85,7 +86,7 @@ function update_user() {
                 //$('#user_id').text(id);
 
                 /*$('#user_name').text(username);*/
-                 $('#user_password').text(password);
+                $('#user_password').text(password);
                 $('#user_firstname').text(fname);
                 $('#user_lastname').text(lname);
                 $('#user_email').text(user_email);
@@ -141,5 +142,3 @@ function update_user() {
 
  }
  */
-
-

@@ -18,6 +18,7 @@ function check_storage(){
 		    console.log('goto main.html');
 	}else{
 			console.log('err');
+			//window.location.replace("index.html");
 		}
 
 }

@@ -26,7 +26,16 @@
               //  $('#playQuiz').attr('disabled','disabled');
                 // window.location.replace('main.html');
 
-            }}
+            }
+
+
+            $('#playQuiz').on('click', function () {
+                $('#animated-img').hide();
+            })
+        }
+
+
+
 
     </script>
     <!-- Material Design Lite -->
@@ -104,6 +113,7 @@
     </header>
     <main class='mdl-layout__content'>
         <div class='mdl-layout__tab-panel is-active' id='fixed-tab-home'>
+            <div id="animated-img" class="animated fadeInUpBig options fast"><img src="cokecrown.gif"></div>
             <div class='page-content' style='padding: 10px 5px;>
 						<input name=' questions
             ' id='cand' type='text' />
@@ -114,7 +124,7 @@
 
                     </div> -->
                 <!-- <div id="scored" class="score">score</div>-->
-                <a id="playQuiz" class='button startQuiz btn btn-lg' href='#'>Play</a>
+                <a id="playQuiz" class='btn-text button btn btn-lg mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored startQuiz' href='#'>Play</a>
                 <!-- where the quiz gets built -->
             </div>
             <!-- <div class='answerResult'>
@@ -246,8 +256,6 @@
 
 
 <script>
-
-
 
 
     function post_score() {

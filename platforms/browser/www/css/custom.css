@@ -624,6 +624,12 @@ a.button.nextQuestion {
 }
 */
 
+.button:hover {
+    color: #d10000 !important;
+    background-color: rgba(209,0,0,0) !important;
+    border: 0px solid #d10000 !important;
+}
+
 .answerResult {
     margin: 0 auto;
     width: 90%;

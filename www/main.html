@@ -15,6 +15,8 @@
         function onDeviceReady() {
 
         }
+
+
     </script>
 
 
@@ -35,8 +37,12 @@
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
     <link rel="stylesheet" href="css/custom.css" type="text/css">
     <link rel="stylesheet" href="css/animate.css" type="text/css">
+    <link rel="stylesheet" href="css/rays.css" type="text/css">
 
-
+<style>
+    /* boooo opera */
+    -o-transition: rotate(3600deg); /* works */
+</style>
 
 
     <script src="js/jquery-3.1.0.min.js"></script>
@@ -184,9 +190,17 @@
 
                 <ul class="center-list main-buttons">
                     <li>
-                        <div style="width: 180px; margin: 0 auto;" class="animated fadeInUpBig">
-                            <img class="icon" src="img/canada-icon.png">
+
+                        <div id="raysDemoHolder" class="animated fadeInUpBig" style="width: 250px; height: 250px; margin: 0 auto;">
+
+                            <img  id="raysLogo" class="icon" src="img/canada-icon.png">
+                            <div id="rays"></div>
                         </div>
+
+
+                      <!--  <div style="width: 250px; margin: 0 auto;" class="animated fadeInUpBig">
+                            <img class="icon" src="img/canada-icon.png">
+                        </div>-->
 
                     </li>
                     <li>

@@ -30,7 +30,7 @@
 
 
             $('#playQuiz').on('click', function () {
-                $('#animated-img').hide();
+                $('#raysDemoHolder').hide();
             })
         }
 
@@ -49,6 +49,13 @@
     <link href='quizgame/css/reset.css' media='screen' rel='stylesheet' type='text/css'>
     <link href='quizgame/css/slickQuiz.css' media='screen' rel='stylesheet' type='text/css'>
     <link href='quizgame/css/master.css' media='screen' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/rays.css" type="text/css">
+
+    <style>
+        /* boooo opera */
+        -o-transition: rotate(3600deg); /* works */
+    </style>
+
     <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' type='text/css'>
     <link rel='stylesheet' href='css/custom.css' type='text/css'>
@@ -113,7 +120,13 @@
     </header>
     <main class='mdl-layout__content'>
         <div class='mdl-layout__tab-panel is-active' id='fixed-tab-home'>
-            <div id="animated-img" class="animated fadeInUpBig options fast"><img src="cokecrown.gif"></div>
+            <div id="raysDemoHolder" class="animated fadeInUpBig quiz" style="width: 250px; height: 250px; margin: 100px auto;">
+
+                <img  id="raysLogo" class="icon" style="height:190px;" src="img/cokecrown.gif">
+                <div id="rays" style="top: -140px; left: -120px;"></div>
+            </div>
+
+          <!--  <div id="animated-img" class="animated fadeInUpBig options fast"> -->
             <div class='page-content' style='padding: 10px 5px;>
 						<input name=' questions
             ' id='cand' type='text' />
@@ -219,7 +232,7 @@
 
 <script src='quizgame/js/jquery-1.7.min.js'></script>
 <!--<script src='http://104.238.96.209/~project/db/app/views/json/slickQuiz-json.js?callback=myFunction'></script>-->
-<script src='http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/slickQuiz-json-test.js?callback=myFunction'></script>
+<script src='http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/slickQuiz-json-2Qs.js?callback=myFunction'></script>
 <script src='http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/slickQuiz.js?callback=mySlickQuiz'></script>
 <!--<script src='quizgame/js/fizzquizz.js'></script>-->
 <!-- <script src='quizgame/js/slickQuiz-config.js'></script>

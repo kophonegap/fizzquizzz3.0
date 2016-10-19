@@ -61,8 +61,7 @@
     <link rel='stylesheet' href='css/custom.css' type='text/css'>
     <link rel='stylesheet' href='css/animate.css' type='text/css'>
     <script src='js/jquery-3.1.0.min.js'></script>
-    <!--<script src='https://code.jquery.com/jquery-3.1.0.min.js'
-        integrity='sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=' crossorigin='anonymous'></script>-->
+
     <script src='https://storage.googleapis.com/code.getmdl.io/1.0.5/material.min.js'></script>
     <script src='js/bootstrap.min.js'></script>
     <script src='js/material-modal.min.js'></script>
@@ -118,12 +117,13 @@
             </ul>
         </div>
     </header>
-    <main class='mdl-layout__content'>
+    <main class='mdl-layout__content2' id="fizzquiz">
         <div class='mdl-layout__tab-panel is-active' id='fixed-tab-home'>
             <div id="raysDemoHolder" class="animated fadeInUpBig quiz" style="width: 250px; height: 250px; margin: 100px auto;">
 
-                <img  id="raysLogo" class="icon" style="height:190px;" src="img/cokecrown.gif">
-                <div id="rays" style="top: -140px; left: -120px;"></div>
+             <!--   <img  id="raysLogo" class="icon" style="height:190px;" src="img/cokecrown.gif">-->
+                <img  id="raysLogo" class="icon animated fadeInUpBig options fast " style="height:250px; " src="img/coke-bottle-real3.png">
+                <div id="rays"></div>
             </div>
 
           <!--  <div id="animated-img" class="animated fadeInUpBig options fast"> -->
@@ -137,7 +137,7 @@
 
                     </div> -->
                 <!-- <div id="scored" class="score">score</div>-->
-                <a id="playQuiz" class='btn-text button btn btn-lg mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored startQuiz' href='#'>Play</a>
+                <a id="playQuiz" style="color: #d10000 !important;" class='btn-text button btn btn-lg mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored startQuiz' href='#'>Play</a>
                 <!-- where the quiz gets built -->
             </div>
             <!-- <div class='answerResult'>

@@ -175,6 +175,15 @@ ul.center-list li {
 
 .mdl-layout.is-upgraded .mdl-layout__tab-panel {
     max-height: 100%;
+
+}
+
+
+main#fizzquizz, .mdl-layout.mdl-js-layout.mdl-layout--fixed-header.mdl-layout--fixed-tabs.is-small-screen.is-upgraded{
+    background: #d10000 !important;
+    background: url(../img/bubbles.gif) #f8f8f8 no-repeat !important;
+    background-size: cover !important;
+
 }
 
 .mdl-layout__content {
@@ -733,5 +742,11 @@ body.message {
 #popupVideo {
     top:0;
     left:0;
+}
+
+
+
+#rays {
+   top: -140px; left: -120px;
 }
 

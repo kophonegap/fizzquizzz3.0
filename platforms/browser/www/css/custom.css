@@ -750,3 +750,10 @@ body.message {
    top: -140px; left: -120px;
 }
 
+
+button#show-dialog {
+    position: absolute;
+    top: 300px;
+    z-index: 2000;
+    color: #333;
+}

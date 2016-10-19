@@ -23,12 +23,12 @@
         } else {
 
                 $('.mdl-dialog__content p').html('Thank you for taking the quiz! See you for the next rounds.');
-                dialog.showModal();
+               /* dialog.showModal();
                 dialog.querySelector('.ok').addEventListener('click', function() {
                     dialog.close();
                    // window.location.replace('main.html');
-                });
-             //   alert('Thank you for taking the quiz! See you for the next rounds.');
+                }); */
+               alert('Thank you for taking the quiz! See you for the next rounds.');
 
               //  $('#playQuiz').attr('disabled','disabled');
                 // window.location.replace('main.html');
@@ -243,8 +243,8 @@
 
 
 <!--<button id="show-dialog" type="button" class="mdl-button">Show Dialog</button>-->
-<dialog class="mdl-dialog">
-   <!-- <h4 class="mdl-dialog__title">Allow data collection?</h4> -->
+<!--<dialog class="mdl-dialog">
+   <!-- <h4 class="mdl-dialog__title">Allow data collection?</h4>
     <div class="mdl-dialog__content">
         <p>
             Allowing us to collect data will let us get you the information you want faster.
@@ -261,14 +261,14 @@
     if (! dialog.showModal) {
         dialogPolyfill.registerDialog(dialog);
     }
-   /* showDialogButton.addEventListener('click', function() {
+  showDialogButton.addEventListener('click', function() {
         dialog.showModal();
-    });*/
+    });
     dialog.querySelector('.close').addEventListener('click', function() {
         dialog.close();
        // window.location.replace('main.html');
     });
-</script>
+</script>-->
 
 <script src='quizgame/js/jquery-1.7.min.js'></script>
 <!--<script src='http://104.238.96.209/~project/db/app/views/json/slickQuiz-json.js?callback=myFunction'></script>-->
@@ -340,14 +340,14 @@
                             // $('#update_0').show();
                         } else if (data == 1) {
                            // alert('Score Saved');
-                            $('.mdl-dialog__content p').html('Score Saved');
+                           /* $('.mdl-dialog__content p').html('Score Saved');
                             $('.mdl-dialog__content p').css('color', 'green');
                             dialog.showModal();
                             dialog.querySelector('.close').addEventListener('click', function() {
                                 dialog.close();
                                 window.location.replace('main.html');
-                            });
-                           // window.location.replace('main.html');
+                            });*/
+                           window.location.replace('main.html');
                             /*$('#update_1').show();
                              $('#user_id').val(user_id);
                              $('#attempts').val(attempts);
@@ -368,15 +368,15 @@
                             // $('#update_0').show();
                         } else if (data == 1) {
                            // alert('Score Saved');
-                            $('.mdl-dialog__content p').html('Score Updated');
+                           /* $('.mdl-dialog__content p').html('Score Updated');
                             $('.mdl-dialog__content p').css('color', 'green');
                             dialog.showModal();
                             dialog.querySelector('.ok').addEventListener('click', function() {
                                 dialog.close();
                                 window.location.replace('main.html');
-                            });
-                           // window.location.replace('main.html');
-                           // window.location.replace('main.html');
+                            });*/
+
+                            window.location.replace('main.html');
                             /*$('#update_1').show();
                              $('#user_id').val(user_id);
                              $('#attempts').val(attempts);

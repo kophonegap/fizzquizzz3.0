@@ -4,7 +4,7 @@
         versionCode="10700">
     <name>Fizz Quizz</name>
     <description>Newsletter App</description>
-    <author href="https://wiki.coke.com/confluence/display/beacons/%5BDRAFT%5D+Manila+SDC+Team" email="rdeguzman@coca-cola.com">SDC Manila Team</author>
+    <author href="https://wiki.coke.com" email="rdeguzman@coca-cola.com">SDC Manila Team</author>
     <content src="index.html"/>
     <preference name="phonegap-version" value="3.7.0"/>
     <preference name="DisallowOverscroll" value="true"/>

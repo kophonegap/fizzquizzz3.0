@@ -1,7 +1,8 @@
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.ko.fizzquizz" version= "1.0.7">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.ko.fizzquizz"
+        version="1.0.7">
     <name>Fizz Quizz</name>
     <description>Newsletter App</description>
-    <author href="https://wiki.coke.com" email="rdeguzman@coca-cola.com">SDC Manila Team</author>
+    <author href="http://phonegap.com" email="support@phonegap.com">SDC Manila Team</author>
     <content src="index.html"/>
     <preference name="phonegap-version" value="3.7.0"/>
     <preference name="DisallowOverscroll" value="true"/>
@@ -17,11 +18,6 @@
     <preference name="exit-on-suspend" value="false"/>
     <preference name="show-splash-screen-spinner" value="true"/>
     <preference name="auto-hide-splash-screen" value="true"/>
-    <preference name="disable-cursor" value="false"/>
-    <preference name="android-minSdkVersion" value="14"/>
-    <preference name="splashscreen" value="splash" />
-    <preference name="SplashScreenDelay" value="10000" />
-    <preference name="AutoHideSplashScreen" value="false" />
     <preference name="disable-cursor" value="false"/>
     <preference name="android-minSdkVersion" value="14"/>
     <preference name="android-installLocation" value="auto"/>

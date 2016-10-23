@@ -229,45 +229,33 @@
                     <label class="mdl-textfield__label" for="userid"></label>
 
                 </div>
-
-
 -->
 
-
-                <div class="profile-content">
-                    <div class="avatar" style="background-image: url('img/daenerys.jpg');"></div>
-                    <h3><span id="userfirstname"></span> <span id="userlastname"></span></h3>
-                    <h4><span id="userusername"></span></h4>
-                    <h5><span id="useremail"></span> </h5>
-                </div>
-
-
-
                 <div class="mdl-textfield mdl-js-textfield">
-                    <input class="mdl-textfield__input" readonly type="text" id="username">
-                    <label class="mdl-textfield__label" for="username"></label>
+                        <input class="mdl-textfield__input" readonly type="text" id="username">
+                        <label class="mdl-textfield__label" for="username"></label>
 
-                </div>
+                    </div>
 
-                <div class="mdl-textfield mdl-js-textfield">
-                    <input class="mdl-textfield__input" type="password" id="password">
-                    <label class="mdl-textfield__label" for="password"></label>
-                </div>
+                    <div class="mdl-textfield mdl-js-textfield">
+                        <input class="mdl-textfield__input" type="password" id="password">
+                        <label class="mdl-textfield__label" for="password"></label>
+                    </div>
 
-              <div class="mdl-textfield mdl-js-textfield">
-                    <input class="mdl-textfield__input" type="text" id="firstname">
-                    <label class="mdl-textfield__label" for="firstname"></label>
-                </div>
+                    <div class="mdl-textfield mdl-js-textfield">
+                        <input class="mdl-textfield__input" type="text" id="firstname">
+                        <label class="mdl-textfield__label" for="firstname"></label>
+                    </div>
 
-                <div class="mdl-textfield mdl-js-textfield">
-                    <input class="mdl-textfield__input" type="text" id="lastname">
-                    <label class="mdl-textfield__label" for="lastname"></label>
-                </div>
+                    <div class="mdl-textfield mdl-js-textfield">
+                        <input class="mdl-textfield__input" type="text" id="lastname">
+                        <label class="mdl-textfield__label" for="lastname"></label>
+                    </div>
 
-                <div class="mdl-textfield mdl-js-textfield">
-                    <input class="mdl-textfield__input" readonly type="text" id="email">
-                    <label class="mdl-textfield__label" for="email"></label>
-                </div>
+                    <div class="mdl-textfield mdl-js-textfield">
+                        <input class="mdl-textfield__input" readonly type="text" id="email">
+                        <label class="mdl-textfield__label" for="email"></label>
+                    </div>
 
                 <div class="mdl-textfield mdl-js-textfield">
                     <input class="mdl-textfield__input" type="text" readonly id="division">
@@ -289,7 +277,6 @@
 
 
 
-
                 <div style='clear:both;'></div>
 
 
@@ -305,7 +292,7 @@
 
 
 
-                <table class="responsive-table hidden" style="display: none;">
+                <table class="responsive-table hidden">
                     <thead>
                     <tr>
                         <th>#</th>

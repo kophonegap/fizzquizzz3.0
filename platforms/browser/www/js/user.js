@@ -29,6 +29,14 @@ $(function () {
             $('#area').val(field.area);
 
 
+            
+            //for profile
+            $('#userfirstname').text(field.fname);
+            $('#userusername').text(field.username);
+            $('#userlastname').text(field.lname);
+            $('#useremail').text(field.email);
+
+
 
             //$('#user_id').text(field.id);
             $('#user_name').text(field.username);

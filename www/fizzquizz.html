@@ -368,10 +368,10 @@
                     //$.post('http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/index.php/update/user', {username: username, password: password, fname: fname})
                     .done(function ( data ) {
                         if (data == 0) {
-                            alert('Uh oh, Try again.');
+                            navigator.notification. navigator.notification.alert('Uh oh, Try again.');
                             // $('#update_0').show();
                         } else if (data == 1) {
-                              alert('Score Saved');
+                               navigator.notification.alert('Score Saved');
                             window.location.replace('main.html');
                          // dialog.showModal();
 
@@ -413,10 +413,10 @@
                     //$.post('http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/index.php/update/user', {username: username, password: password, fname: fname})
                     .done(function ( data ) {
                         if (data == 0) {
-                            alert('Uh oh, Try again.');
+                             navigator.notification.alert('Uh oh, Try again.');
                             // $('#update_0').show();
                         } else if (data == 1) {
-                            alert('Score Saved');
+                             navigator.notification.alert('Score Saved');
                               window.location.replace('main.html');
                            /* var dialog = document.querySelector('dialog');
                             var showDialogButton = document.querySelector('#show-dialog');

@@ -810,3 +810,48 @@ button#show-dialog {
     margin: 0 auto !important;
     width: 100% !important;
 }
+
+.profile-content {
+    text-align: center;
+}
+
+.profile-content > .avatar {
+    background-position: center center;
+    background-size: cover;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    display: inline-block;
+    height: 88px;
+    left: auto;
+    margin-bottom: 10px;
+    position: relative;
+    width: 88px;
+}
+
+
+#profile-content h3 span#fnames {
+    float: left;
+    width: 50%;
+}
+
+
+#profile-content h3 span#lnames {
+    float: left;
+    width: 50%;
+}
+
+
+.profile-content h3 {
+    font-size: 22px;
+    line-height: 22px;
+}
+
+.profile-content h4 {
+    font-size: 18px;
+    line-height: 18px;
+}
+
+.profile-content h5 {
+    font-size: 14px;
+    line-height: 14px;
+}

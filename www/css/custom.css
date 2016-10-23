@@ -867,11 +867,11 @@ table.profile td {
 
 table.profile td label {
     font-weight: 100;
-    color: #d3d3d3;
+    color: rgba(0,0,0,0.4);
 }
 
-button#editProfile {
-    color: #ddd;
+a#editProfile {
+    color: rgba(0,0,0,0.4);
     float: right;
-    font-size: 1.2em;
+    font-size: 1em;
 }

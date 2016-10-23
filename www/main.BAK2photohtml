@@ -256,9 +256,14 @@
 
                 <div id="profileContent" class="profile-content">
 
+                    <form id="myForms" action="http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/index.php/uploadpicc" method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="user_id_upload" id="user_iddddddd" />
+                        upload: <input type="file" name="upload_file[]" id="upload_input"/>
 
-
-                    <div id="avatar" class="avatar" style="background-image: url('img/daenerys.png');"></div>
+                        <input type="submit" value="Save" />
+                    </form>
+                    responseText
+                    <div class="avatar" style="background-image: url('img/daenerys.png');"></div>
                     <h3><span id="userfirstname"></span> <span id="userlastname"></span></h3>
                     <h4><span id="userusername"></span></h4>
                     <h5><span id="useremail"></span></h5>
@@ -300,13 +305,6 @@
 
 
                 <div id="editmyProfile" style="display: none;">
-
-                    <form id="myForms" action="http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/index.php/uploadpicc" method="post" enctype="multipart/form-data">
-                        <input type="hidden" name="user_id_upload" id="user_iddddddd" />
-                        <input type="file" name="upload_file[]" id="upload_input"/>
-                        <input type="submit" value="Save" />
-                    </form>
-
                     <div class="mdl-textfield mdl-js-textfield">
                         <input class="mdl-textfield__input" readonly type="text" id="username">
                         <label class="mdl-textfield__label" for="username"></label>
@@ -705,7 +703,6 @@
 
     $(document).ready(function(){
         $('#user_iddddddd').val(localStorage.getItem('user_id'));
-
         var options = {
             //target: '#upload_loading',
             beforeSubmit: showRequest,
@@ -729,7 +726,6 @@
                 console.log('Error or file not supported! required format :png,gif,jpeg sie: less than 3mb');
             }else{
                 console.log('Upload success!');
-
             }
         }
     }

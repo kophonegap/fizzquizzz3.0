@@ -870,8 +870,8 @@ table.profile td label {
     color: rgba(0,0,0,0.4);
 }
 
-a#editProfile {
+a#editProfile i {
     color: rgba(0,0,0,0.4);
     float: right;
-    font-size: 1em;
+    font-size: 1.2em;
 }

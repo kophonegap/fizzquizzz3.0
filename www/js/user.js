@@ -27,9 +27,11 @@ $(function () {
             $('#division').val(field.division);
             $('#unit').val(field.aunit);
             $('#area').val(field.area);
+            $('#avatar').val(field.avatar);
 
-
-            
+            var profile_photo =  base_url + '/upload/files/' + field.avatar;
+           // $('#avatar').html('<div class="avatar" style="background-image: url("+ profile_photo +")');
+            $('#avatar').css('background-image', 'url(' + profile_photo + ')');
             //for profile
             $('#userfirstname').text(field.fname);
             $('#userusername').text(field.username);
@@ -61,12 +63,18 @@ $(function () {
             console.log(field.division);
             console.log(field.aunit);
             console.log(field.area);
+            console.log(field.avatar);
            localStorage.setItem('user_id', field.id);
            // console.log(field.lang);
 
         });
     });
 });
+
+function update_cancel() {
+    $('#profileContent').show();
+    $('#editmyProfile').hide();
+}
 
 function update_user() {
     // var id = $('#user_id').val();
@@ -135,6 +143,14 @@ function edittheProfile() {
     $('#editmyProfile').show();
 
 }
+
+
+
+
+
+
+
+// bind 'myForm' and provide a simple callback function
 
 
 

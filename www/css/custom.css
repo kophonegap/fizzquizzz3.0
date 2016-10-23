@@ -855,3 +855,23 @@ button#show-dialog {
     font-size: 14px;
     line-height: 14px;
 }
+
+table.responsive-table.profile {
+    width: 100%;
+    font-size: 1em;
+}
+table.profile td {
+    padding:0 10px;
+    text-transform: capitalize !important;
+}
+
+table.profile td label {
+    font-weight: 100;
+    color: #d3d3d3;
+}
+
+button#editProfile {
+    color: #ddd;
+    float: right;
+    font-size: 1.2em;
+}

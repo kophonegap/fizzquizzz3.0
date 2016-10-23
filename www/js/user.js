@@ -35,6 +35,9 @@ $(function () {
             $('#userusername').text(field.username);
             $('#userlastname').text(field.lname);
             $('#useremail').text(field.email);
+            $('#userdivision').text(field.division);
+            $('#userunit').text(field.aunit);
+            $('#userarea').text(field.area);
 
 
 
@@ -88,9 +91,11 @@ function update_user() {
         .done(function ( data ) {
             if (data == 0) {
                 $('#update_0').show();
+
             } else if (data == 1) {
                 $('#update_1').show();
-
+                $('.profile-content').show();
+                $('#editmyProfile').hide();
                 //$('#user_id').text(id);
 
                 /*$('#user_name').text(username);*/
@@ -121,6 +126,16 @@ function update_user() {
         });
 
 }
+
+
+function edittheProfile() {
+
+    //alert('profile');
+    $('#profileContent').hide();
+    $('#editmyProfile').show();
+
+}
+
 
 
 /*

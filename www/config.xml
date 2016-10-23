@@ -4,13 +4,13 @@
     <description>Newsletter App</description>
     <author href="http://phonegap.com" email="support@phonegap.com">SDC Manila Team</author>
     <content src="index.html"/>
+    <preference name="fullscreen" value="true"/>
+    <preference name="webviewbounce" value="true"/>
     <preference name="phonegap-version" value="3.7.0"/>
     <preference name="DisallowOverscroll" value="true"/>
     <preference name="permissions" value="none"/>
     <preference name="orientation" value="portrait"/>
     <preference name="target-device" value="universal"/>
-    <preference name="fullscreen" value="true"/>
-    <preference name="webviewbounce" value="true"/>
     <preference name="prerendered-icon" value="true"/>
     <preference name="stay-in-webview" value="false"/>
     <preference name="ios-statusbarstyle" value="black-opaque"/>

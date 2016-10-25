@@ -27,26 +27,11 @@
 
 
 
-                 /*   var dialog = document.querySelector('dialog');
-                    var showDialogButton = document.querySelector('#show-dialog');
-                    if (! dialog.showModal) {
-                    dialogPolyfill.registerDialog(dialog);
-                    }
-                    dialog.showModal();
-
-                    dialog.querySelector('.close').addEventListener('click', function() {
-                    dialog.close();
-                     //   window.location.replace('main.html')
-                    });
-*/
-
-
-
 
                 navigator.notification.alert('Thank you for taking the quiz! See you for the next rounds.');
 
                 //  $('#playQuiz').attr('disabled','disabled');
-               //  window.location.replace('main.html');
+                //  window.location.replace('main.html');
 
             }
 
@@ -60,8 +45,6 @@
     </script>
 
 
-
-
     <!-- Material Design Lite -->
     <meta content='width=device-width,initial-scale=1' name='viewport'>
     <script src='https://code.getmdl.io/1.1.3/material.min.js'></script>
@@ -70,7 +53,7 @@
     <link rel='stylesheet' href='css/material-modal.css'>
     <link rel='stylesheet' href='css/demo.min.css'>
     <link rel='stylesheet' href='css/index.css'>
-  <!--  <link href='css/bootstrap.min.css' media='screen' rel='stylesheet' type='text/css'>-->
+    <!--  <link href='css/bootstrap.min.css' media='screen' rel='stylesheet' type='text/css'>-->
     <link href='quizgame/css/reset.css' media='screen' rel='stylesheet' type='text/css'>
     <link href='quizgame/css/slickQuiz.css' media='screen' rel='stylesheet' type='text/css'>
     <link href='quizgame/css/master.css' media='screen' rel='stylesheet' type='text/css'>
@@ -79,8 +62,8 @@
     <style>
         /* boooo opera */
         -o-transition:
-
         rotate
+
         (
         3600
         deg
@@ -96,7 +79,7 @@
     <script src='js/jquery-3.1.0.min.js'></script>
 
     <script src='https://storage.googleapis.com/code.getmdl.io/1.0.5/material.min.js'></script>
-   <!-- <script src='js/bootstrap.min.js'></script>-->
+    <!-- <script src='js/bootstrap.min.js'></script>-->
     <script src='js/material-modal.min.js'></script>
     <script src='js/material-modal.min.js'></script>
     <script src='js/jquery.touchSwipe.min.js'></script>
@@ -124,11 +107,9 @@
 <body id="slickQuiz" onload="onLoad()">
 
 
-
 <div id='loader' style='display: block;'>
     <div class='mdl-spinner mdl-js-spinner is-active'></div>
 </div>
-
 
 
 <!--<button id="show-dialog" type="button" class="mdl-button">Show Dialog</button>-->
@@ -142,7 +123,7 @@
     <div class="mdl-dialog__actions">
         <button type="button" class="mdl-button close">Ok</button>
        <!-- <button type="button" class="mdl-button close">Disagree</button>-->
-   <!-- </div>
+<!-- </div>
 </dialog>-->
 
 <div class='mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs'>
@@ -159,7 +140,8 @@
                 <li class='mdl-menu__item user' style='background: #ddd;'>
                     <button id='userProf'
                             class='mdl-button btn bt-lg  btn btn-lg mdl-button btn bt-lg--icon mdl-js-button mdl-js-ripple-effect'>
-                        <i class='material-icons'>perm_identity</i>
+                        <!--<i class='material-icons'>perm_identity</i>-->
+                        <i class='material-icons'>home</i>
                     </button>
                 </li>
                 <li class='mdl-menu__item'>
@@ -292,10 +274,8 @@
         </div>
 
 
-
     </main>
 </div>
-
 
 
 <script src='quizgame/js/jquery-1.7.min.js'></script>
@@ -368,38 +348,12 @@
                     //$.post('http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/index.php/update/user', {username: username, password: password, fname: fname})
                     .done(function ( data ) {
                         if (data == 0) {
-                            navigator.notification. navigator.notification.alert('Uh oh, Try again.');
+                            navigator.notification.alert('Uh oh, Try again.');
                             // $('#update_0').show();
                         } else if (data == 1) {
-                               navigator.notification.alert('Score Saved');
+                            navigator.notification.alert('Score Saved');
                             window.location.replace('main.html');
-                         // dialog.showModal();
 
-                         /*   var dialog = document.querySelector('dialog');
-                            var showDialogButton = document.querySelector('#show-dialog');
-                            if (! dialog.showModal) {
-                                dialogPolyfill.registerDialog(dialog);
-                            }
-                            $('#popupDialog p').html('Score Saved');
-                            $('#popupDialog p').css('color', 'green');
-                            dialog.showModal();
-
-                            $('#popupDialog .close').on('click', function() {
-                                $('dialog').hide();
-                                window.location.replace('main.html')
-                            });
-*/
-                           // $('#popupDialog').show();
-
-
-                            //window.location.replace('main.html');
-                            /*$('#update_1').show();
-                             $('#user_id').val(user_id);
-                             $('#attempts').val(attempts);
-                             $('#set').val(set);
-                             $('#score_bottle').val(score_bottle);
-
-                             //window.location.href = "user.html";*/
                         }
                     });
         } else {
@@ -413,53 +367,12 @@
                     //$.post('http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/index.php/update/user', {username: username, password: password, fname: fname})
                     .done(function ( data ) {
                         if (data == 0) {
-                             navigator.notification.alert('Uh oh, Try again.');
+                            navigator.notification.alert('Uh oh, Try again.');
                             // $('#update_0').show();
                         } else if (data == 1) {
-                             navigator.notification.alert('Score Saved');
-                              window.location.replace('main.html');
-                           /* var dialog = document.querySelector('dialog');
-                            var showDialogButton = document.querySelector('#show-dialog');
-                            if (! dialog.showModal) {
-                                dialogPolyfill.registerDialog(dialog);
-                            }
-                            $('#popupDialog p').html('Score Updated');
-                            $('#popupDialog p').css('color', 'green');
-                            dialog.showModal();
+                            navigator.notification.alert('Score Saved');
+                            window.location.replace('main.html');
 
-                            $('#popupDialog .close').on('click', function() {
-                                $('dialog').hide();
-                                window.location.replace('main.html')
-                            });
-*/
-                           /* dialog.querySelector('.close').addEventListener('click', function() {
-                                dialog.close();
-                                window.location.replace('main.html')
-                            });*/
-                           /* $('#popupDialog').show();
-
-                            $('#popupDialog p').html('Score Updated');
-                            $('#popupDialog p').css('color', 'green');
-                            $('.mdl-button.close').on('click', function () {
-                                $('#popupDialog').hide();
-                                window.location.replace('main.html');
-                            });*/
-
-                            // dialog.showModal();
-                           /* dialog.querySelector('.ok').addEventListener('click', function () {
-                                dialog.close();
-                                window.location.replace('main.html');
-                            }
-                            */
-
-                            /*$('#update_1').show();
-                             $('#user_id').val(user_id);
-                             $('#attempts').val(attempts);
-                             $('#set').val(set);
-                             $('#score_bottle').val(score_bottle);
-
-                             */
-                            //window.location.href = "user.html";
                             console.log(attempts);
                         }
                     });

@@ -205,7 +205,7 @@ function mySlickQuiz() {
                 backButtonText: '',
                 randomSort: false,
                 randomSortQuestions: false,
-                randomSortAnswers: false,
+                randomSortAnswers: true,
                 preventUnanswered: false,
                 completionResponseMessaging: false,
                 disableResponseMessaging: false

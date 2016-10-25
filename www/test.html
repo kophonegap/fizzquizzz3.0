@@ -1,192 +1,212 @@
-<html>
-<head>
-    <!-- Material Design Lite -->
-    <script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
-    <link rel="stylesheet" href="https://code.getmdl.io/1.2.0/material.pink-purple.min.css"/>
-    <!-- Material Design icon font -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
-    <link rel="stylesheet" href="css/custom.css" type="text/css">
-    <meta content="width=device-width,initial-scale=1" name=viewport>
+<?php
+	// Database details
+	include '../config.php';
+	
+	// Get job (and id)
+	$job = '';
+	$id  = '';
+	if (isset($_GET['job'])){
+	  $job = $_GET['job'];
+	  if ($job == 'get_questions' ||
+	      $job == 'get_question'   ||
+	      $job == 'add_question'   ||
+	      $job == 'edit_question'  ||
+	      $job == 'delete_question'){
+	    if (isset($_GET['id'])){
+	      $id = $_GET['id'];
+	      if (!is_numeric($id)){
+	        $id = '';
+	      }
+	    }
+	  } else {
+	    $job = '';
+	  }
+	}
+	
+	// Prepare array
+	$mysql_data = array();
+	
+	// Valid job found
+	if ($job != ''){
+	
+	  // Connect to database
+	  $db_connection = mysqli_connect($db_server, $db_username, $db_password, $db_name);
+	  if (mysqli_connect_errno()){
+	    $result  = 'error';
+	    $message = 'Failed to connect to database: ' . mysqli_connect_error();
+	    $job     = '';
+	  }
+	
+	  // Execute job
+	  if ($job == 'get_questions'){
+	  		
+	    // Get companies
+	    $query = "SELECT * FROM it_questions ORDER BY datefrom DESC";
+	    //$query = "SELECT a.*, q.* FROM it_answers a, it_questions q WHERE a.question_id=q.question_id ORDER BY division";
+	
+	    $query = mysqli_query($db_connection, $query);
+	    if (!$query){
+	      $result  = 'error';
+	      $message = 'query error';
+	    } else {
+	      $result  = 'success';
+	      $message = 'query success';
+	      while ($question = mysqli_fetch_array($query)){
+	        $functions  = '<div class="function_buttons">
+<ul class="col-sm-12">';
+    $functions .= '
+    <li class="col-sm-4 function_addq">
+        <a href="#" id="add_answer" data-toggle="modal" data-id="'   . $question['question_id'] .'"><span
+                class="fa fa-plus"></span></a></li>
+    ';
+    $qid = $question['question_id'];
+    $functions .= '
+    <li class="col-sm-4 function_edit"><a data-id="'   . $question['question_id'] . '"
+                                          data-name="' . $question['question_question'] . '"><span>Edit</span></a></li>
+    ';
+    $functions .= '
+    <li class="col-sm-4 function_delete"><a data-id="' . $question['question_id'] . '"
+                                            data-name="' . $question['question_question'] . '"><span>Delete</span></a>
+    </li>
+    ';
+    $functions .= '
+</ul></div>';
+$mysql_data[] = array(
+"division"          => $question['division'],
+"question_question"  => $question['question_question'],
+"datefrom"    => $question['datefrom'],
+"dateto"       => $question['dateto'],
 
 
-    <script src="https://code.jquery.com/jquery-3.1.0.min.js"
-            integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
-    <script src="js/jquery.touchSwipe.min.js"></script>
-    <script src="js/user.js"></script>
-    <script src="js/all.js"></script>
+"status"   => number_format($question['status'], 0, '.', ','),
+//"employees"     => number_format($question['employees'], 0, '.', ','),
+//"market_cap"    => '$ ' . $question['market_cap'],
+"headquarters"  => $question['headquarters'],
+"functions"     => $functions
+);
+}
+}
 
-    <script type="text/javascript">
+} elseif ($job == 'get_question'){
 
-    </script>
+// Get question
+if ($id == ''){
+$result  = 'error';
+$message = 'id missing';
+} else {
+$query = "SELECT * FROM it_questions WHERE question_id = '" . mysqli_real_escape_string($db_connection, $id) . "'";
 
-</head>
-<body>
-
-<!-- Simple header with fixed tabs. -->
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header
-                mdl-layout--fixed-tabs">
-    <header class="mdl-layout__header">
-
-        <div class="mdl-layout__header-row">
-
-
-            <div id='swipe_menu'>
-                <span class="mdl-layout-title" id='top_title'>Administration</span>
-            </div>
+/* $query = "SELECT q.*, a.* FROM it_questions q, it_answers a
+WHERE q.question_id='" . mysqli_real_escape_string($db_connection, $id) . "'";*/
 
 
-            <button id="right_btn"
-                    class="mdl-button mdl-js-button mdl-button--icon ">
-                <i class="material-icons">more_vert</i>
-            </button>
+/* $query = "SELECT q.*, a.* FROM it_questions q, it_answers a
+WHERE q.question_id='" . mysqli_real_escape_string($db_connection, $id) . "'";*/
+$query = mysqli_query($db_connection, $query);
+if (!$query){
+$result  = 'error';
+$message = 'query error';
+} else {
+$result  = 'success';
+$message = 'query success';
+while ($question = mysqli_fetch_array($query)){
+$mysql_data[] = array(
+"division"          => $question['division'],
+"question_question"  => $question['question_question'],
 
-            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
-                for="right_btn">
-                <li onclick="log_out();" class="mdl-menu__item">Logout</li>
+"datefrom"    => $question['datefrom'],
+"dateto"       => $question['dateto'],
+"status"   => $question['status'],
+//"employees"     => $question['employees'],
+//"market_cap"    => $question['market_cap'],
+"headquarters"  => $question['headquarters']
+);
+}
+}
+}
 
-            </ul>
+} elseif ($job == 'add_question'){
 
-        </div>
+// Add question
+$query = "INSERT INTO it_questions SET ";
+if (isset($_GET['division']))         { $query .= "division         = '" . mysqli_real_escape_string($db_connection, $_GET['division'])         . "', "; }
+if (isset($_GET['question_question'])) { $query .= "question_question = '" . mysqli_real_escape_string($db_connection, $_GET['question_question']) . "', "; }
+if (isset($_GET['datefrom']))   { $query .= "datefrom   = '" . mysqli_real_escape_string($db_connection, $_GET['datefrom'])   . "', "; }
+if (isset($_GET['dateto']))      { $query .= "dateto      = '" . mysqli_real_escape_string($db_connection, $_GET['dateto'])      . "', "; }
+if (isset($_GET['status']))    { $query .= "status    = '" . mysqli_real_escape_string($db_connection, $_GET['status'])    . "', "; }
+//if (isset($_GET['employees']))    { $query .= "employees    = '" . mysqli_real_escape_string($db_connection, $_GET['employees'])    . "', "; }
+//if (isset($_GET['market_cap']))   { $query .= "market_cap   = '" . mysqli_real_escape_string($db_connection, $_GET['market_cap'])   . "', "; }
+if (isset($_GET['headquarters'])) { $query .= "headquarters = '" . mysqli_real_escape_string($db_connection, $_GET['headquarters']) . "'";   }
+$query = mysqli_query($db_connection, $query);
+if (!$query){
+$result  = 'error';
+$message = 'query error';
+} else {
+$result  = 'success';
+$message = 'query success';
+}
 
-        <!-- Tabs -->
-        <!--   <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
-             <a href="#fixed-tab-3" class="mdl-layout__tab is-active">Page #1</a>
-             <a href="#fixed-tab-1" class="mdl-layout__tab ">User Page</a>
-             <a href="#fixed-tab-2" class="mdl-layout__tab">Account</a>
-           </div>
-           -->
-    </header>
+} elseif ($job == 'edit_question'){
 
+// Edit question
+if ($id == ''){
+$result  = 'error';
+$message = 'id missing';
+} else {
+$query = "UPDATE it_questions SET ";
+if (isset($_GET['division']))         { $query .= "division         = '" . mysqli_real_escape_string($db_connection, $_GET['division'])         . "', "; }
+if (isset($_GET['question_question'])) { $query .= "question_question = '" . mysqli_real_escape_string($db_connection, $_GET['question_question']) . "', "; }
+if (isset($_GET['datefrom']))   { $query .= "datefrom   = '" . mysqli_real_escape_string($db_connection, $_GET['datefrom'])   . "', "; }
+if (isset($_GET['dateto']))      { $query .= "dateto      = '" . mysqli_real_escape_string($db_connection, $_GET['dateto'])      . "', "; }
+if (isset($_GET['status']))    { $query .= "status    = '" . mysqli_real_escape_string($db_connection, $_GET['status'])    . "', "; }
+//if (isset($_GET['employees']))    { $query .= "employees    = '" . mysqli_real_escape_string($db_connection, $_GET['employees'])    . "', "; }
+//  if (isset($_GET['market_cap']))   { $query .= "market_cap   = '" . mysqli_real_escape_string($db_connection, $_GET['market_cap'])   . "', "; }
+if (isset($_GET['headquarters'])) { $query .= "headquarters = '" . mysqli_real_escape_string($db_connection, $_GET['headquarters']) . "'";   }
+$query .= "WHERE question_id = '" . mysqli_real_escape_string($db_connection, $id) . "'";
+$query  = mysqli_query($db_connection, $query);
+if (!$query){
+$result  = 'error';
+$message = 'query error';
+} else {
+$result  = 'success';
+$message = 'query success';
+}
+}
 
-    <div class="mdl-layout__drawer">
+} elseif ($job == 'delete_question'){
 
+// Delete question
+if ($id == ''){
+$result  = 'error';
+$message = 'id missing';
+} else {
+$query = "DELETE FROM it_questions WHERE question_id = '" . mysqli_real_escape_string($db_connection, $id) . "'";
+$query = mysqli_query($db_connection, $query);
+if (!$query){
+$result  = 'error';
+$message = 'query error';
+} else {
+$result  = 'success';
+$message = 'query success';
+}
+}
 
-        <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-            <div class="mdl-card__title">
-                <h2 class="mdl-card__title-text">Welcome</h2>
-            </div>
-            <div class="mdl-card__supporting-text"></div>
-            <div class="mdl-card__actions mdl-card--border">
-                <a href='#' class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                    Users</a>
-            </div>
-            <div class="mdl-card__actions mdl-card--border">
-                <a href='#' class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                    Questions</a>
-            </div>
-            <div class="mdl-card__menu">
-                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                    <i class="material-icons">perm_identity</i>
+}
 
+// Close database connection
+mysqli_close($db_connection);
 
-                </button>
-                <button id="user_menu"
-                        class="mdl-button mdl-js-button mdl-button--icon">
-                    <i class="material-icons">mode_edit</i>
-                </button>
+}
 
-                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
-                    for="user_menu">
-                    <li class="mdl-menu__item">Some Action</li>
-                    <li class="mdl-menu__item">Another Action</li>
-                    <li disabled class="mdl-menu__item">Disabled Action</li>
-                    <li class="mdl-menu__item">Yet Another Action</li>
-                </ul>
-            </div>
-        </div>
+// Prepare data
+$data = array(
+"result"  => $result,
+"message" => $message,
+"data"    => $mysql_data
+);
 
-    </div>
+// Convert PHP array to JSON array
+$json_data = json_encode($data);
+print $json_data;
+?>
 
-
-    <main class="mdl-layout__content">
-
-        <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
-            <div class="page-content">
-
-                <h1>Page #1</h1>
-
-            </div>
-        </section>
-
-        <section class="mdl-layout__tab-panel " id="fixed-tab-2">
-            <div class="page-content">
-
-
-                <table class='table table-bordered'>
-                    <div id='output'></div>
-                </table>
-
-                <input type='hidden' id='user_username'><Br>
-                Firstname:<span id='user_firstname'></span><Br>
-                <div style='clear:both;'></div>
-
-                <div class="mdl-textfield mdl-js-textfield">
-                    <input class="mdl-textfield__input" type="text" id="fname">
-                </div>
-                <button type='button' class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect "
-                        onclick='update_user();'>
-                    Update
-                </button>
-                <div id='update_1' style='display:none;'>user updated</div>
-                <div id='update_0' style='display:none;'>Error</div>
-
-
-            </div>
-        </section>
-        <section class="mdl-layout__tab-panel" id="fixed-tab-3">
-            <div class="page-content">
-
-                <!-- Icon List -->
-                <style>
-                    .demo-list-icon {
-                        width: 300px;
-                    }
-                </style>
-
-                <ul class="demo-list-icon mdl-list">
-
-                    <li class="mdl-list__item">
-                          <span class="mdl-list__item-primary-content">
-                         <i class="material-icons">face</i> &nbsp; User Full name
-                        </span>
-                                        </li>
-
-
-                                        <li class="mdl-list__item">
-                          <span class="mdl-list__item-primary-content">
-                         <i class="material-icons">note</i> &nbsp; Test Link
-                        </span>
-                                        </li>
-
-
-                                        <li class="mdl-list__item" onclick='log_out();'>
-                          <span class="mdl-list__item-primary-content">
-                          <i class="material-icons">error</i> &nbsp; Logout
-                        </span>
-                                        </li>
-
-                </ul>
-            </div>
-        </section>
-
-
-
-
-    </main>
-
-    <footer class="mdl-mega-footer">
-        <div class="mdl-mega-footer__middle-section">
-            <div class="mdl-mini-footer__left-section">
-
-                <ul class="mdl-mini-footer__link-list">
-                    <li><a href="#">Help</a></li>
-                    <li><a href="#">Privacy & Terms</a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
-
-</div>
-</body>
-</html>

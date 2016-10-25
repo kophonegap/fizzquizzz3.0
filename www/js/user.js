@@ -148,7 +148,41 @@ function edittheProfile() {
 
 
 
+function imageProfile() {
+    
+    $(document).ready(function () {
+        $('#user_iddddddd').val(localStorage.getItem('user_id'));
 
+        var options = {
+            //target: '#upload_loading',
+            beforeSubmit: showRequest,
+            success: showResponse
+        };
+        $('#myForms').ajaxForm(options);
+    });
+
+    function showRequest( formData, jqForm, options ) {
+        var queryString = $.param(formData);
+        console.log(formData);
+    }
+
+    function showResponse( responseText, statusText, xhr, $form ) {
+        console.log(statusText);
+        console.log(responseText);
+        if (statusText == 'success') {
+            //$('#page_loader_cb').fadeOut(100);
+            $('#upload_input').val('');
+            console.log('upload complete');
+            if (responseText == '0') {
+                console.log('Error or file not supported! required format :png,gif,jpeg sie: less than 3mb');
+            } else {
+                console.log('Upload success!');
+
+            }
+        }
+    }
+
+}
 
 // bind 'myForm' and provide a simple callback function
 

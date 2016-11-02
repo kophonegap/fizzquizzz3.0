@@ -1,5 +1,6 @@
 <html>
 <head>
+    <meta content="width=device-width,initial-scale=1" name="viewport">
     <script src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8">
         function onLoad() {
@@ -323,9 +324,10 @@
         var attempts = localStorage.getItem("attempts");
         localStorage.setItem("attempts", attempts);
         var user_id = $('#user_id').val();
-        //var attempts = $('#attempts').val();
+
         var setnames = $('#setnames').val();
         var score_bottle = $('#score_bottle').val();
+        var attempts = $('#attempts').val();
         console.log(attempts);
         // var user_email = $('#email').val();
         //alert(attempts);
@@ -333,14 +335,14 @@
         if (attempts == null) {
             attempts = 1;
 
-            $.get(base_url + '/index.php/user_results/add/'+ user_id +'/'+score_bottle, function( data ) {
+            $.get(base_url + '/index.php' + '/user_results/add/'+ user_id +'/'+setnames +'/'+score_bottle, function( data ) {
                 //$.post('http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/index.php/update/user', {username: username, password: password, fname: fname})
 
                 if (data == 0) {
                     navigator.notification.alert('Uh oh, Try again.');
                     // $('#update_0').show();
                 } else if (data == 1) {
-                    navigator.notification.alert('Score Saved');
+                   // navigator.notification.alert('Score Saved');
                     window.location.replace('main.html');
 
                 }
@@ -350,14 +352,14 @@
         else {
 
             attempts++;
-            $.get(base_url + '/index.php/user_results/add/'+ user_id +'/'+score_bottle, function( data ) {
+            $.get(base_url + '/index.php' +'/user_results/update/'+ user_id +'/'+score_bottle, function( data ) {
                 //$.post('http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/index.php/update/user', {username: username, password: password, fname: fname})
 
                 if (data == 0) {
                     navigator.notification.alert('Uh oh, Try again.');
                     // $('#update_0').show();
                 } else if (data == 1) {
-                    navigator.notification.alert('Score Updated');
+                   // navigator.notification.alert('Score Updated');
                     window.location.replace('main.html');
 
                 }

@@ -78,14 +78,47 @@
     <script charset="utf-8" src="https://cdn.datatables.net/1.10.0/js/jquery.dataTables.js"></script>
     <script charset="utf-8" src="https://cdn.jsdelivr.net/jquery.validation/1.13.1/jquery.validate.min.js"></script>
 
-
+    <!--<script src='http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/slickQuiz-json.js?callback=myFunction'></script>
+    <script src='http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/slickQuiz.js?callback=mySlickQuiz'></script>-->
     <script src="http://malsup.github.com/jquery.form.js"></script>
 
     <script>
-        // wait for the DOM to be loaded
-        $(document).ready(function() {
+        noNet(base_url +'/json.php',
+                function(data) {
+                    for(i = 0; i < data.length; i++) {
+                        //document.getElementById("result1").innerHTML += '<li> ' + data[i]['name'] + '</li>';
+                        console.log(data[i]['name']);
+                    }
+                }
+        );
 
-        });
+
+        // wait for the DOM to be loaded
+        /* $(document).ready(function() {
+
+
+             $.each( quizJSON, function( quizJSONs ) {
+             jsonStr = JSON.stringify(quizJSON);
+            // console.log(jsonStr);
+
+                 console.info("CONSOLE LOG : ")
+                 console.log(jsonStr);
+                 console.info("CONSOLE DIR : ");
+                 console.dir(jsonStr);
+
+                 //quizJSON = console.dir(jsonStr);
+                 //localStorage.setItem('quizJSON', jsonStr);
+
+                 console.log('quizJSON', quizJSON);
+           // var quizJSON =  localStorage.getItem('jsonStr');
+            //console.log(quizJSON);
+             });
+            // localStorage.setItem('dateFrString', date_published);
+            //localStorage.setItem('dateToString', date_expire);
+           //var dateFrString =  localStorage.getItem('dateFrString');
+            //var dateToString =  localStorage.getItem('dateToString');
+
+        });*/
     </script>
 
 </head>

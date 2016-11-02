@@ -60,7 +60,7 @@ function loadQuestions(){
     $.ajax({
         type: 'GET',
 
-        url: base_url + '/index.php/jsoncode',
+        url: base_url + '/adminer/jsonquest.php',
         data: { get_param: 'value' },
         success: function (data) {
             // quizJSON = data;
@@ -69,6 +69,7 @@ function loadQuestions(){
             // localStorage.quizdata = data;
 
             // THIS IS ALREADY STRINGIFIED
+           // var string = data;
             var string = data;
 
 // DO NOT STRINGIFY AGAIN WHEN WRITING TO LOCAL STORAGE
@@ -83,11 +84,11 @@ function loadQuestions(){
            // var parsedObject = JSON.parse(quizJSON);
            // var parsedObject = JSON.stringify(quizJSON);
             console.log(quizJSON);
-            $('#cand').val(quizJSON);
+            //$('#cand').val(quizJSON);
 
 
 
-            document.write(quizJSON);
+           // document.write(quizJSON);
         }
 
 
@@ -101,6 +102,46 @@ function loadQuestions(){
 
 
 
+function loadQuestions2(){
+
+    $.ajax({
+        type: 'GET',
+
+        url: base_url + '/index.php/jsoncode2',
+        data: { get_param: 'value' },
+        success: function (data) {
+            // quizJSON = data;
+            var quizJSON = data;
+            //alert(data);
+           // localStorage.quizdata = data;
+            localStorage.quizJSON = data;
+            // THIS IS ALREADY STRINGIFIED
+            var string = data;
+
+// DO NOT STRINGIFY AGAIN WHEN WRITING TO LOCAL STORAGE
+            localStorage.setItem('quizJSON', string);
+
+            // READ STRING FROM LOCAL STORAGE
+            // var retrievedObject = localStorage.getItem('quizJSON');
+            var quizJSON = localStorage.getItem('quizJSON');
+
+// CONVERT STRING TO REGULAR JS OBJECT
+            //var parsedObject = JSON.parse(retrievedObject);
+            // var parsedObject = JSON.parse(quizJSON);
+            // var parsedObject = JSON.stringify(quizJSON);
+            console.log(quizJSON);
+            $('#cand').val(quizJSON);
+
+
+
+           // document.write(quizJSON);
+        }
+
+
+
+    })
+}
+//loadQuestions2();
 
 $(function() {
 

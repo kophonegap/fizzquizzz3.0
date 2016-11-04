@@ -70,10 +70,10 @@
     <script src="js/myApp.js"></script>
     <script src="js/user.js"></script>
 
-
+<!--
     <script charset="utf-8" src="controllers/config.js"></script>
     <script charset="utf-8" src="controllers/users.js"></script>
-
+-->
     <!-- <script charset="utf-8" src="http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/admins/controllers/users.js?callback=tableUsers"></script>-->
     <script charset="utf-8" src="https://cdn.datatables.net/1.10.0/js/jquery.dataTables.js"></script>
     <script charset="utf-8" src="https://cdn.jsdelivr.net/jquery.validation/1.13.1/jquery.validate.min.js"></script>
@@ -333,7 +333,7 @@
 
 
                 <div id="editmyProfile" style="display: none;">
-                   <!-- <script>imageProfile();</script>-->
+                   <!-- <script>imageProfile();</script>
                     <form id="myForms" action="http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/index.php/uploadpicc" method="post" enctype="multipart/form-data">
                         <input type="hidden" name="user_id_upload" id="user_iddddddd" />
                         <input type="file" name="upload_file[]" id="upload_input" value=""/>
@@ -730,6 +730,49 @@
                 </div>
             </footer>
             -->
+
+        <script src='quizgame/js/jquery-1.7.min.js'></script>
+
+
+        <script type="application/javascript">
+            var myDivision = localStorage.getItem("user_division");
+            //var myDivision = division;
+            var str = myDivision;
+            str = str.replace(/\s/g, '');
+            console.log('My Division is:', str);
+        </script>
+
+
+        <script type="text/javascript">
+            function downloadJSAtOnload() {
+                var element = document.createElement("script");
+                /*************** CUSTOM SCRIPT ******************/
+                element.src = 'http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/json' + str +'.js' + '?callback=myFunction';
+
+                /*   if (str == 'SmallFormat') {
+                 element.src = "http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/jsonSmallFormat.js?callback=myFunction";
+                 } else if (str == 'LargeFormat') {
+                 element.src = "http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/jsonLargeFormat.js?callback=myFunction";
+                 } else if  (str == 'Generalist') {
+                 element.src = "http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/jsonGeneralist.js?callback=myFunction";
+                 } else if  (str == 'Merchandiser')  {
+                 element.src = "http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/jsonMerchandiser.js?callback=myFunction";
+                 }
+                 */
+
+                /*************** CUSTOM SCRIPT ******************/
+
+                // element.src = "http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/jsonSmallFormat.js?callback=myFunction";
+                document.body.appendChild(element);
+            }
+            if (window.addEventListener)
+                window.addEventListener("load", downloadJSAtOnload, false);
+            else if (window.attachEvent)
+                window.attachEvent("onload", downloadJSAtOnload);
+            else window.onload = downloadJSAtOnload;
+
+            downloadJSAtOnload();
+        </script>
     </main>
 </div>
 

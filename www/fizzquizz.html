@@ -4,41 +4,42 @@
     <script type="text/javascript" charset="utf-8">
         function onLoad() {
             document.addEventListener("deviceready", onDeviceReady, false);
-        }
-
-        // cordova is ready
-        //
 
 
-        function onDeviceReady() {
-            var attempted = localStorage.getItem('attempts');
-            // if (attempted < 1) {
-            if (attempted < 1) {
-
-                $('#playQuiz').removeAttr('disabled');
-                window.open(base_url + "/app/views/media/video.php", "_blank", "location=no", "closebuttoncaption=Return");
-
-                //$('#playQuiz').attr('disabled','');
-
-            } else {
+            console.log('cordova is ready');
+            //
 
 
+            function onDeviceReady() {
+                var attempted = localStorage.getItem('attempts');
+                // if (attempted < 1) {
+                if (attempted < 1) {
+
+                    $('#playQuiz').removeAttr('disabled');
+                    window.open(base_url + "/app/views/media/video.php", "_blank", "location=no", "closebuttoncaption=Return");
+
+                    //$('#playQuiz').attr('disabled','');
+
+                } else {
 
 
 
 
 
-               //navigator.notification.alert('Thank you for taking the quiz! See you for the next rounds.');
 
-                //  $('#playQuiz').attr('disabled','disabled');
-                //  window.location.replace('main.html');
 
+                    //navigator.notification.alert('Thank you for taking the quiz! See you for the next rounds.');
+
+                    //  $('#playQuiz').attr('disabled','disabled');
+                    //  window.location.replace('main.html');
+
+                }
+
+
+                $('#playQuiz').on('click', function () {
+                    $('#raysDemoHolder').hide();
+                })
             }
-
-
-            $('#playQuiz').on('click', function () {
-                $('#raysDemoHolder').hide();
-            })
         }
 
 
@@ -222,6 +223,7 @@
                     var user_id = localStorage.getItem("user_id");
                     var attempts = localStorage.getItem("attempts");
                     var set = localStorage.getItem("set");
+                    var division = localStorage.getItem('user_division');
 
 
                     $("#playQuiz").on('click', function () {
@@ -234,7 +236,7 @@
                         //   localStorage.setItem("attempts", attempts);
                         localStorage.setItem("set", set);
 
-
+                        $("#division").val(division);
                         $("#user_id").val(user_id);
 
                         $("#attempts").val(attempts);
@@ -249,7 +251,7 @@
 
 
                 </script>
-
+                <input type="hidden" id="division" name="division"/>
                 <input type="hidden" id="user_id" name="user_id"/>
                 <input type="hidden" id="set" name="set" value=""/>
                 <input type="hidden" id="attemptsA" name="attemptsA" value=""/>
@@ -280,7 +282,76 @@
 
 
 <script src='quizgame/js/jquery-1.7.min.js'></script>
-<script src='http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/jsonSmallFormat.js?callback=myFunction'></script>
+
+
+<script type="application/javascript">
+    var myDivision = localStorage.getItem("user_division");
+   //var myDivision = division;
+    var str = myDivision;
+    str = str.replace(/\s/g, '');
+    console.log('My Division is:', str);
+</script>
+
+
+<script type="text/javascript">
+    function downloadJSAtOnload() {
+        var element = document.createElement("script");
+/*************** CUSTOM SCRIPT ******************/
+        element.src = 'http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/json' + str +'.js' + '?callback=myFunction';
+
+     /*   if (str == 'SmallFormat') {
+            element.src = "http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/jsonSmallFormat.js?callback=myFunction";
+        } else if (str == 'LargeFormat') {
+            element.src = "http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/jsonLargeFormat.js?callback=myFunction";
+        } else if  (str == 'Generalist') {
+            element.src = "http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/jsonGeneralist.js?callback=myFunction";
+        } else if  (str == 'Merchandiser')  {
+            element.src = "http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/jsonMerchandiser.js?callback=myFunction";
+        }
+        */
+
+            /*************** CUSTOM SCRIPT ******************/
+
+       // element.src = "http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/jsonSmallFormat.js?callback=myFunction";
+        document.body.appendChild(element);
+    }
+    if (window.addEventListener)
+        window.addEventListener("load", downloadJSAtOnload, false);
+    else if (window.attachEvent)
+        window.attachEvent("onload", downloadJSAtOnload);
+    else window.onload = downloadJSAtOnload;
+
+    downloadJSAtOnload();
+</script>
+
+<!--  <script type="text/javascript" src="http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/jsonSmallFormat.js?callback=myFunction"></script>
+
+  if (myDivision = 'Small Format')
+
+      document.write('<scri' + 'pt type="text/javascript" src="http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/jsonSmallFormat.js?callback=myFunction"></' + 'script>');
+  else if (myDivision = 'Large Format')
+      document.write('<scri' + 'pt type="text/javascript" src="http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/jsonLargeFormat.js?callback=myFunction"></' + 'script>');
+  else if (myDivision = 'Generalist')
+      document.write('<scri' + 'pt type="text/javascript" src="http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/jsonGeneralist.js?callback=myFunction"></' + 'script>');
+  else
+      document.write('<scri' + 'pt type="text/javascript" src="http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/jsonMerchandise.js?callback=myFunction"></' + 'script>');
+
+*/
+/*
+      if (myDivision = "Small Format") {
+      <script type="text/javascript" src="http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/jsonSmallFormat.js?callback=myFunction"></script>
+          }else if (myDivision = "Large Format") {
+      <script type="text/javascript" src="http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/jsonLargeFormat.js?callback=myFunction"></script>
+          } else if (myDivision = "Generalist") {
+      <script type="text/javascript" src="http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/jsonGeneralist.js?callback=myFunction"></script>
+          } else {
+      <script type="text/javascript" src="http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/jsonMerchandise.js?callback=myFunction"></script>
+          }
+
+-->
+
+
+<!-- <script src='http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/jsonSmallFormat.js?callback=myFunction'></script> -->
 <script src='http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/slickquiz.js?callback=mySlickQuiz'></script>
 <!--<script src='quizgame/js/slickQuiz-json.js'></script>
 <script src='quizgame/js/slickQuiz.js?callback=mySlickQuiz'></script>
@@ -294,7 +365,7 @@
     mySlickQuiz();
 
 
-    $.getJSON(base_url + '/index.php' + '/user_results/' + user_id, function ( result ) {
+    /*$.getJSON(base_url + '/index.php' + '/user_results/' + user_id, function ( result ) {
         $.each(result, function ( i, field ) {
             // $("#output").append("<tr><td>Username:  "+ field.username + " </td></tr><tr><td>Password: "+ field.password + "</td></tr>");
             //  $('#userid').val(field.id);
@@ -302,7 +373,7 @@
             $('#attemptsA').val(field.attempts);
             $('#datefrom').val(field.dateFrString);
         });
-    });
+    });*/
 
     /*
      $("document").ready(function(){
@@ -330,6 +401,9 @@
 </script>
 
 
+
+
+
 <script>
     function post_score() {
 
@@ -345,23 +419,22 @@
         // var user_email = $('#email').val();
         //alert(attempts);
 
-        if (attempts == null) {
 
-            $.get(base_url + '/index.php' + '/user_results/update/' + user_id + '/' + datefromDynamic + '/' + score_bottle, function ( data ) {
+        $.get(base_url + '/index.php' + '/user_results/update/' + user_id + '/' + datefromDynamic + '/' + score_bottle, function ( data ) {
 
 
-                if (data == 0) {
-                    // alert('uh oh, try again.');
-                    // $('#update_0').show();
-                } else if (data == 1) {
-                    attempts = 1;
-                    localStorage.setItem("attempts", attempts);
-                    //  alert('score recorded!');
-                    console.log('score recorded');
-                    window.location.replace('main.html');
+            if (data == 0) {
+                // alert('uh oh, try again.');
+                // $('#update_0').show();
+            } else if (data == 1) {
+                attempts = 1;
+                localStorage.setItem("attempts", attempts);
+                //  alert('score recorded!');
+                console.log('score recorded');
+                window.location.replace('main.html');
 
-                }
-            });
+            }
+            // });
             /* $.get(base_url + '/index.php' + '/user_results/add/'+ user_id +'/'+ division +'/'+setnames+'/'+score_bottle, function( data ) {
              //$.post('http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/index.php/update/user', {username: username, password: password, fname: fname})
 
@@ -375,30 +448,30 @@
              }
              });*/
 
-        }
-        else {
+            //  }
+            else {
 
 
+                $.get(base_url + '/index.php' + '/user_results/update/' + user_id + '/' + datefromDynamic + '/' + score_bottle, function ( data ) {
+                    //$.post('http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/index.php/update/user', {username: username, password: password, fname: fname})
 
-            $.get(base_url + '/index.php' + '/user_results/update/' + user_id + '/' + datefromDynamic + '/' + score_bottle, function ( data ) {
-                //$.post('http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/index.php/update/user', {username: username, password: password, fname: fname})
+                    if (data == 0) {
+                        //alert('uh oh, try again.');
+                        // $('#update_0').show();
+                    } else if (data == 1) {
+                        //alert('score updated');
+                        attempts++;
+                        localStorage.setItem("attempts", attempts);
+                        console.log('score updated');
+                        // navigator.notification.alert('score updated');
+                        window.location.replace('main.html');
 
-                if (data == 0) {
-                    //alert('uh oh, try again.');
-                    // $('#update_0').show();
-                } else if (data == 1) {
-                    //alert('score updated');
-                    attempts++;
-                    localStorage.setItem("attempts", attempts);
-                    console.log('score updated');
-                    // navigator.notification.alert('score updated');
-                    window.location.replace('main.html');
-
-                }
-            });
-        }
+                    }
+                });
+            }
 
 
+        });
     }
 
     /* console.log('---------');

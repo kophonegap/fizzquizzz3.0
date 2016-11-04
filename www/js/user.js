@@ -47,6 +47,7 @@ $(function () {
             $('#user_name').text(field.username);
             $('#user_username').text(field.username);
             $('#user_password').text(field.password);
+            $('#user_division').text(field.division);
             $('#user_firstname').text(field.fname);
             $('#user_lastname').text(field.lname);
             $('#user_email').text(field.email);
@@ -64,7 +65,8 @@ $(function () {
             console.log(field.aunit);
             console.log(field.area);
             console.log(field.avatar);
-           localStorage.setItem('user_id', field.id);
+            localStorage.setItem('user_id', field.id);
+            localStorage.setItem('user_division', field.division);
            // console.log(field.lang);
 
         });
@@ -110,6 +112,7 @@ function update_user() {
                 $('#user_password').text(password);
                 $('#user_firstname').text(fname);
                 $('#user_lastname').text(lname);
+                $('#user_division').text(division);
                 $('#user_email').text(user_email);
                 /* $('#user_privilege').text(privilege);
                  $('#userid').val(field.id);
@@ -149,7 +152,7 @@ function edittheProfile() {
 
 
 function imageProfile() {
-    
+
     $(document).ready(function () {
         $('#user_iddddddd').val(localStorage.getItem('user_id'));
 

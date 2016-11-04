@@ -880,3 +880,12 @@ a#editProfile i {
     float: right;
     font-size: 1.2em;
 }
+
+.answerResult.correct {
+    max-width:280px;
+    margin:0 auto;
+}
+
+div#popupDialog {
+    margin: 0 auto;
+}

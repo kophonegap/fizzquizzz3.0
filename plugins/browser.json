@@ -7,7 +7,15 @@
         "files": {}
     },
     "installed_plugins": {
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "com.ko.fizzquizz"
+        },
         "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.ko.fizzquizz"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
             "PACKAGE_NAME": "com.ko.fizzquizz"
         },
         "cordova-plugin-inappbrowser": {
@@ -16,6 +24,5 @@
         "cordova-plugin-screen-orientation": {
             "PACKAGE_NAME": "com.ko.fizzquizz"
         }
-    },
-    "dependent_plugins": {}
+    }
 }

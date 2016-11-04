@@ -1,285 +1,84 @@
-
-
-$(document).ready(function(){
-// On page load: datatable
-    var table_companies = $('#table_questions').dataTable({
-        "ajax": base_url + "/services/questions.php?job=get_questions",
-        "columns": [
-            { "data": "division" },
-            { "data": "question_question",   "sClass": "question_question" },
-            { "data": "datefrom" },
-            { "data": "dateto" },
-            { "data": "status",      "sClass": "integer" },
-            { "data": "set",   "sClass": "set"  },
-// { "data": "market_cap",     "sClass": "integer" },
-            { "data": "headquarters"},
-            { "data": "functions",      "sClass": "functions" }
-        ],
-        "aoColumnDefs": [
-            { "bSortable": false, "aTargets": [-1] }
-        ],
-        "lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
-        "oLanguage": {
-            "oPaginate": {
-                "sFirst":       " ",
-                "sPrevious":    " ",
-                "sNext":        " ",
-                "sLast":        " ",
-            },
-            "sLengthMenu":    "Records per page: _MENU_",
-            "sInfo":          "Total of _TOTAL_ records (showing _START_ to _END_)",
-            "sInfoFiltered":  "(filtered from _MAX_ total records)"
-        }
-    });
-// On page load: form validation
-    jQuery.validator.setDefaults({
-        success: 'valid',
-        rules: {
-            fiscal_year: {
-                required: true,
-                min:      2000,
-                max:      2025
-            }
+// Setup your quiz text and questions here
+/*$(document).ready(function () {
+ $.ajax({
+ type: 'GET',
+ url: 'http://104.238.96.209/~project/db/jsoncode',
+ data: { get_param: 'value' },
+ success: function (data) {
+ var questions = data;
+ alert(data);
+ //$('#cand').html(data);
+ }
+ });
+ });*/
+// NOTE: pay attention to commas, IE struggles with those bad boys
+//[{"id":1,"question":"What is the first letter in the Alphabet?","question_id":1,"option":"Z","is_correct":0},{"id":2,"question":"What is the first letter in the Alphabet?","question_id":1,"option":"N","is_correct":0},{"id":3,"question":"What is the first letter in the Alphabet?","question_id":1,"option":"O","is_correct":0},{"id":4,"question":"What is the first letter in the Alphabet?","question_id":1,"option":"A","is_correct":1}]
+var quizJSON = {
+    "info": {
+        "name":    "Test Your Knowledge!!",
+        "main":    "<div id='meSsage'><video width='100%' controls><source src='media/sample.mp4' type='video/mp4'></video></div>",
+        "results": "<h5>Learn More</h5><p>Etiam scelerisque, nunc ac egestas consequat, odio nibh euismod nulla, eget auctor orci nibh vel nisi. Aliquam erat volutpat. Mauris vel neque sit amet nunc gravida congue sed sit amet purus.</p>",
+        "level1":  "Jeopardy Ready",
+        "level2":  "Jeopardy Contender",
+        "level3":  "Jeopardy Amateur",
+        "level4":  "Jeopardy Newb",
+        "level5":  "Stay in school, kid..." // no comma here
+    },
+    "questions": [
+        { // Question 1
+            "q": "Which of the following packages is not considered to be “Sparkling IC”?",
+            "a": [
+                {"option": "237mL glass",      "correct": true},
+                {"option": "414mL",     "correct": false},
+                {"option": "500mL",      "correct": false},
+                {"option": "310mL sleek can",     "correct": false} // no comma here
+            ],
+            "correct": "<p><span>That's right!</span> 237mL glass is not considered to be "Sparkling IC</p>",
+            "incorrect": "<p><span>Uhh no.</span> 237mL glass is not considered to be "Sparkling IC</p>" // no comma here
         },
-        errorPlacement: function(error, element){
-            error.insertBefore(element);
+        { // Question 2
+            "q": "Who needs to approve any equipment swap before the work order is placed through coketech.ca?",
+            "a": [
+                {"option": "ASM",    "correct": false},
+                {"option": "Small Format Director",     "correct": true},
+                {"option": "DSM",      "correct": false},
+                {"option": "SUVP",   "correct": false} // no comma here
+            ],
+            "correct": "<p><span>Holy bananas!</span> The Small Format Director needs to approve an equipment swap before the work order is placed through coketech.ca.</p>",
+            "incorrect": "<p><span>Fail.</span>  The Small Format Director needs to approve an equipment swap before the work order is placed through coketech.ca.</p>" // no comma here
         },
-        highlight: function(element){
-            $(element).parent('.field_container').removeClass('valid').addClass('error');
+        { // Question 3
+            "q": "What is the minimum order size required for a Convenience Retail customer located within 90km of the Distribution Centre before we should key an order?",
+            "a": [
+                {"option": "$280",        "correct": false},
+                {"option": "$190",           "correct": false},
+                {"option": "$250",  "correct": true},
+                {"option": "$475",   "correct": false} // no comma here
+            ],
+            "correct": "<p><span>Nice!</span> The minimum order size required for a Convenience Retail customer located within 90km of the Distribution Centre is $250.</p>",
+            "incorrect": "<p><span>No.</span> The minimum order size required for a Convenience Retail customer located within 90km of the Distribution Centre is $250.</p>" // no comma here
         },
-        unhighlight: function(element){
-            $(element).parent('.field_container').addClass('valid').removeClass('error');
-        }
-    });
-    var form_question = $('#form_question');
-    form_question.validate();
-// Show message
-    function show_message(message_text, message_type){
-        $('#message').html('
-            <p>' + message_text + '</p>
-            ').attr("class', message_type);
-        $('#message_container').show();
-        if (typeof timeout_message !== 'undefined'){
-            window.clearTimeout(timeout_message);
-        }
-        timeout_message = setTimeout(function(){
-            hide_message();
-        }, 8000);
-    }
-// Hide message
-    function hide_message(){
-        $('#message').html('').attr('class', '');
-        $('#message_container').hide();
-    }
-// Show loading message
-    function show_loading_message(){
-        $('#loading_container').show();
-    }
-// Hide loading message
-    function hide_loading_message(){
-        $('#loading_container').hide();
-    }
-// Show lightbox
-    function show_lightbox(){
-        $('.lightbox_bg').show();
-        $('.lightbox_container').show();
-    }
-// Hide lightbox
-    function hide_lightbox(){
-        $('.lightbox_bg').hide();
-        $('.lightbox_container').hide();
-    }
-// Lightbox background
-    $(document).on('click', '.lightbox_bg', function(){
-        hide_lightbox();
-    });
-// Lightbox close button
-    $(document).on('click', '.lightbox_close', function(){
-        hide_lightbox();
-    });
-// Escape keyboard key
-    $(document).keyup(function(e){
-        if (e.keyCode == 27){
-            hide_lightbox();
-        }
-    });
-// Hide iPad keyboard
-    function hide_ipad_keyboard(){
-        document.activeElement.blur();
-        $('input').blur();
-    }
-// Add question button
-    $(document).on('click', '#add_question', function(e){
-        e.preventDefault();
-        $('.lightbox_content h2').text('Add question');
-        $('#form_question button').text('Add question');
-        $('#form_question').attr('class', 'form add');
-        $('#form_question').attr('data-id', '');
-        $('#form_question .field_container label.error').hide();
-        $('#form_question .field_container').removeClass('valid').removeClass('error');
-        $('#form_question #division').val('');
-        $('#form_question #question_question').val('');
-        $('#form_question #datefrom').val('');
-        $('#form_question #dateto').val('');
-        $('#form_question #status').val('');
-        $('#form_answer #question_id').val('');
-        $('#form_question #set').val('');
-// $('#form_question #market_cap').val('');
-        $('#form_question #headquarters').val('');
-        show_lightbox();
-    });
-// Add question submit form
-    $(document).on('submit', '#form_question.add', function(e){
-        e.preventDefault();
-// Validate form
-        if (form_question.valid() == true){
-// Send question information to database
-            hide_ipad_keyboard();
-            hide_lightbox();
-            show_loading_message();
-            var form_data = $('#form_question').serialize();
-            var request   = $.ajax({
-                url:          base_url + '/services/questions.php?job=add_answer',
-                cache:        false,
-                data:         form_data,
-                dataType:     'json',
-                contentType:  'application/json; charset=utf-8',
-                type:         'get'
-            });
-            request.done(function(output){
-                if (output.result == 'success'){
-// Reload datable
-                    table_companies.api().ajax.reload(function(){
-                        hide_loading_message();
-                        var answer_answer = $('#answer_answer').val();
-                        show_message("answer '" + answer_answer + "' added successfully.", 'success');
-                    }, true);
-                } else {
-                    hide_loading_message();
-                    show_message('Add request failed', 'error');
-                }
-            });
-            request.fail(function(jqXHR, textStatus){
-                hide_loading_message();
-                show_message('Add request failed: ' + textStatus, 'error');
-            });
-        }
-    });
-// Edit question button
-    $(document).on('click', '.function_edit a', function(e){
-        e.preventDefault();
-// Get question information from database
-        show_loading_message();
-        var id      = $(this).data('id');
-        var request = $.ajax({
-//  url:          base_url + '/services/questions.php?job=get_question?qid=$id',
-            url:          base_url + '/services/questions.php?job=get_question',
-            cache:        false,
-            data:         'id=' + id,
-            dataType:     'json',
-            contentType:  'application/json; charset=utf-8',
-            type:         'get'
-        });
-        request.done(function(output){
-            if (output.result == 'success'){
-                $('.lightbox_content h2').text('Edit question');
-                $('#form_question button').text('Edit question');
-                $('#form_question').attr('class', 'form edit');
-                $('#loadOptions').attr('data-id', id);
-                $('#loadOptions').val(id);
-                $('#question_id').val(id);
-                $('#form_question').attr('data-id', id);
-                $('#form_question .field_container label.error').hide();
-                $('#form_question .field_container').removeClass('valid').removeClass('error');
-                $('#form_question #division').val(output.data[0].division);
-                $('#form_question #question_question').val(output.data[0].question_question);
-                $('#form_question #datefrom').val(output.data[0].datefrom);
-                $('#form_question #dateto').val(output.data[0].dateto);
-                $('#form_question #status').val(output.data[0].status);
-                $('#form_question #set').val(output.data[0].set);
-//$('#form_question #market_cap').val(output.data[0].market_cap);
-                $('#form_question #headquarters').val(output.data[0].headquarters);
-                hide_loading_message();
-                show_lightbox();
-            } else {
-                hide_loading_message();
-                show_message('Information request failed', 'error');
-            }
-        });
-        request.fail(function(jqXHR, textStatus){
-            hide_loading_message();
-            show_message('Information request failed: ' + textStatus, 'error');
-        });
-    });
-// Edit question submit form
-    $(document).on('submit', '#form_question.edit', function(e){
-        e.preventDefault();
-// Validate form
-        if (form_question.valid() == true){
-// Send question information to database
-            hide_ipad_keyboard();
-            hide_lightbox();
-            show_loading_message();
-            var id        = $('#form_question').attr('data-id');
-            var form_data = $('#form_question').serialize();
-            var request   = $.ajax({
-                url:          base_url + '/services/questions.php?job=edit_question&id=' + id,
-                cache:        false,
-                data:         form_data,
-                dataType:     'json',
-                contentType:  'application/json; charset=utf-8',
-                type:         'get'
-            });
-            request.done(function(output){
-                if (output.result == 'success'){
-// Reload datable
-                    table_companies.api().ajax.reload(function(){
-                        hide_loading_message();
-                        var question_question = $('#question_question').val();
-                        show_message("question '" + question_question + "' edited successfully.", 'success');
-                    }, true);
-                } else {
-                    hide_loading_message();
-                    show_message('Edit request failed', 'error');
-                }
-            });
-            request.fail(function(jqXHR, textStatus){
-                hide_loading_message();
-                show_message('Edit request failed: ' + textStatus, 'error');
-            });
-        }
-    });
-// Delete question
-    $(document).on('click', '.function_delete a', function(e){
-        e.preventDefault();
-        var question_question = $(this).data('name');
-        if (confirm("Are you sure you want to delete '" + question_question + "'?")){
-            show_loading_message();
-            var id      = $(this).data('id');
-            var request = $.ajax({
-                url:          base_url + '/services/questions.php?job=delete_question&id=' + id,
-                cache:        false,
-                dataType:     'json',
-                contentType:  'application/json; charset=utf-8',
-                type:         'get'
-            });
-            request.done(function(output){
-                if (output.result == 'success'){
-// Reload datable
-                    table_companies.api().ajax.reload(function(){
-                        hide_loading_message();
-                        show_message("question '" + question_question + "' deleted successfully.", 'success');
-                    }, true);
-                } else {
-                    hide_loading_message();
-                    show_message('Delete request failed', 'error');
-                }
-            });
-            request.fail(function(jqXHR, textStatus){
-                hide_loading_message();
-                show_message('Delete request failed: ' + textStatus, 'error');
-            });
-        }
-    });
-});
-
+        { // Question 4
+            "q": "What is the minimum order size required for an FSOP customer located within 90km of the Distribution Centre before we should key an order?",
+            "a": [
+                {"option": "$280",        "correct": false},
+                {"option": "$190",           "correct": true},
+                {"option": "$250",  "correct": false},
+                {"option": "$475",   "correct": false} // no comma here
+            ],
+            "correct": "<p><span>Good Job!</span> The minimum order size required for an FSOP customer located within 90km of the Distribution Centre  is $190.</p>",
+            "incorrect": "<p><span>ERRRR!</span> The minimum order size required for an FSOP customer located within 90km of the Distribution Centre  is $190.</p>" // no comma here
+        },
+        { // Question 5
+            "q": "In Convenience Retail, what is the maximum number of cooler clings per door?",
+            "a": [
+                {"option": "2 clings",   "correct": false},
+                {"option": "3 clings",          "correct": false},
+                {"option": "1 cling",  "correct": false},
+                {"option": "None of the above",  "correct": true} // no comma here
+            ],
+            "correct": "<p><span>Brilliant!</span> In Convenience Retail, a maximum of 2 clings can be placed on a cooler door.</p>",
+            "incorrect": "<p><span>Not Quite.</span> In Convenience Retail, a maximum of 2 clings can be placed on a cooler door.</p>" // no comma here
+        } // no comma here
+    ]
+};

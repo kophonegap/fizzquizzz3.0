@@ -262,10 +262,33 @@
                 </script>
                 <script src='quizgame/js/jquery-1.7.min.js'></script>
                 <script>
-                    var myQuizDivision = base_url + '/app/views/json/json' + division + '.js?callback=myFunction';
-                    // myquizdivision;
-                    document.write('<' + 'script src=' + myQuizDivision + '></' + 'script' + '>');
-                    console.log(myQuizDivision);
+                   /* var myQuizDivision = base_url + '/app/views/json/json' + division + '.js?callback=myFunction';
+
+                    var slickquizContent = document.write('<' + 'script src=' + myQuizDivision + '></' + 'script' + '>');
+                    console.log(slickquizContent);*/
+
+                   function loadjscssfile(filename, filetype){
+                       if (filetype=="js"){ //if filename is a external JavaScript file
+                           var fileref=document.createElement('script')
+                           fileref.setAttribute("type","text/javascript")
+                           fileref.setAttribute("src", filename)
+                       }
+                       else if (filetype=="css"){ //if filename is an external CSS file
+                           var fileref=document.createElement("link")
+                           fileref.setAttribute("rel", "stylesheet")
+                           fileref.setAttribute("type", "text/css")
+                           fileref.setAttribute("href", filename)
+                       }
+                       if (typeof fileref!="undefined")
+                           document.getElementsByTagName("head")[0].appendChild(fileref)
+                   }
+
+                   var myQuizDivision = base_url + '/app/views/json/json' + division + '.js?callback=myFunction';
+
+                   loadjscssfile(myQuizDivision, "js")
+                  // loadjscssfile("myscript.js", "js") //dynamically load and add this .js file
+                   //loadjscssfile("javascript.php", "js") //dynamically load "javascript.php" as a JavaScript file
+                   //loadjscssfile("mystyle.css", "css") ////dynamically load and add this .css file
 
                 </script>
                 <script src='http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/slickquiz.js?callback=mySlickQuiz'></script>

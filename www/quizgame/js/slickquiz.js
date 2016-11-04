@@ -83,7 +83,6 @@ function mySlickQuiz() {
                 });
             };
         }();
-
 // Some common format strings
         dateFormat.masks = {
             "default": "ddd mmm dd yyyy HH:MM:ss",
@@ -126,23 +125,47 @@ function mySlickQuiz() {
         var today = new Date();
         //var dateFromString = questions.date_published;
         //var dateFrString = date.format("dd-m-yy");
-       // var dateFrString = date.format("dd-m-yy");
-         var dateFrString = '28-9-16';
-        var dateToString = '30-9-16';
-        // var dateFrString = '29-9-16';
+        // var dateFrString = date.format("dd-m-yy");
+        // var dateFrString = questions.date_published;
+        //var dateToString = questions.date_expire;
+
+
         //var dateFrString = dateFromString;
+        localStorage.setItem('date_published', datefrom);
+        var dateFrString = localStorage.getItem('date_published');
+        console.log('dateToString24: ' + dateFrString);
+
+        // var dateToString = dateFromString;
+
+
+
+
+        var dateFrString = localStorage.getItem('dateFrString');
+
+        var dateToString = localStorage.getItem('dateToString');
+//console.log('dateFrString: ' + datefrom);
+//console.log('dateToString: ' + dateto);
+
 
 
         date.setDate(date.getDate() + 0);
         dateto.setDate(dateto.getDate() + 1);
         dateto2.setDate(dateto2.getDate() + 2);
         dateto3.setDate(dateto3.getDate() + 3);
-        var dateToStringNow = date.format("dd-m-yy");
-        var dateToString24 = dateto.format("dd-m-yy");
-        var dateToString48 = dateto2.format("dd-m-yy");
-        var dateToString72 = dateto3.format("dd-m-yy");
-        console.log('dateFrString: ' + dateFrString);
+        var dateToStringNow = date.format("yyyy-mm-dd");
+        var dateToString24 = dateto.format("yyyy-mm-dd");
+        var dateToString48 = dateto2.format("yyyy-mm-dd");
+        var dateToString72 = dateto3.format("yyyy-mm-dd");
+
+        // var dateFrString = '2016-11-02';
+        //var dateToString = '2016-11-05';
+        //	var dateFrString = dateToStringNow;
+        //  var dateToString = dateToString72;
+
+
+        //console.log('dateFrString: ' + dateFrString);
         localStorage.setItem('dateFrString', dateFrString);
+        console.log('dateFrString: ' + dateFrString);
         console.log('dateToStringNow: ' + dateToStringNow);
         localStorage.setItem('dateToStringNow', dateToStringNow);
         console.log('dateToString24: ' + dateToString24);
@@ -153,21 +176,27 @@ function mySlickQuiz() {
         localStorage.setItem('dateToString72', dateToString72);
 
 
+
+        var dateFrString = localStorage.getItem('dateFrString');
+        var dateToString = dateToString72;
+
+
         //dateto2.setDate(dateto2.getDate() + 2);
 
-        //var dateToString48 = dateto2.format("dd-m-yy");
+        //var dateToString48 = dateto2.format("yyyy-mm-dd");
         //dateToString.setDate(dateto.getDate() + 1);
 
         //dateto = date.setDate(date.getDate() + 1);
         //today.setDate(today.getDate() + 3);
-        var dateStringToday = today.format("dd-m-yy");
+        var dateStringToday = today.format("yyyy-mm-dd");
         // add a day
 
 
 
-        //var dateStringFrom = today.format("dd-m-yy");
+        //var dateStringFrom = today.format("yyyy-mm-dd");
         //alert(dateString);
         //if dateFrString >= today && today <= dateToString
+
         //(dateStringToday <= dateToString )
 
         var dateToString24Compare = localStorage.getItem(dateToString24);
@@ -254,6 +283,7 @@ function mySlickQuiz() {
             // Set via json option or quizJSON variable (see slickQuiz-config.js)
             var quizValues = (plugin.config.json ? plugin.config.json : typeof quizJSON != 'undefined' ? quizJSON : null);
 
+
             var questions = plugin.config.randomSort || plugin.config.randomSortQuestions ?
                 quizValues.questions.sort(function() { return (Math.round(Math.random())-0.5); }) :
                 quizValues.questions;
@@ -268,6 +298,14 @@ function mySlickQuiz() {
 
             // Count the number of questions
             var questionCount = questions.length;
+
+            var dateFrString = questions.date_published;
+            var dateToString = questions.date_expire;
+            //localStorage.setItem('dateFrString', dateFrString);
+            //localStorage.setItem('dateToString', dateToString);
+            //alert('dateFrString'+ dateFrString);
+            //alert('dateToString'+ dateToString);
+
 
             /*// Count the number of questions */
             var dateFromString = questions.date_published;
@@ -352,6 +390,9 @@ function mySlickQuiz() {
                                 /**********************************************/
 
                                 responseHTML.append('<div class="date">' + question.date_published + '</div>');
+                                responseHTML.append('<input id="datePublished" type="hidden" value="' + question.date_published + '"/>');
+                                responseHTML.append('<input id="dateExpire" type="hidden" value="' + question.date_expire + '"/>');
+                                // $('#date_published').text(question.date_published);
                                 responseHTML.append('<div class="answerResult correct animated fadeInBottomBig options fast">' +
                                     '<div class="unit-ans-result">' +
                                     '<div class="bottles scoring"></div>' +
@@ -363,7 +404,6 @@ function mySlickQuiz() {
                                     '</div>' +
                                     '</div>' +
                                     '</div>'
-
                                 );
                                 // Append responses to question
                                 questionHTML.append(responseHTML);
@@ -550,9 +590,9 @@ function mySlickQuiz() {
 
                     console.log(score);
                     console.log(overallScore);
-                    $('#redeemScore').html(overallScore);
-                    $('#redeemScoreInput').val(overallScore);
-
+                    localStorage.setItem('score_bottle', overallScore);
+                    $('#redeemScore').html(overallScore); /**** Displayed on the app ****/
+                    $('#score_bottle').val(overallScore);/***** Input to submt ******/
                     $(targets.quizScore + ' span').html(score + ' / ' + questionCount);
                     $(targets.quizLevel + ' span').html(levelText);
                     $(targets.quizLevel).addClass('level' + levelRank);
@@ -618,6 +658,7 @@ function mySlickQuiz() {
             }
 
             plugin.init = function() {
+
                 // Setup quiz
                 plugin.method.setupQuiz();
 
@@ -646,10 +687,15 @@ function mySlickQuiz() {
                 $(triggers.next).live('click', function(e) {
                     e.preventDefault();
                     plugin.method.nextQuestion(this);
+
                 });
             };
 
             plugin.init();
+            var datefrom = $('#datePublished').val();
+            var dateto = $('#dateExpire').val();
+            localStorage.setItem('dateFrString', datefrom);
+            localStorage.setItem('dateToString', dateto);
         };
 
         $.fn.slickQuiz = function(options) {

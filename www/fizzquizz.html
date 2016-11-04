@@ -25,7 +25,7 @@
                 //$('#playQuiz').attr('disabled','');
                 var jsURL = "http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json";
                 var myDivision = localStorage.getItem('division');
-                myDivision = str.replace(/\s+/g, '');
+                var myDivision = myDivision.replace(/\s+/g, '');
                 var getJSfile = function ( src ) {
                     var jsfile = $("<script type='text/javascript' src='" + src + "'>");
                     $("head").append(jsfile);
@@ -33,7 +33,7 @@
 
 
                 getJSfile(jsURL + "/json" + myDivision + ".js?callback=myFunction");
-                alert(getJSfile);
+               // alert(getJSfile);
                 console.log(getJSfile);
 
 

@@ -219,6 +219,8 @@
                     //var score_bottle = $('#score_bottle').val(overallScore);
                     //   var attempts = 0;
                     var media_id = '102516';
+
+                    var dateFrString =  localStorage.getItem("dateFrString");
                     var user = localStorage.getItem("userlogin");
                     var user_id = localStorage.getItem("user_id");
                     var attempts = localStorage.getItem("attempts");
@@ -254,7 +256,7 @@
                 <input type="hidden" id="division" name="division"/>
                 <input type="hidden" id="user_id" name="user_id"/>
                 <input type="hidden" id="set" name="set" value=""/>
-                <input type="hidden" id="attemptsA" name="attemptsA" value=""/>
+                <input type="hidden" id="attempts" name="attempts" value=""/>
                 <input type="hidden" id="score_bottle" name="score_bottle" value=""/>
                 <script>
                     // var theScore =
@@ -287,8 +289,8 @@
 <script type="application/javascript">
     var myDivision = localStorage.getItem("user_division");
    //var myDivision = division;
-    var str = myDivision;
-    str = str.replace(/\s/g, '');
+   // var str = myDivision;
+    var str = myDivision.replace(/\s/g, '');
     console.log('My Division is:', str);
 </script>
 
@@ -324,80 +326,13 @@
     downloadJSAtOnload();
 </script>
 
-<!--  <script type="text/javascript" src="http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/jsonSmallFormat.js?callback=myFunction"></script>
-
-  if (myDivision = 'Small Format')
-
-      document.write('<scri' + 'pt type="text/javascript" src="http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/jsonSmallFormat.js?callback=myFunction"></' + 'script>');
-  else if (myDivision = 'Large Format')
-      document.write('<scri' + 'pt type="text/javascript" src="http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/jsonLargeFormat.js?callback=myFunction"></' + 'script>');
-  else if (myDivision = 'Generalist')
-      document.write('<scri' + 'pt type="text/javascript" src="http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/jsonGeneralist.js?callback=myFunction"></' + 'script>');
-  else
-      document.write('<scri' + 'pt type="text/javascript" src="http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/jsonMerchandise.js?callback=myFunction"></' + 'script>');
-
-*/
-/*
-      if (myDivision = "Small Format") {
-      <script type="text/javascript" src="http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/jsonSmallFormat.js?callback=myFunction"></script>
-          }else if (myDivision = "Large Format") {
-      <script type="text/javascript" src="http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/jsonLargeFormat.js?callback=myFunction"></script>
-          } else if (myDivision = "Generalist") {
-      <script type="text/javascript" src="http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/jsonGeneralist.js?callback=myFunction"></script>
-          } else {
-      <script type="text/javascript" src="http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/jsonMerchandise.js?callback=myFunction"></script>
-          }
-
--->
-
 
 <!-- <script src='http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/jsonSmallFormat.js?callback=myFunction'></script> -->
 <script src='http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/slickquiz.js?callback=mySlickQuiz'></script>
-<!--<script src='quizgame/js/slickQuiz-json.js'></script>
-<script src='quizgame/js/slickQuiz.js?callback=mySlickQuiz'></script>
-<script src='http://104.238.96.209/~project/db/app/views/json/slickQuiz-json.js?callback=myFunction'></script>-->
-<!--<script src='http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/slickQuiz-json-2Qs.js?callback=myFunction'></script>-->
-<!--<script src='http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/slickQuiz.js?callback=mySlickQuiz'></script>-->
-<!--<script src='quizgame/js/fizzquizz.js'></script>-->
-<!-- <script src='quizgame/js/slickQuiz-config.js'></script>
-    <script src='quizgame/js/slickQuiz.js?callback=mySlickQuiz'></script>-->
+
 <script>
     mySlickQuiz();
 
-
-    /*$.getJSON(base_url + '/index.php' + '/user_results/' + user_id, function ( result ) {
-        $.each(result, function ( i, field ) {
-            // $("#output").append("<tr><td>Username:  "+ field.username + " </td></tr><tr><td>Password: "+ field.password + "</td></tr>");
-            //  $('#userid').val(field.id);
-            $('#user_id').val(field.user_id);
-            $('#attemptsA').val(field.attempts);
-            $('#datefrom').val(field.dateFrString);
-        });
-    });*/
-
-    /*
-     $("document").ready(function(){
-     $("#sendScore").submit(function(e){
-     e.preventDefault();
-     var user_id = $("input#user_id").val();
-     var attempts = $("input#attempts").val();
-     var set = $("input#set").val();
-     var score_bottle = $("input#score_bottle").val();
-     var dataString = 'user_id='+user_id+'&attempts='+attempts+'&set='+set+'&score_bottle='+score_bottle;
-     $.ajax({
-     type: "POST",
-     url : base_url + "/index.php/user_results",
-     data : dataString,
-     success : function(data){
-     console.log(data);
-     window.location.replace("main.html");
-     }
-     },"json");
-
-     });
-     });//end of document ready function
-
-     */
 </script>
 
 

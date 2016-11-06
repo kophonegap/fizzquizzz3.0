@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="22c9e585-4f85-409c-8670-7d404e50f077" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/controllers/config.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/controllers/data.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/controllers/users.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.xml" afterPath="$PROJECT_DIR$/config.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/config.xml" afterPath="$PROJECT_DIR$/www/config.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/fizzquizz.html" afterPath="$PROJECT_DIR$/www/fizzquizz.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/user.js" afterPath="$PROJECT_DIR$/www/js/user.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/main.html" afterPath="$PROJECT_DIR$/www/main.html" />
     </list>
     <ignored path="fizzquizzz3.0.iws" />
@@ -34,11 +32,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="fizzquizz.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="fizzquizz.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/fizzquizz.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="443" column="36" selection-start-line="443" selection-start-column="36" selection-end-line="443" selection-end-column="36" />
+            <state relative-caret-position="270">
+              <caret line="221" column="0" selection-start-line="221" selection-start-column="0" selection-end-line="221" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#header#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -55,7 +53,7 @@
       <file leaf-file-name="slickquiz.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/quizgame/js/slickquiz.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="717">
+            <state relative-caret-position="10650">
               <caret line="710" column="1" selection-start-line="710" selection-start-column="1" selection-end-line="710" selection-end-column="1" />
               <folding>
                 <marker date="1478232244000" expanded="true" signature="17364:17937" placeholder="..." />
@@ -79,16 +77,37 @@
       <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
-              <caret line="756" column="91" selection-start-line="756" selection-start-column="91" selection-end-line="756" selection-end-column="91" />
+            <state relative-caret-position="1986">
+              <caret line="443" column="41" selection-start-line="443" selection-start-column="19" selection-end-line="443" selection-end-column="41" />
               <folding>
-                <marker date="1478276041000" expanded="false" signature="14983:14994" placeholder="..." />
-                <marker date="1478276041000" expanded="false" signature="15051:15095" placeholder="..." />
-                <marker date="1478276041000" expanded="false" signature="15167:15180" placeholder="..." />
-                <marker date="1478276041000" expanded="false" signature="15321:15333" placeholder="..." />
-                <marker date="1478276041000" expanded="false" signature="15716:15727" placeholder="..." />
-                <marker date="1478276041000" expanded="false" signature="16173:16187" placeholder="..." />
+                <element signature="n#style#0;n#a#0;n#li#1;n#ul#0;n#div#0;n#section#0;n#main#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#section#1;n#main#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1478433918000" expanded="true" signature="16300:16311" placeholder="..." />
+                <marker date="1478433918000" expanded="false" signature="16368:16412" placeholder="..." />
+                <marker date="1478433918000" expanded="false" signature="16484:16497" placeholder="..." />
+                <marker date="1478433918000" expanded="true" signature="16638:16650" placeholder="..." />
+                <marker date="1478433918000" expanded="false" signature="17033:17044" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="29" column="36" selection-start-line="27" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/www/config.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -96,7 +115,7 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-615">
+            <state relative-caret-position="660">
               <caret line="51" column="19" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="19" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
@@ -108,7 +127,7 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2355">
+            <state relative-caret-position="573">
               <caret line="158" column="22" selection-start-line="158" selection-start-column="22" selection-end-line="158" selection-end-column="22" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#header#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -147,7 +166,7 @@
       <file leaf-file-name="user.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/user.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
+            <state relative-caret-position="315">
               <caret line="21" column="47" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
               <folding />
             </state>
@@ -157,7 +176,7 @@
       <file leaf-file-name="myApp.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/myApp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
+            <state relative-caret-position="2145">
               <caret line="143" column="4" selection-start-line="143" selection-start-column="2" selection-end-line="143" selection-end-column="4" />
               <folding />
             </state>
@@ -220,8 +239,6 @@
         <option value="$PROJECT_DIR$/www/css/media.css" />
         <option value="$PROJECT_DIR$/platforms/browser/config.xml" />
         <option value="$PROJECT_DIR$/platforms/browser/www/config.xml" />
-        <option value="$PROJECT_DIR$/config.xml" />
-        <option value="$PROJECT_DIR$/www/config.xml" />
         <option value="$PROJECT_DIR$/www/index.html" />
         <option value="$PROJECT_DIR$/www/js/all.js" />
         <option value="$PROJECT_DIR$/www/test.html" />
@@ -232,8 +249,10 @@
         <option value="$PROJECT_DIR$/www/quizgame/js/slickQuiz-json.js" />
         <option value="$PROJECT_DIR$/www/fizzquizz.BAK2html" />
         <option value="$PROJECT_DIR$/www/js/user.js" />
-        <option value="$PROJECT_DIR$/www/main.html" />
         <option value="$PROJECT_DIR$/www/fizzquizz.html" />
+        <option value="$PROJECT_DIR$/www/main.html" />
+        <option value="$PROJECT_DIR$/config.xml" />
+        <option value="$PROJECT_DIR$/www/config.xml" />
       </list>
     </option>
   </component>
@@ -272,8 +291,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -316,52 +333,14 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="quizgame" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fizzquizzz3.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fizzquizzz3.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fizzquizzz3.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fizzquizzz3.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
+              <option name="myItemId" value="plugins" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -564,7 +543,8 @@
       <workItem from="1478060730656" duration="15000" />
       <workItem from="1478060757843" duration="8158000" />
       <workItem from="1478116109954" duration="905000" />
-      <workItem from="1478161342338" duration="43445000" />
+      <workItem from="1478161342338" duration="44368000" />
+      <workItem from="1478430002311" duration="2346000" />
     </task>
     <task id="LOCAL-00001" summary="ok">
       <created>1473540519297</created>
@@ -598,7 +578,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="350964000" />
+    <option name="totallyTimeSpent" value="354233000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="724" extended-state="6" />
@@ -607,7 +587,6 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.253125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.08854962" sideWeight="0.503125" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977098" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -620,6 +599,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -661,20 +641,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/www/quizgame/js/slickQuiz-data.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/quizgame/js/slickQuiz-datajs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/quizgame/js/slickQuizData.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -953,9 +919,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -971,7 +934,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="597">
           <caret line="130" column="5" selection-start-line="68" selection-start-column="0" selection-end-line="130" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -979,7 +941,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="30" column="11" selection-start-line="0" selection-start-column="0" selection-end-line="83" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -987,7 +948,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -995,7 +955,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="106" column="17" selection-start-line="0" selection-start-column="0" selection-end-line="390" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1003,7 +962,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1126">
           <caret line="364" column="74" selection-start-line="364" selection-start-column="12" selection-end-line="364" selection-end-column="74" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1021,9 +979,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2011">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1031,21 +986,35 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
           <caret line="119" column="41" selection-start-line="109" selection-start-column="11" selection-end-line="119" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/myApp.js">
+    <entry file="file://$PROJECT_DIR$/www/controllers/config.js" />
+    <entry file="file://$PROJECT_DIR$/www/controllers/data.js" />
+    <entry file="file://$PROJECT_DIR$/www/controllers/users.js" />
+    <entry file="file://$PROJECT_DIR$/www/quizgame/js/slickquiz.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="143" column="4" selection-start-line="143" selection-start-column="2" selection-end-line="143" selection-end-column="4" />
+        <state relative-caret-position="10650">
+          <caret line="710" column="1" selection-start-line="710" selection-start-column="1" selection-end-line="710" selection-end-column="1" />
+          <folding>
+            <marker date="1478232244000" expanded="true" signature="17364:17937" placeholder="..." />
+            <marker date="1478232244000" expanded="true" signature="17434:17890" placeholder="..." />
+            <marker date="1478232244000" expanded="true" signature="17582:17843" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/nonet.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-615">
+        <state relative-caret-position="660">
           <caret line="51" column="19" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="19" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
@@ -1053,9 +1022,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="47" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/myApp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2145">
+          <caret line="143" column="4" selection-start-line="143" selection-start-column="2" selection-end-line="143" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2355">
+        <state relative-caret-position="573">
           <caret line="158" column="22" selection-start-line="158" selection-start-column="22" selection-end-line="158" selection-end-column="22" />
           <folding>
             <element signature="n#style#0;n#div#0;n#header#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1090,77 +1075,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/quizgame/js/slickquiz.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="717">
-          <caret line="710" column="1" selection-start-line="710" selection-start-column="1" selection-end-line="710" selection-end-column="1" />
-          <folding>
-            <marker date="1478232244000" expanded="true" signature="17364:17937" placeholder="..." />
-            <marker date="1478232244000" expanded="true" signature="17434:17890" placeholder="..." />
-            <marker date="1478232244000" expanded="true" signature="17582:17843" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/nonet.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/controllers/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/controllers/data.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/controllers/users.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2235">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="21" column="47" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="756" column="91" selection-start-line="756" selection-start-column="91" selection-end-line="756" selection-end-column="91" />
-          <folding>
-            <marker date="1478276041000" expanded="false" signature="14983:14994" placeholder="..." />
-            <marker date="1478276041000" expanded="false" signature="15051:15095" placeholder="..." />
-            <marker date="1478276041000" expanded="false" signature="15167:15180" placeholder="..." />
-            <marker date="1478276041000" expanded="false" signature="15321:15333" placeholder="..." />
-            <marker date="1478276041000" expanded="false" signature="15716:15727" placeholder="..." />
-            <marker date="1478276041000" expanded="false" signature="16173:16187" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/fizzquizz.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="443" column="36" selection-start-line="443" selection-start-column="36" selection-end-line="443" selection-end-column="36" />
+        <state relative-caret-position="270">
+          <caret line="221" column="0" selection-start-line="221" selection-start-column="0" selection-end-line="221" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#header#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1170,6 +1088,38 @@
             <element signature="n#style#0;n#a#0;n#div#2;n#div#0;n#main#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#main#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1986">
+          <caret line="443" column="41" selection-start-line="443" selection-start-column="19" selection-end-line="443" selection-end-column="41" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#li#1;n#ul#0;n#div#0;n#section#0;n#main#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#section#1;n#main#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1478433918000" expanded="true" signature="16300:16311" placeholder="..." />
+            <marker date="1478433918000" expanded="false" signature="16368:16412" placeholder="..." />
+            <marker date="1478433918000" expanded="false" signature="16484:16497" placeholder="..." />
+            <marker date="1478433918000" expanded="true" signature="16638:16650" placeholder="..." />
+            <marker date="1478433918000" expanded="false" signature="17033:17044" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="36" selection-start-line="27" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>

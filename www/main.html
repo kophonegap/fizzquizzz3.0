@@ -14,6 +14,20 @@
         // cordova is ready
         //
         function onDeviceReady() {
+            var myDivision = localStorage.getItem("user_division");
+            //var myDivision = division;
+            // var str = myDivision;
+            var str = myDivision.replace(/\s/g, '');
+            console.log('My Division is:', str);
+
+
+
+
+            $('#getStarted').on('click', function () {
+                console.log("fizzquizz"+ str +".html");
+                window.location.replace("fizzquizz"+ str +".html");
+
+            });
 
 
        /* function downloadJSAtOnload() {
@@ -109,21 +123,7 @@
 
     <script>
 
-        var myDivision = localStorage.getItem("user_division");
-        //var myDivision = division;
-        // var str = myDivision;
-        var str = myDivision.replace(/\s/g, '');
-        console.log('My Division is:', str);
 
-
-
-
-        $('#getStarted').on('click', function () {
-            console.log("fizzquizz"+ str +".html");
-            window.location.replace("fizzquizz"+ str +".html");
-
-        });
-        
         noNet(base_url +'/json.php',
                 function(data) {
                     for(i = 0; i < data.length; i++) {

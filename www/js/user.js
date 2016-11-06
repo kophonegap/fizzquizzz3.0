@@ -69,6 +69,7 @@ $(function () {
             console.log(field.avatar);
             localStorage.setItem('user_id', field.id);
             localStorage.setItem('user_division', field.division);
+            localStorage.setItem('user_area', field.area);
            // console.log(field.lang);
 
         });

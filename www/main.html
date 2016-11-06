@@ -14,33 +14,31 @@
         //
         function onDeviceReady() {
 
-
-
-
-
-
-
-
-
-
-
         var myDivision = localStorage.getItem("user_division");
         //var myDivision = division;
         // var str = myDivision;
         var str = myDivision.replace(/\s/g, '');
         console.log('My Division is:', str);
 
-        function downloadJSAtOnload() {
-            var element = document.createElement("script");
+
+
+
+        $('#getStarted').on('click', function () {
+            console.log("fizzquizz"+ str +".html");
+            window.location.replace("fizzquizz"+ str +".html");
+
+        });
+       /* function downloadJSAtOnload() {
+            var element = document.createElement("script");*/
             /*************** CUSTOM SCRIPT ******************/
-            element.src = 'http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/json' + str +'.js' + '?callback=myFunction';
+           // element.src = 'http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/json' + str +'.js' + '?callback=myFunction';
 
 
 
             /*************** CUSTOM SCRIPT ******************/
 
             // element.src = "http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/jsonSmallFormat.js?callback=myFunction";
-            document.body.appendChild(element);
+           /* document.body.appendChild(element);
         }
         if (window.addEventListener)
             window.addEventListener("load", downloadJSAtOnload, false);
@@ -49,7 +47,7 @@
         else window.onload = downloadJSAtOnload;
 
         downloadJSAtOnload();
-
+*/
 
 
 
@@ -296,7 +294,7 @@
                     </li>
                     <li>
 
-                        <a href="fizzquizz.html" style="min-width: 100%;"
+                        <a href="#" id="getStarted" style="min-width: 100%;"
                            class="btn-text button btn btn-lg mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Get
                             Started</a>
 

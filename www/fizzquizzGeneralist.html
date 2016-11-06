@@ -220,30 +220,43 @@
                     //   var attempts = 0;
                     var media_id = '102516';
 
+
+
+
+
                     var dateFrString =  localStorage.getItem("dateFrString");
                     var user = localStorage.getItem("userlogin");
                     var user_id = localStorage.getItem("user_id");
                     var attempts = localStorage.getItem("attempts");
-                    var set = localStorage.getItem("set");
+
                     var division = localStorage.getItem('user_division');
 
 
+                    var setr= division;
+                    firstChar  = setr.charAt(0);
+
+                    var setdate = dateFrString;
+                    var setnames = firstChar + setdate;
+
+
+
                     $("#playQuiz").on('click', function () {
-                        var set = 'S1121016';
+                        //var set = 'S1121016';
 
                          attempts++;
                         //attempts = localStorage.getItem("attempts");
                         localStorage.setItem("attempts", attempts);
                         localStorage.setItem("media_id", media_id);
                         //   localStorage.setItem("attempts", attempts);
-                        localStorage.setItem("set", set);
+                        localStorage.setItem("datefrom", dateFrString);
+                        localStorage.setItem("setnames", setnames);
 
                         $("#division").val(division);
                         $("#user_id").val(user_id);
 
                         $("#attempts").val(attempts);
 
-                        $("#set").val(set);
+                        $("#setnames").val(setnames);
 
 
                         //localStorage.setItem("score_bottle", score_bottle);
@@ -255,7 +268,8 @@
                 </script>
                 <input type="hidden" id="division" name="division"/>
                 <input type="hidden" id="user_id" name="user_id"/>
-                <input type="hidden" id="set" name="set" value=""/>
+                <input type="hidden" id="setnames" name="setnames" value=""/>
+                <input type="hidden" id="datefrom" name="datefrom" value=""/>
                 <input type="hidden" id="attempts" name="attempts" value=""/>
                 <input type="hidden" id="score_bottle" name="score_bottle" value=""/>
                 <script>

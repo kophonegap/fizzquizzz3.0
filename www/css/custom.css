@@ -913,3 +913,20 @@ div#capturePhoto {
     padding: 20px;
     z-index: 20;
 }
+
+.btn_usephoto {
+    height: 50px;
+}
+
+input#upload_input {
+    visibility: hidden;
+}
+
+
+.box {
+    margin-top: 20%;
+}
+
+input.btn_usephoto.btn-info.btn-block {
+    margin-top:50px;
+}

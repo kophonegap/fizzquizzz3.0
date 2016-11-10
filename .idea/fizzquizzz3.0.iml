@@ -7,6 +7,7 @@
       <excludeFolder url="file://$MODULE_DIR$/plugins/cordova-plugin-inappbrowser/platforms" />
       <excludeFolder url="file://$MODULE_DIR$/temp" />
       <excludeFolder url="file://$MODULE_DIR$/tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/www/PhonegapFileUpload-master/PhonegapFileUpload/platforms" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

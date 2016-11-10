@@ -216,7 +216,7 @@ function imageProfile() {
                 console.log('Upload success!');
                 alert('Process complete');
                 //$('#capturePhoto').hide();
-                //window.location.reload();
+                window.location.reload();
 
 
             }
@@ -232,6 +232,10 @@ function imageProfile() {
 var myDivision = localStorage.getItem("user_division");
 var str = myDivision.replace(/\s/g, '');
 console.log('My Division is:', str);
+
+
+
+
 
 /*
 $('#getStarted').on('click', function () {

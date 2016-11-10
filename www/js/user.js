@@ -76,7 +76,7 @@ $(function () {
             console.log("fizzquizz" + str + ".html");
             var fizzquizz = "fizzquizz" + str + ".html";
             localStorage.setItem('fizzquizz', fizzquizz);
-          
+
 
         });
     });
@@ -173,7 +173,7 @@ function showImageLoader() {
 
 function imageProfile() {
 
-    
+
 
     $(document).ready(function () {
 
@@ -196,26 +196,27 @@ function imageProfile() {
 
     function showResponse( responseText, statusText, xhr, $form ) {
 
-        $('#loader-mini').show();
+       // $('#loader-mini').show();
         console.log(statusText);
         console.log(responseText);
         if (statusText == 'success') {
            // $('#page_loader_cb').fadeOut(100);
 
-           $('.upload_image').val('');
+           $('#upload_input').val('');
 
           //  $('#upload_input').val('');
             console.log('upload complete');
-            alert('upload complete');
-            $('#loader-mini').hide();
+
+         //   $('#loader-mini').hide();
             /*$('#smallImage').val('');
             $('#largeImage').val('');*/
             if (responseText == '0') {
                 console.log('Error or file not supported! required format :png,gif,jpeg sie: less than 3mb');
             } else {
                 console.log('Upload success!');
-                $('#capturePhoto').hide();
-                window.location.reload();
+                alert('Process complete');
+                //$('#capturePhoto').hide();
+                //window.location.reload();
 
 
             }

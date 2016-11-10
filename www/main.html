@@ -1,7 +1,7 @@
 <html>
 <head>
 
-
+    <script src='quizgame/js/jquery-1.7.min.js'></script>
     <script src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8">
 
@@ -16,7 +16,6 @@
         function onDeviceReady() {
 
 
-
             noNet(base_url + '/json.php',
                     function ( data ) {
                         for (i = 0; i < data.length; i++) {
@@ -27,14 +26,83 @@
             );
 
 
+            var myDivision = localStorage.getItem("user_division");
+            var str = myDivision.replace(/\s/g, '');
+            console.log('My Division is:', str);
+
+
+            var quizlink = localStorage.getItem('fizzquizz');
+
+
+            $('#getStarted2').on('click', function () {
+                console.log("fizzquizz" + str + ".html");
+                console.log("quizlink", quizlink);
+                window.location.replace(quizlink);
+                console.log(quizlink);
+
+            });
+
+
+            function imageProfile() {
+
+
+                $(document).ready(function () {
+
+                    $('#user_iddddddd').val(localStorage.getItem('user_id'));
+
+
+                    var options = {
+                        // target: '#upload_loading',
+                        beforeSubmit: showRequest,
+                        // correctOrientation: true,
+                        success: showResponse
+                    };
+                    $('#myForms').ajaxForm(options);
+                });
+
+                function showRequest( formData, jqForm, options ) {
+                    var queryString = $.param(formData);
+                    console.log(formData);
+                }
+
+                function showResponse( responseText, statusText, xhr, $form ) {
+
+                    // $('#loader-mini').show();
+                    console.log(statusText);
+                    console.log(responseText);
+                    if (statusText == 'success') {
+                        // $('#page_loader_cb').fadeOut(100);
+
+                        $('#upload_input').val('');
+
+                        //  $('#upload_input').val('');
+                        console.log('upload complete');
+
+                        //   $('#loader-mini').hide();
+                        /*$('#smallImage').val('');
+                         $('#largeImage').val('');*/
+                        if (responseText == '0') {
+                            console.log('Error or file not supported! required format :png,gif,jpeg sie: less than 3mb');
+                        } else {
+                            console.log('Upload success!');
+                            alert('Process complete');
+
+                            window.location.reload();
+
+                            btn_usephoto
+                        }
+                    }
+                }
+
+            }
+
+
         }
 
 
-
-
-
-
-
+        function myFunction() {
+            $('#capturePhoto').hide();
+        }
 
 
     </script>
@@ -85,9 +153,9 @@
 
     <script src="js/jquery-3.1.0.min.js"></script> -->
 
-    <!-- <script src="js/app.js"></script>-->
+    <!-- <script src="js/app.js"></script>
 
-    <script src="js/image.js"></script>
+    <script src="js/image.js"></script>-->
     <script src="js/all.js"></script>
     <script src="js/myApp.js"></script>
     <script src="js/user.js"></script>
@@ -150,7 +218,7 @@
 
                     Hi, <span id="user_firstname" class="truncate"></span></li>
                 <li disabled class="mdl-menu__item">Notifications</li>
-                <li class="mdl-menu__item"><a href="image.html">Photo</a></li>
+                <!-- <li class="mdl-menu__item"><a href="image.html">Photo</a></li>-->
                 <li onclick="log_out();" class="mdl-menu__item">Logout</li>
             </ul>
 
@@ -280,9 +348,9 @@
                 <div id="profileContent" class="profile-content">
 
 
-                <a href="#" onclick="showImageLoader();">
-                    <div id="avatar"  class="avatar" style="background-image: url('img/daenerys.png');"></div>
-                </a>
+                    <a href="#" onclick="showImageLoader();">
+                        <div id="avatar" class="avatar" style="background-image: url('img/daenerys.png');"></div>
+                    </a>
                     <h3><span id="userfirstname"></span> <span id="userlastname"></span></h3>
                     <h4><span id="userusername"></span></h4>
                     <h5><span id="useremail"></span></h5>
@@ -290,7 +358,8 @@
 
                     <div id="capturePhoto" style="display: none;">
                         <script>imageProfile();</script>
-                        <form id="myForms" action="http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/index.php/uploadpicc"
+                        <form id="myForms"
+                              action="http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/index.php/uploadpicc"
                               method="post" enctype="multipart/form-data">
                             <input type="hidden" name="user_id_upload" id="user_iddddddd"/>
                             <div class="mdl-textfield mdl-js-textfield">
@@ -298,7 +367,8 @@
                                        id="upload_input" value=""/>
                             </div>
 
-                            <input type="submit" value="Use Photo" class="btn_usephoto btn-info btn-block"/>
+                            <input onclick="setTimeout(myFunction, 3000)" type="submit" value="Use Photo"
+                                   class="btn_usephoto btn-info btn-block"/>
 
 
                         </form>
@@ -341,10 +411,24 @@
                         </tbody>
                     </table>
 
-         </div>
+                </div>
 
 
                 <div id="editmyProfile" style="display: none;">
+                    <script>imageProfile();</script>
+                    <form id="myForms"
+                          action="http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/index.php/uploadpicc"
+                          method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="user_id_upload" id="user_iddddddd"/>
+                        <div class="mdl-textfield mdl-js-textfield">
+                            <input type="file" name="upload_file[]" class="form-control" class="upload_image"
+                                   id="upload_input" value=""/>
+                        </div>
+
+                        <input type="submit" value="Use Photo" class="btn_usephoto btn-info btn-block"/>
+
+
+                    </form>
 
 
                     <div class="mdl-textfield mdl-js-textfield">
@@ -414,49 +498,49 @@
                             </div> -->
 
 
-                       <!-- <table class="responsive-table hidden" style="display: none;">
-                            <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>User Name</th>
-                                <th>Password</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Email</th>
-                                <th>Privilege</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
+                            <!-- <table class="responsive-table hidden" style="display: none;">
+                                 <thead>
+                                 <tr>
+                                     <th>#</th>
+                                     <th>User Name</th>
+                                     <th>Password</th>
+                                     <th>First Name</th>
+                                     <th>Last Name</th>
+                                     <th>Email</th>
+                                     <th>Privilege</th>
+                                 </tr>
+                                 </thead>
+                                 <tbody>
+                                 <tr>
 
 
-                                <td>
-                                    <div id="user_id"></div>
-                                </td>
-                                <td>
-                                    <div id="user_username"></div>
-                                </td>
-                                <td>
-                                    <div id="user_password"></div>
-                                </td>
-                                <td>
-                                    <div id="user_firstname"></div>
-                                </td>
-                                <td>
-                                    <div id="user_lastname"></div>
-                                </td>
-                                <td>
-                                    <div id="user_email"></div>
-                                </td>
-                                <td>
-                                    <div id="user_privilege"></div>
-                                </td>
+                                     <td>
+                                         <div id="user_id"></div>
+                                     </td>
+                                     <td>
+                                         <div id="user_username"></div>
+                                     </td>
+                                     <td>
+                                         <div id="user_password"></div>
+                                     </td>
+                                     <td>
+                                         <div id="user_firstname"></div>
+                                     </td>
+                                     <td>
+                                         <div id="user_lastname"></div>
+                                     </td>
+                                     <td>
+                                         <div id="user_email"></div>
+                                     </td>
+                                     <td>
+                                         <div id="user_privilege"></div>
+                                     </td>
 
-                            </tr>
+                                 </tr>
 
 
-                            </tbody>
-                        </table>-->
+                                 </tbody>
+                             </table>-->
 
 
                             <!--    <div class="mdl-textfield mdl-js-textfield">
@@ -740,19 +824,7 @@
     </main>
 </div>
 
-<script src='quizgame/js/jquery-1.7.min.js'></script>
-<script>
 
-    var quizlink = localStorage.getItem('fizzquizz');
-
-
-    $('#getStarted2').on('click', function () {
-        console.log("fizzquizz" + str + ".html");
-        window.location.replace(quizlink);
-        console.log(quizlink);
-
-    });
-</script>
 <!--
 <script>
 
@@ -789,9 +861,6 @@
 
 </script>
 -->
-
-
-
 
 
 </body>

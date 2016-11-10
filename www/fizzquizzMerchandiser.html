@@ -232,6 +232,7 @@
                     var area = localStorage.getItem('user_area');
                     var division = localStorage.getItem('user_division');
                     var divisions = division;
+                    var aunit = localStorage.getItem('user_aunit');
 
 
                     var setr= division;
@@ -252,11 +253,13 @@
                         localStorage.setItem("division", division);
                         localStorage.setItem("datefrom", datefrom);
                         localStorage.setItem("divisions", divisions);
+                        localStorage.setItem("aunit", aunit);
                         //   localStorage.setItem("attempts", attempts);
 
                         localStorage.setItem("datefrom", datefrom);
                         localStorage.setItem("setnames", setnames);
                         $("#area").val(area);
+                        $("#aunit").val(aunit);
                         $("#datefrom").val(datefrom);
                         $("#divisions").val(divisions);
                         $("#user_id").val(user_id);
@@ -276,6 +279,7 @@
 
                 <input type="hidden" id="divisions" name="divisions" value=""/>
                 <input type="hidden" id="area" name="area" value=""/>
+                <input type="hidden" id="aunit" name="aunit" value=""/>
                 <input type="hidden" id="user_id" name="user_id" value=""/>
                 <input type="hidden" id="setnames" name="setnames" value=""/>
                 <input type="hidden" id="datefrom" name="datefrom" value=""/>
@@ -297,7 +301,7 @@
             <!-- </div>-->
 
             <div id='endQuiBtn'>
-                <button type="submit" onclick="post_score()" id='sendScore' class='button btn btn-lg'>Submit</button>
+                <button type="submit" onclick="post_score_new()" id='sendScore' class='button btn btn-lg'>Submit</button>
             </div>
         </div>
 
@@ -321,7 +325,7 @@
 
 
 
- <script src='http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/jsonMerchandiser.js?callback=myFunction'></script>
+<script src='http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/jsonMerchandiser.js?callback=myFunction'></script>
 <script src='http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/slickquiz.js?callback=mySlickQuiz'></script>
 
 <script>
@@ -334,7 +338,14 @@
 
 
 <script>
-    function post_score() {
+
+
+
+
+
+    /************ NEW ***************/
+
+    function post_score_new() {
 
         //  var attempts = localstorage.getitem("attempts");
 
@@ -345,12 +356,13 @@
         var attempts = $('#attempts').val();
         var divisions = $('#divisions').val();
         var area = $('#area').val();
+        var aunit = $('#aunit').val();
         console.log('Attempts', attempts);
         // var user_email = $('#email').val();
         //alert(attempts);
 
 
-        $.get(base_url + '/index.php' + '/user_results/update/' + user_id + '/' + datefromDynamic + '/' + area + '/'  + divisions + '/' +  score_bottle, function ( data ) {
+        $.get(base_url + '/index.php' + '/user_results_new/update/' + user_id + '/' + datefromDynamic + '/' + area + '/'  + divisions + '/' + aunit + '/' +  score_bottle, function ( data ) {
 
 
             if (data == 0) {
@@ -359,37 +371,23 @@
             } else if (data == 1) {
                 attempts = 1;
                 localStorage.setItem("attempts", attempts);
-                //  alert('score recorded!');
+                  alert('score recorded!');
                 console.log('score recorded');
                 window.location.replace('main.html');
 
             }
-            // });
-            /* $.get(base_url + '/index.php' + '/user_results/add/'+ user_id +'/'+ division +'/'+setnames+'/'+score_bottle, function( data ) {
-             //$.post('http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/index.php/update/user', {username: username, password: password, fname: fname})
 
-             if (data == 0) {
-             navigator.notification.alert('uh oh, try again.');
-             // $('#update_0').show();
-             } else if (data == 1) {
-             // navigator.notification.alert('score saved');
-             window.location.replace('main.html');
-
-             }
-             });*/
-
-            //  }
             else {
 
 
-                $.get(base_url + '/index.php' + '/user_results/update/' + user_id + '/' + datefromDynamic + '/' + area + '/' + divisions + '/'  + score_bottle, function ( data ) {
+                $.get(base_url + '/index.php' + '/user_results_new/update/' + user_id + '/' + datefromDynamic + '/' + area + '/' + divisions + '/' + aunit + '/'  + score_bottle, function ( data ) {
                     //$.post('http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/index.php/update/user', {username: username, password: password, fname: fname})
 
                     if (data == 0) {
                         //alert('uh oh, try again.');
                         // $('#update_0').show();
                     } else if (data == 1) {
-                        //alert('score updated');
+                        alert('score updated');
                         attempts++;
                         localStorage.setItem("attempts", attempts);
                         console.log('score updated');
@@ -403,14 +401,6 @@
 
         });
     }
-
-    /* console.log('---------');
-     $.each( quizJSON, function( quizJSONs ) {
-     jsonStr = JSON.stringify(quizJSON.questions.date_published),
-     console.log(jsonStr);
-     });*/
-
-
 </script>
 <!--
 <script>

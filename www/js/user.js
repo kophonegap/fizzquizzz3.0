@@ -50,6 +50,7 @@ $(function () {
             $('#user_username').text(field.username);
             $('#user_password').text(field.password);
             $('#user_division').text(field.division);
+            $('#user_aunit').text(field.aunit);
             $('#user_firstname').text(field.fname);
             $('#user_lastname').text(field.lname);
             $('#user_email').text(field.email);
@@ -70,7 +71,12 @@ $(function () {
             localStorage.setItem('user_id', field.id);
             localStorage.setItem('user_division', field.division);
             localStorage.setItem('user_area', field.area);
+            localStorage.setItem('user_aunit', field.aunit);
            // console.log(field.lang);
+            console.log("fizzquizz" + str + ".html");
+            var fizzquizz = "fizzquizz" + str + ".html";
+            localStorage.setItem('fizzquizz', fizzquizz);
+          
 
         });
     });
@@ -82,6 +88,7 @@ function update_cancel() {
 }
 
 function update_user() {
+    $('#loader-mini').show();
     // var id = $('#user_id').val();
     var username = $('#username').val();
     var password = $('#password').val();
@@ -100,6 +107,8 @@ function update_user() {
         lname: lname,
         user_email: user_email
     })
+
+
     // $.post(base_url + '/update/user', {username: username, password: password})
         .done(function ( data ) {
             if (data == 0) {
@@ -107,6 +116,7 @@ function update_user() {
 
             } else if (data == 1) {
                 $('#update_1').show();
+
                 $('.profile-content').show();
                 $('#editmyProfile').hide();
                 //$('#user_id').text(id);
@@ -136,6 +146,8 @@ function update_user() {
                  $('#user_privilege').text(field.privilege);
                  */
                 //window.location.href = "user.html";
+               // $('#loader-mini').hide();
+                window.location.reload();
             }
         });
 
@@ -151,17 +163,27 @@ function edittheProfile() {
 }
 
 
+function showImageLoader() {
+    $('#capturePhoto').show();
+}
+
+
 
 
 
 function imageProfile() {
 
+    
+
     $(document).ready(function () {
+
         $('#user_iddddddd').val(localStorage.getItem('user_id'));
 
+
         var options = {
-            //target: '#upload_loading',
+           // target: '#upload_loading',
             beforeSubmit: showRequest,
+           // correctOrientation: true,
             success: showResponse
         };
         $('#myForms').ajaxForm(options);
@@ -173,22 +195,50 @@ function imageProfile() {
     }
 
     function showResponse( responseText, statusText, xhr, $form ) {
+
+        $('#loader-mini').show();
         console.log(statusText);
         console.log(responseText);
         if (statusText == 'success') {
-            //$('#page_loader_cb').fadeOut(100);
-            $('#upload_input').val('');
+           // $('#page_loader_cb').fadeOut(100);
+
+           $('.upload_image').val('');
+
+          //  $('#upload_input').val('');
             console.log('upload complete');
+            alert('upload complete');
+            $('#loader-mini').hide();
+            /*$('#smallImage').val('');
+            $('#largeImage').val('');*/
             if (responseText == '0') {
                 console.log('Error or file not supported! required format :png,gif,jpeg sie: less than 3mb');
             } else {
                 console.log('Upload success!');
+                $('#capturePhoto').hide();
+                window.location.reload();
+
 
             }
         }
     }
 
 }
+
+
+
+
+
+var myDivision = localStorage.getItem("user_division");
+var str = myDivision.replace(/\s/g, '');
+console.log('My Division is:', str);
+
+/*
+$('#getStarted').on('click', function () {
+    console.log("fizzquizz" + str + ".html");
+    window.location.replace("fizzquizz" + str + ".html");
+
+});
+*/
 
 // bind 'myForm' and provide a simple callback function
 

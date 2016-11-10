@@ -14,46 +14,27 @@
         // cordova is ready
         //
         function onDeviceReady() {
-            var myDivision = localStorage.getItem("user_division");
-            //var myDivision = division;
-            // var str = myDivision;
-            var str = myDivision.replace(/\s/g, '');
-            console.log('My Division is:', str);
 
 
 
-
-            $('#getStarted').on('click', function () {
-                console.log("fizzquizz"+ str +".html");
-                window.location.replace("fizzquizz"+ str +".html");
-
-            });
-
-
-       /* function downloadJSAtOnload() {
-            var element = document.createElement("script");*/
-            /*************** CUSTOM SCRIPT ******************/
-           // element.src = 'http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/json' + str +'.js' + '?callback=myFunction';
-
-
-
-            /*************** CUSTOM SCRIPT ******************/
-
-            // element.src = "http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/jsonSmallFormat.js?callback=myFunction";
-           /* document.body.appendChild(element);
-        }
-        if (window.addEventListener)
-            window.addEventListener("load", downloadJSAtOnload, false);
-        else if (window.attachEvent)
-            window.attachEvent("onload", downloadJSAtOnload);
-        else window.onload = downloadJSAtOnload;
-
-        downloadJSAtOnload();
-*/
-
+            noNet(base_url + '/json.php',
+                    function ( data ) {
+                        for (i = 0; i < data.length; i++) {
+                            //document.getElementById("result1").innerHTML += '<li> ' + data[i]['name'] + '</li>';
+                            console.log(data[i]['name']);
+                        }
+                    }
+            );
 
 
         }
+
+
+
+
+
+
+
 
 
     </script>
@@ -81,8 +62,8 @@
     <style>
         /* boooo opera */
         -o-transition:
-
         rotate
+
         (
         3600
         deg
@@ -105,14 +86,16 @@
     <script src="js/jquery-3.1.0.min.js"></script> -->
 
     <!-- <script src="js/app.js"></script>-->
+
+    <script src="js/image.js"></script>
     <script src="js/all.js"></script>
     <script src="js/myApp.js"></script>
     <script src="js/user.js"></script>
 
-<!--
-    <script charset="utf-8" src="controllers/config.js"></script>
-    <script charset="utf-8" src="controllers/users.js"></script>
--->
+    <!--
+        <script charset="utf-8" src="controllers/config.js"></script>
+        <script charset="utf-8" src="controllers/users.js"></script>
+    -->
     <!-- <script charset="utf-8" src="http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/admins/controllers/users.js?callback=tableUsers"></script>-->
     <script charset="utf-8" src="https://cdn.datatables.net/1.10.0/js/jquery.dataTables.js"></script>
     <script charset="utf-8" src="https://cdn.jsdelivr.net/jquery.validation/1.13.1/jquery.validate.min.js"></script>
@@ -121,50 +104,15 @@
     <script src='http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/app/views/json/slickQuiz.js?callback=mySlickQuiz'></script>-->
     <script src="http://malsup.github.com/jquery.form.js"></script>
 
-    <script>
-
-
-        noNet(base_url +'/json.php',
-                function(data) {
-                    for(i = 0; i < data.length; i++) {
-                        //document.getElementById("result1").innerHTML += '<li> ' + data[i]['name'] + '</li>';
-                        console.log(data[i]['name']);
-                    }
-                }
-        );
-
-
-        // wait for the DOM to be loaded
-        /* $(document).ready(function() {
-
-
-             $.each( quizJSON, function( quizJSONs ) {
-             jsonStr = JSON.stringify(quizJSON);
-            // console.log(jsonStr);
-
-                 console.info("CONSOLE LOG : ")
-                 console.log(jsonStr);
-                 console.info("CONSOLE DIR : ");
-                 console.dir(jsonStr);
-
-                 //quizJSON = console.dir(jsonStr);
-                 //localStorage.setItem('quizJSON', jsonStr);
-
-                 console.log('quizJSON', quizJSON);
-           // var quizJSON =  localStorage.getItem('jsonStr');
-            //console.log(quizJSON);
-             });
-            // localStorage.setItem('dateFrString', date_published);
-            //localStorage.setItem('dateToString', date_expire);
-           //var dateFrString =  localStorage.getItem('dateFrString');
-            //var dateToString =  localStorage.getItem('dateToString');
-
-        });*/
-    </script>
 
 </head>
 <body onload="onLoad()">
 <div id="loader" style="display: none;">
+    <div class="mdl-spinner mdl-js-spinner is-active"></div>
+</div>
+
+
+<div id="loader-mini" style="display: none;">
     <div class="mdl-spinner mdl-js-spinner is-active"></div>
 </div>
 
@@ -202,6 +150,7 @@
 
                     Hi, <span id="user_firstname" class="truncate"></span></li>
                 <li disabled class="mdl-menu__item">Notifications</li>
+                <li class="mdl-menu__item"><a href="image.html">Photo</a></li>
                 <li onclick="log_out();" class="mdl-menu__item">Logout</li>
             </ul>
 
@@ -298,7 +247,7 @@
                     </li>
                     <li>
 
-                        <a href="#" id="getStarted" style="min-width: 100%;"
+                        <a href="#" id="getStarted2" style="min-width: 100%; z-index: 100"
                            class="btn-text button btn btn-lg mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Get
                             Started</a>
 
@@ -331,11 +280,30 @@
                 <div id="profileContent" class="profile-content">
 
 
-
-                    <div id="avatar" class="avatar" style="background-image: url('img/daenerys.png');"></div>
+                <a href="#" onclick="showImageLoader();">
+                    <div id="avatar"  class="avatar" style="background-image: url('img/daenerys.png');"></div>
+                </a>
                     <h3><span id="userfirstname"></span> <span id="userlastname"></span></h3>
                     <h4><span id="userusername"></span></h4>
                     <h5><span id="useremail"></span></h5>
+
+
+                    <div id="capturePhoto" style="display: none;">
+                        <script>imageProfile();</script>
+                        <form id="myForms" action="http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/index.php/uploadpicc"
+                              method="post" enctype="multipart/form-data">
+                            <input type="hidden" name="user_id_upload" id="user_iddddddd"/>
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <input type="file" name="upload_file[]" class="form-control" class="upload_image"
+                                       id="upload_input" value=""/>
+                            </div>
+
+                            <input type="submit" value="Use Photo" class="btn_usephoto btn-info btn-block"/>
+
+
+                        </form>
+                    </div>
+
 
                     <table class="responsive-table profile">
 
@@ -344,7 +312,9 @@
                             <td></td>
                             <td>
 
-                                <a id="editProfile" href="#"  onclick="edittheProfile();" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">create</i></a></td>
+                                <a id="editProfile" href="#" onclick="edittheProfile();"
+                                   class="btn-floating btn-large waves-effect waves-light red"><i
+                                        class="material-icons">create</i></a></td>
                         </tr>
                         <tr>
 
@@ -370,26 +340,18 @@
 
                         </tbody>
                     </table>
-                </div>
+
+         </div>
 
 
                 <div id="editmyProfile" style="display: none;">
-                 <script>imageProfile();</script>
-                    <form id="myForms" action="http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/index.php/uploadpicc" method="post" enctype="multipart/form-data">
-                        <input type="hidden" name="user_id_upload" id="user_iddddddd" />
-                        <div class="mdl-textfield mdl-js-textfield">
-                        <input type="file" name="upload_file[]" class="form-control" id="upload_input" value=""/>
-                        </div>
 
-                        <input type="submit" value="Use Photo" class="btn_usephoto btn-info" />
-                    </form>
 
                     <div class="mdl-textfield mdl-js-textfield">
                         <input class="mdl-textfield__input" readonly type="text" id="username">
                         <label class="mdl-textfield__label" for="username"></label>
 
                     </div>
-
 
 
                     <div class="mdl-textfield mdl-js-textfield">
@@ -436,23 +398,23 @@
                     <div id="update_0" style="display:none;">Something wrong happen. Please Try again.</div>
                     <div class="row">
                         <div class="col-md-6" style="float: left;">
-                    <button type='button'
-                            class="mdl-layout__tab mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored"
-                            onclick="update_cancel();">
-                        Cancel
-                    </button>
+                            <button type='button'
+                                    class="mdl-layout__tab mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored"
+                                    onclick="update_cancel();">
+                                Cancel
+                            </button>
                         </div>
                         <div class="col-md-6" style="float:left;">
-                    <button type='button'
-                            class="mdl-layout__tab mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored"
-                            onclick="update_user();">
-                        Update
-                    </button>
+                            <button type='button'
+                                    class="mdl-layout__tab mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored"
+                                    onclick="update_user();">
+                                Update
+                            </button>
                             <!--     </div>
-                            </div>
+                            </div> -->
 
 
-                        <table class="responsive-table hidden" style="display: none;">
+                       <!-- <table class="responsive-table hidden" style="display: none;">
                             <thead>
                             <tr>
                                 <th>#</th>
@@ -497,30 +459,30 @@
                         </table>-->
 
 
-                <!--    <div class="mdl-textfield mdl-js-textfield">
-                         <label>User Name</label>
-                         <input class="mdl-textfield__input" type="text" disabled id='user_username'>
-                     </div>
-                     <div class="mdl-textfield mdl-js-textfield">
-                         <label>First Name</label>
-                         <input class="mdl-textfield__input" type="text" id="user_firstname">
-                     </div>
-                     <div class="mdl-textfield mdl-js-textfield">
-                         <label>Last Name</label>
-                         <input class="mdl-textfield__input" type="text" id="user_lastname">
-                     </div>
-                     <div class="mdl-textfield mdl-js-textfield">
-                         <label>Email</label>
-                         <input class="mdl-textfield__input" type="text" disabled id="user_email">
-                     </div>
-                     <button type='button' class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect "
-                             onclick='update_user();'>
-                         Update
-                     </button>
-                     <div id='update_1' style='display:none; width: 100%; color: lawngreen;'>Update Successful</div>
-                     <div id='update_0' style='display:none;'>Error</div>-->
+                            <!--    <div class="mdl-textfield mdl-js-textfield">
+                                     <label>User Name</label>
+                                     <input class="mdl-textfield__input" type="text" disabled id='user_username'>
+                                 </div>
+                                 <div class="mdl-textfield mdl-js-textfield">
+                                     <label>First Name</label>
+                                     <input class="mdl-textfield__input" type="text" id="user_firstname">
+                                 </div>
+                                 <div class="mdl-textfield mdl-js-textfield">
+                                     <label>Last Name</label>
+                                     <input class="mdl-textfield__input" type="text" id="user_lastname">
+                                 </div>
+                                 <div class="mdl-textfield mdl-js-textfield">
+                                     <label>Email</label>
+                                     <input class="mdl-textfield__input" type="text" disabled id="user_email">
+                                 </div>
+                                 <button type='button' class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect "
+                                         onclick='update_user();'>
+                                     Update
+                                 </button>
+                                 <div id='update_1' style='display:none; width: 100%; color: lawngreen;'>Update Successful</div>
+                                 <div id='update_0' style='display:none;'>Error</div>-->
 
-            </div>
+                        </div>
         </section>
 
 
@@ -777,7 +739,19 @@
 
     </main>
 </div>
+<script src='quizgame/js/jquery-1.7.min.js'></script>
+<script>
 
+    var quizlink = localStorage.getItem('fizzquizz');
+
+
+    $('#getStarted2').on('click', function () {
+        console.log("fizzquizz" + str + ".html");
+        window.location.replace(quizlink);
+        console.log(quizlink);
+
+    });
+</script>
 <!--
 <script>
 
@@ -814,5 +788,10 @@
 
 </script>
 -->
+
+
+
+
+
 </body>
 </html>

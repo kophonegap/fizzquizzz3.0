@@ -836,7 +836,7 @@ button#show-dialog {
 .profile-content #avatar {
     background-position: center center;
     background-size: cover;
-    border: 1px solid rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
     display: inline-block;
     height: 88px;
@@ -933,7 +933,7 @@ div#capturePhoto {
     color: rgb(209, 0, 0);
     background: #fff !important;
     border-radius: 5px;
-    border: 1px solid rgb(209, 0, 0);
+    border: 1px solid rgba(209, 0, 0, 0.09);
 }
 
 
@@ -946,7 +946,7 @@ div#capturePhoto {
 }
 
 .photoIcon {
-    height:50px;
+    height:90px;
 }
 
 input#upload_input {
@@ -994,4 +994,10 @@ input[readonly] {
 }
 input#email {
     text-transform: lowercase;
+}
+body#slickQuiz .mdl-button--raised.mdl-button--colored {
+    background: rgb(209,0,0);
+    color: rgb(255,255,255);
+    padding: 0 20px !important;
+    width: 90% !important;
 }

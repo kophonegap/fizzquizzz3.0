@@ -12,6 +12,9 @@
         },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.ko.fizzquizz"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "com.ko.fizzquizz"
         }
     },
     "dependent_plugins": {

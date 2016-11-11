@@ -111,7 +111,7 @@
         var checkDateFrString = localStorage.getItem('dateFrString');
 
         if (checkAttempt === checkDateFrString){
-            alert("Thank you for taking the Quiz. New set is comming in few days. See you!");
+           alert("Thank you for taking the quiz! See you for the next rounds.");
             window.location.replace("main.html")
         } else {
             console.log("First Time");
@@ -400,7 +400,7 @@
             } else if (data == 1) {
                 attempts = 1;
                 localStorage.setItem("attempts", attempts);
-                  alert('score recorded!');
+                  navigator.notification.alert('score recorded!');
                 console.log('score recorded');
                 window.location.replace('main.html');
 
@@ -413,10 +413,10 @@
                     //$.post('http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver/index.php/update/user', {username: username, password: password, fname: fname})
 
                     if (data == 0) {
-                        //alert('uh oh, try again.');
+                        //navigator.notification.alert('uh oh, try again.');
                         // $('#update_0').show();
                     } else if (data == 1) {
-                        alert('score updated');
+                        navigator.notification.alert('score updated');
                         attempts++;
                         localStorage.setItem("attempts", attempts);
                         console.log('score updated');

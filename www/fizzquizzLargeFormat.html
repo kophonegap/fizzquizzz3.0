@@ -400,7 +400,7 @@
             } else if (data == 1) {
                 attempts = 1;
                 localStorage.setItem("attempts", attempts);
-                  alert('score recorded!');
+                navigator.notification.alert('score recorded!');
                 console.log('score recorded');
                 window.location.replace('main.html');
 
@@ -416,7 +416,7 @@
                         //alert('uh oh, try again.');
                         // $('#update_0').show();
                     } else if (data == 1) {
-                        alert('score updated');
+                        navigator.notification.alert('score updated');
                         attempts++;
                         localStorage.setItem("attempts", attempts);
                         console.log('score updated');

@@ -973,6 +973,14 @@ input.btn_usephoto.btn-info.btn-block {
 .mdl-button--raised.mdl-button--colored {
     background: rgb(209,0,0);
     color: rgb(255,255,255);
+    padding: 0 !important;
+    width: 100% !important;
+}
+
+
+#btnCancel, #btnUpdate {
+    background: rgb(209,0,0);
+    color: rgb(255,255,255);
     padding: 0 20px !important;
     width: 100% !important;
 }

@@ -841,6 +841,7 @@ button#show-dialog {
     display: inline-block;
     height: 88px;
     left: auto;
+    color: transparent;
     margin-bottom: 10px;
     position: relative;
     width: 88px;
@@ -929,4 +930,31 @@ input#upload_input {
 
 input.btn_usephoto.btn-info.btn-block {
     margin-top:50px;
+}
+
+
+.mdl-button--raised.mdl-button--colored {
+    background: rgb(209,0,0);
+    color: rgb(255,255,255);
+    padding: 0 20px !important;
+    width: 100% !important;
+}
+
+input[readonly] {
+    color: #999;
+    text-transform: capitalize;
+    background: url(../img/lock.png) no-repeat scroll;
+    background-size: 10px;
+    background-position-x: 250px;
+    background-position-y: 15px;
+    background-blend-mode: overlay;
+}
+
+
+.readonly.is-focused{
+    border-bottom: none !important;
+
+}
+input#email {
+    text-transform: lowercase;
 }

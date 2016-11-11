@@ -7,6 +7,8 @@ function log_out() {
 
 var base_url = "http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver";
 
+
+
 $(function () {
     var user = localStorage.getItem('userlogin');
 
@@ -18,6 +20,8 @@ $(function () {
 
 
     $.getJSON(base_url + '/index.php/get_user_details/' + user, function ( result ) {
+
+
         $.each(result, function ( i, field ) {
             // $("#output").append("<tr><td>Username:  "+ field.username + " </td></tr><tr><td>Password: "+ field.password + "</td></tr>");
             //  $('#userid').val(field.id);
@@ -31,9 +35,18 @@ $(function () {
             $('#area').val(field.area);
             $('#avatar').val(field.avatar);
 
-            var profile_photo =  base_url + '/upload/files/' + field.avatar;
+            if($('#avatar').val() == "" || $('#avatar').val() == null)
+            {
+                var profile_photo =  base_url + '/upload/files/' + 'daenerys.png';
+            }else {
+                var profile_photo =  base_url + '/upload/files/' + field.avatar;
+            }
+
+
+            //var profile_photo =  base_url + '/upload/files/' + field.avatar;
            // $('#avatar').html('<div class="avatar" style="background-image: url("+ profile_photo +")');
             $('#avatar').css('background-image', 'url(' + profile_photo + ')');
+            $("#avatar").empty();
             //for profile
             $('#userfirstname').text(field.fname);
             $('#userusername').text(field.username);
@@ -42,6 +55,7 @@ $(function () {
             $('#userdivision').text(field.division);
             $('#userunit').text(field.aunit);
             $('#userarea').text(field.area);
+            $('#avatar').text(field.avatar);
 
 
 
@@ -68,14 +82,45 @@ $(function () {
             console.log(field.aunit);
             console.log(field.area);
             console.log(field.avatar);
+
+
+
+
+
+
+
             localStorage.setItem('user_id', field.id);
             localStorage.setItem('user_division', field.division);
             localStorage.setItem('user_area', field.area);
             localStorage.setItem('user_aunit', field.aunit);
            // console.log(field.lang);
-            console.log("fizzquizz" + str + ".html");
+
+            get_Quiz_History();
+
+
+            var myDivision = localStorage.getItem("user_division");
+            var str = myDivision.replace(/\s/g, '');
+            console.log('My Division is:', str);
+            localStorage.setItem('str', str);
+            //console.log("fizzquizz" + str + ".html");
             var fizzquizz = "fizzquizz" + str + ".html";
             localStorage.setItem('fizzquizz', fizzquizz);
+            console.log("My FizzQuizz is:", fizzquizz);
+
+
+
+            var quizlink = localStorage.getItem('fizzquizz');
+
+
+            $('#getStarted2').on('click', function () {
+
+                window.location.replace(fizzquizz);
+                console.log('Confirm my FizzQuizz link:', fizzquizz);
+
+              
+
+            });
+
 
 
         });
@@ -229,12 +274,29 @@ function imageProfile() {
 
 
 
-var myDivision = localStorage.getItem("user_division");
-var str = myDivision.replace(/\s/g, '');
-console.log('My Division is:', str);
+
+function get_Quiz_History() {
+
+    var user_id = localStorage.getItem('user_id');
+
+$.getJSON(base_url + '/index.php/get_user_quiz_history/' + user_id, function ( result ) {
+
+
+    $.each(result, function ( i, field ) {
+
+// $("#output").append("<tr><td>Username:  "+ field.username + " </td></tr><tr><td>Password: "+ field.password + "</td></tr>");
+        //$('#user_id').text(field.id);
+        console.log(field.attempts);
+        console.log(field.datefrom);
+        console.log(field.score_bottle);
 
 
 
+    });
+})
+
+
+}
 
 
 /*

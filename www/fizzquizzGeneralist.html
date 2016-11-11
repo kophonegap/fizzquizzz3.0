@@ -11,6 +11,10 @@
 
 
             function onDeviceReady() {
+
+
+
+
                 var attempted = localStorage.getItem('attempts');
                 // if (attempted < 1) {
                 if (attempted < 1) {
@@ -101,6 +105,17 @@
         });
         loaderSpin();
 
+
+
+        var checkAttempt = localStorage.getItem('recent_quiz');
+        var checkDateFrString = localStorage.getItem('dateFrString');
+
+        if (checkAttempt === checkDateFrString){
+            alert("Thank you for taking the Quiz. New set is comming in few days. See you!");
+            window.location.replace("main.html")
+        } else {
+            console.log("First Time");
+        }
 
     </script>
 
@@ -221,25 +236,25 @@
                     var media_id = '102516';
 
 
+                    var attempts = localStorage.getItem("attempts");
 
 
-
-                    var dateFrString =  localStorage.getItem("dateFrString");
-                    var datefrom = dateFrString;
+                    //var dateFrString =  localStorage.getItem("dateFrString");
+                   /* var datefrom = localStorage.getItem("dateFrString");
                     var user = localStorage.getItem("userlogin");
                     var user_id = localStorage.getItem("user_id");
                     var attempts = localStorage.getItem("attempts");
                     var area = localStorage.getItem('user_area');
                     var division = localStorage.getItem('user_division');
                     var divisions = division;
-                    var aunit = localStorage.getItem('user_aunit');
+                    var aunit = localStorage.getItem('user_aunit');*/
 
 
-                    var setr= division;
-                    firstChar  = setr.charAt(0);
+                    //var setr= division;
+                    //firstChar  = setr.charAt(0);
 
-                    var setdate = dateFrString;
-                    var setnames = firstChar + setdate;
+                    //var setdate = dateFrString;
+                    //var setnames = firstChar + setdate;
 
 
 
@@ -249,15 +264,28 @@
                         attempts++;
                         //attempts = localStorage.getItem("attempts");
                         localStorage.setItem("attempts", attempts);
-                        localStorage.setItem("media_id", media_id);
+
+
+                        var datefrom = localStorage.getItem("dateFrString");
+                        var user = localStorage.getItem("userlogin");
+                        var user_id = localStorage.getItem("user_id");
+
+                        var area = localStorage.getItem('user_area');
+                        var division = localStorage.getItem('user_division');
+                        var divisions = division;
+                        var aunit = localStorage.getItem('user_aunit');
+
+
+
+                       /* localStorage.setItem("media_id", media_id);
                         localStorage.setItem("division", division);
                         localStorage.setItem("datefrom", datefrom);
                         localStorage.setItem("divisions", divisions);
-                        localStorage.setItem("aunit", aunit);
+                        localStorage.setItem("aunit", aunit);*/
                         //   localStorage.setItem("attempts", attempts);
 
-                        localStorage.setItem("datefrom", datefrom);
-                        localStorage.setItem("setnames", setnames);
+                        //localStorage.setItem("datefrom", datefrom);
+                        //localStorage.setItem("setnames", setnames);
                         $("#area").val(area);
                         $("#aunit").val(aunit);
                         $("#datefrom").val(datefrom);
@@ -266,7 +294,7 @@
 
                         $("#attempts").val(attempts);
 
-                        $("#setnames").val(setnames);
+                        //$("#setnames").val(setnames);
 
 
                         //localStorage.setItem("score_bottle", score_bottle);
@@ -281,7 +309,7 @@
                 <input type="hidden" id="area" name="area" value=""/>
                 <input type="hidden" id="aunit" name="aunit" value=""/>
                 <input type="hidden" id="user_id" name="user_id" value=""/>
-                <input type="hidden" id="setnames" name="setnames" value=""/>
+                <!--<input type="hidden" id="setnames" name="setnames" value=""/>-->
                 <input type="hidden" id="datefrom" name="datefrom" value=""/>
                 <input type="hidden" id="attempts" name="attempts" value=""/>
                 <input type="hidden" id="score_bottle" name="score_bottle" value=""/>
@@ -358,6 +386,7 @@
         var area = $('#area').val();
         var aunit = $('#aunit').val();
         console.log('Attempts', attempts);
+
         // var user_email = $('#email').val();
         //alert(attempts);
 
@@ -397,6 +426,8 @@
                     }
                 });
             }
+
+            localStorage.setItem('recent_quiz', datefromDynamic);
 
 
         });

@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="22c9e585-4f85-409c-8670-7d404e50f077" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/fizzquizzGeneralist.html" afterPath="$PROJECT_DIR$/www/fizzquizzGeneralist.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/fizzquizzLargeFormat.html" afterPath="$PROJECT_DIR$/www/fizzquizzLargeFormat.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/fizzquizzMerchandiser.html" afterPath="$PROJECT_DIR$/www/fizzquizzMerchandiser.html" />
     </list>
     <ignored path="fizzquizzz3.0.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,26 +30,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="fizzquizzGeneralist.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/fizzquizzGeneralist.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4890">
-              <caret line="327" column="113" selection-start-line="327" selection-start-column="113" selection-end-line="327" selection-end-column="113" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fizzquizzMerchandiser.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/fizzquizzMerchandiser.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5130">
-              <caret line="343" column="0" selection-start-line="343" selection-start-column="0" selection-end-line="403" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -108,11 +90,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="custom.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="custom.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/css/custom.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="918" column="16" selection-start-line="918" selection-start-column="16" selection-end-line="918" selection-end-column="16" />
+            <state relative-caret-position="282">
+              <caret line="912" column="16" selection-start-line="912" selection-start-column="16" selection-end-line="912" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -151,8 +133,38 @@
       <file leaf-file-name="fizzquizzSmallFormat.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/fizzquizzSmallFormat.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="113" column="90" selection-start-line="113" selection-start-column="90" selection-end-line="113" selection-end-column="90" />
+            <state relative-caret-position="68">
+              <caret line="98" column="9" selection-start-line="98" selection-start-column="9" selection-end-line="98" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fizzquizzLargeFormat.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/fizzquizzLargeFormat.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="477">
+              <caret line="355" column="109" selection-start-line="355" selection-start-column="109" selection-end-line="355" selection-end-column="109" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fizzquizzGeneralist.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/fizzquizzGeneralist.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="327">
+              <caret line="355" column="114" selection-start-line="355" selection-start-column="114" selection-end-line="355" selection-end-column="114" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fizzquizzMerchandiser.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/www/fizzquizzMerchandiser.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="312">
+              <caret line="347" column="44" selection-start-line="347" selection-start-column="44" selection-end-line="347" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -220,14 +232,14 @@
         <option value="$PROJECT_DIR$/www/fizzquizz.html" />
         <option value="$PROJECT_DIR$/www/photo.html" />
         <option value="$PROJECT_DIR$/www/js/image.js" />
-        <option value="$PROJECT_DIR$/www/fizzquizzLargeFormat.html" />
-        <option value="$PROJECT_DIR$/www/fizzquizzGeneralist.html" />
         <option value="$PROJECT_DIR$/www/index.html" />
-        <option value="$PROJECT_DIR$/www/fizzquizzMerchandiser.html" />
         <option value="$PROJECT_DIR$/www/js/user.js" />
         <option value="$PROJECT_DIR$/www/fizzquizzSmallFormat.html" />
         <option value="$PROJECT_DIR$/www/main.html" />
         <option value="$PROJECT_DIR$/www/css/custom.css" />
+        <option value="$PROJECT_DIR$/www/fizzquizzLargeFormat.html" />
+        <option value="$PROJECT_DIR$/www/fizzquizzGeneralist.html" />
+        <option value="$PROJECT_DIR$/www/fizzquizzMerchandiser.html" />
       </list>
     </option>
   </component>
@@ -386,19 +398,19 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/johnraymundniconi/Documents/phonegap/Alpha/fizzquizzz3.0/www/css/rays.css" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/www" />
-      <recent name="$PROJECT_DIR$/www/js" />
-      <recent name="$PROJECT_DIR$/platforms/browser/www" />
-      <recent name="$PROJECT_DIR$/platforms/browser" />
-      <recent name="$PROJECT_DIR$" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/www/fizzquizz" />
       <recent name="$PROJECT_DIR$/www/quizgame/js" />
       <recent name="$PROJECT_DIR$/www/css" />
       <recent name="$PROJECT_DIR$/www/js" />
       <recent name="$PROJECT_DIR$/www" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/www" />
+      <recent name="$PROJECT_DIR$/www/js" />
+      <recent name="$PROJECT_DIR$/platforms/browser/www" />
+      <recent name="$PROJECT_DIR$/platforms/browser" />
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.fizzquizzSmallFormat.html">
@@ -590,7 +602,7 @@
       <workItem from="1478806664318" duration="4212000" />
       <workItem from="1478811345965" duration="598000" />
       <workItem from="1478859817117" duration="18681000" />
-      <workItem from="1478892396579" duration="1450000" />
+      <workItem from="1478892396579" duration="1612000" />
     </task>
     <task id="LOCAL-00001" summary="ok">
       <created>1473540519297</created>
@@ -624,7 +636,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="430758000" />
+    <option name="totallyTimeSpent" value="430920000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="724" extended-state="0" />
@@ -976,21 +988,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/fizzquizzLargeFormat.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4890">
-          <caret line="327" column="109" selection-start-line="327" selection-start-column="109" selection-end-line="327" selection-end-column="109" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/fizzquizzGeneralist.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4890">
-          <caret line="327" column="113" selection-start-line="327" selection-start-column="113" selection-end-line="327" selection-end-column="113" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/js/myApp.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -1006,14 +1003,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/fizzquizzMerchandiser.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5130">
-          <caret line="343" column="0" selection-start-line="343" selection-start-column="0" selection-end-line="403" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/css/media.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
@@ -1026,14 +1015,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1785">
           <caret line="119" column="14" selection-start-line="119" selection-start-column="14" selection-end-line="119" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/fizzquizzSmallFormat.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="113" column="90" selection-start-line="113" selection-start-column="90" selection-end-line="113" selection-end-column="90" />
           <folding />
         </state>
       </provider>
@@ -1096,8 +1077,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/css/custom.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="918" column="16" selection-start-line="918" selection-start-column="16" selection-end-line="918" selection-end-column="16" />
+        <state relative-caret-position="282">
+          <caret line="912" column="16" selection-start-line="912" selection-start-column="16" selection-end-line="912" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/fizzquizzSmallFormat.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="98" column="9" selection-start-line="98" selection-start-column="9" selection-end-line="98" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/fizzquizzLargeFormat.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="477">
+          <caret line="355" column="109" selection-start-line="355" selection-start-column="109" selection-end-line="355" selection-end-column="109" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/fizzquizzGeneralist.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="355" column="114" selection-start-line="355" selection-start-column="114" selection-end-line="355" selection-end-column="114" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/fizzquizzMerchandiser.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="347" column="44" selection-start-line="347" selection-start-column="44" selection-end-line="347" selection-end-column="44" />
           <folding />
         </state>
       </provider>

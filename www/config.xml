@@ -4,6 +4,10 @@
     <description>Newsletter App</description>
     <author href="http://phonegap.com" email="support@phonegap.com">SDC Manila Team</author>
     <content src="index.html"/>
+    <feature name="Notification">
+        <param name="wp-package" value="Notification"/>
+    </feature>
+    <gap:plugin name="org.apache.cordova.dialogs" />
     <preference name="fullscreen" value="true"/>
     <preference name="webviewbounce" value="true"/>
     <preference name="phonegap-version" value="3.7.0"/>

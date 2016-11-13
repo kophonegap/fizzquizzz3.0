@@ -8,6 +8,7 @@
 
         function onLoad() {
             document.addEventListener("deviceready", onDeviceReady, false);
+            $('#loader').show();
 
         }
 
@@ -15,7 +16,7 @@
         //
         function onDeviceReady() {
 
-
+            $('#loader').hide();
             noNet(base_url + '/json.php',
                     function ( data ) {
                         for (i = 0; i < data.length; i++) {
@@ -108,9 +109,20 @@
             input#upload_input {').on('change', function () {
             $('#uploadImage').show();
         });
+
+
+*/
+      /*  $('#uploadImage').on('click', function () {
+            $('#loader-mini').show();
+            setTimeout(myFunction, 3000);
+        });
 */
 
+        function uploadingImg(){
+            $('#loader-mini').show();
+            setTimeout(myFunction, 3000);
 
+        }
     </script>
 
 
@@ -386,7 +398,7 @@
                             </div>
 
 
-                            <input id="uploadImage" onclick="setTimeout(myFunction, 3000)" type="submit" value="Use Photo"
+                            <input id="uploadImage" onclick="uploadingImg();" type="submit" value="Use Photo"
                                    class="btn_usephoto btn-info btn-block" />
 
                             <input id="canceluploadImage" onclick="$('#capturePhoto').hide();" type="button" value="Cancel"

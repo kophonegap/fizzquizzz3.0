@@ -259,7 +259,8 @@ function imageProfile() {
                 console.log('Error or file not supported! required format :png,gif,jpeg sie: less than 3mb');
             } else {
                 console.log('Upload success!');
-                navigator.notification.alert('Process complete');
+             //   navigator.notification.alert('Process complete');
+                window.alert('Process complete');
                 //$('#capturePhoto').hide();
                 window.location.reload();
 

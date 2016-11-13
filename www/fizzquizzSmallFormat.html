@@ -2,18 +2,19 @@
 <head>
     <script src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8">
+
         function onLoad() {
             document.addEventListener("deviceready", onDeviceReady, false);
+            $('#loader').show();
 
+        }
 
-            console.log('cordova is ready');
-            //
 
 
             function onDeviceReady() {
 
-
-
+                $('#loader').hide();
+                console.log('cordova is ready');
 
                 var attempted = localStorage.getItem('attempts');
                 // if (attempted < 1) {
@@ -43,7 +44,7 @@
                 $('#playQuiz').on('click', function () {
                     $('#raysDemoHolder').hide();
                 })
-            }
+
         }
 
 
@@ -107,12 +108,13 @@
 
 
 
-        var checkAttempt = localStorage.getItem('recent_quiz');
+        var checkAttempt = localStorage.getItem('date-published');
         var checkDateFrString = localStorage.getItem('dateFrString');
-
+        console.log("checkAttempt:", checkAttempt);
+        console.log("checkDateFrString", checkDateFrString );
         if (checkAttempt === checkDateFrString){
-            alert("Thank you for taking the quiz! See you for the next rounds.");
-            window.location.replace("main.html")
+            window.alert("Thank you for taking the quiz! See you for the next rounds.");
+           // window.location.replace("main.html")
         } else {
             console.log("First Time");
         }

@@ -12,6 +12,11 @@ var base_url = "http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquiz
 $(function () {
     var user = localStorage.getItem('userlogin');
 
+
+
+
+
+
     /*if (userlogin != 'blank') {
         window.location.replace("main.html");
     }
@@ -85,7 +90,7 @@ $(function () {
 
 
 
-
+            get_Quiz_History();
 
 
 
@@ -95,7 +100,7 @@ $(function () {
             localStorage.setItem('user_aunit', field.aunit);
            // console.log(field.lang);
 
-            get_Quiz_History();
+
 
 
             var myDivision = localStorage.getItem("user_division");
@@ -120,6 +125,9 @@ $(function () {
               
 
             });
+
+
+
 
 
 
@@ -272,29 +280,47 @@ function imageProfile() {
 }
 
 
-
-
-
-
 function get_Quiz_History() {
 
     var user_id = localStorage.getItem('user_id');
 
-$.getJSON(base_url + '/index.php/get_user_quiz_history/' + user_id, function ( result ) {
+    $.getJSON(base_url + '/index.php/get_user_quiz_history/' + user_id, function ( results ) {
 
 
-    $.each(result, function ( i, field ) {
+        //$.each(result, function ( i, field ) {
+        $.each(results, function ( i, fields ) {
 
-// $("#output").append("<tr><td>Username:  "+ field.username + " </td></tr><tr><td>Password: "+ field.password + "</td></tr>");
-        //$('#user_id').text(field.id);
-        console.log(field.attempts);
-        console.log(field.datefrom);
-        console.log(field.score_bottle);
+            $("#output").append("<tr><td><label>Set</label></td><td> " + fields.datefrom + " </td><td><label>Score</label></td><td>" + fields.score_bottle + "</td></tr>");
+            //$('#user_id').text(field.id);
+            //    console.log(field.attempts);
+            //  console.log(field.datefrom);
+            //  console.log(field.score_bottle);
+
+
+        });
+    })
 
 
 
-    });
-})
+    $.getJSON(base_url + '/index.php/get_user_quiz_history/' + user_id, function ( results ) {
+
+
+        //$.each(result, function ( i, field ) {
+        $.each(results, function ( i, fields ) {
+
+            $("#output2").append("<li> " + fields.datefrom + " </li>");
+            //$('#user_id').text(field.id);
+            //    console.log(field.attempts);
+            //  console.log(field.datefrom);
+            //  console.log(field.score_bottle);
+            var checkLQuiz = $("#output2 li:nth-child(1)").text();
+            console.log ("checkLQuiz", checkLQuiz);
+
+
+
+
+        });
+    })
 
 
 }

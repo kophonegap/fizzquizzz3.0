@@ -108,13 +108,13 @@
 
 
 
-        var checkAttempt = localStorage.getItem('date-published');
+        var checkAttempt = localStorage.getItem('checkLQuiz');
         var checkDateFrString = localStorage.getItem('dateFrString');
         console.log("checkAttempt:", checkAttempt);
         console.log("checkDateFrString", checkDateFrString );
-        if (checkAttempt === checkDateFrString){
-           // window.alert("Thank you for taking the quiz! See you for the next rounds.");
-           // window.location.replace("main.html")
+        if (checkAttempt == checkDateFrString){
+            window.alert("Thank you for taking the quiz! See you for the next rounds.");
+            window.location.replace("main.html")
         } else {
             console.log("First Time");
         }

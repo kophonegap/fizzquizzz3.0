@@ -39,6 +39,9 @@ function get_Quiz_History() {
 }
 
 
+
+
+
 $(function () {
     var user = localStorage.getItem('userlogin');
 
@@ -140,7 +143,8 @@ $(function () {
                 e.preventDefault();
                 var checkLQuiz = localStorage.getItem('fizzquizz');
 
-                window.location.replace(fizzquizz);
+               // window.location.replace(fizzquizz);
+                window.location.replace('fizzquizzData.html');
                 console.log('Confirm my FizzQuizz link:', fizzquizz);
 
 
@@ -154,6 +158,7 @@ $(function () {
         });
     });
 });
+
 
 
 

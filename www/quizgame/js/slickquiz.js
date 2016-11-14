@@ -131,16 +131,17 @@ function mySlickQuiz() {
 
 
         //var dateFrString = dateFromString;
-        localStorage.setItem('date_published', datefrom);
-        var dateFrString = localStorage.getItem('date_published');
-        console.log('dateToString24: ' + dateFrString);
+        //localStorage.setItem('date_published', datefrom);
+        //var dateFrString = localStorage.getItem('date_published');
+        //console.log('dateToString24: ' + dateFrString);
+        // console.log('dateFrString: ' + dateFrString);
 
         // var dateToString = dateFromString;
 
 
 
 
-        var dateFrString = localStorage.getItem('dateFrString');
+        // var dateFrString = localStorage.getItem('dateFrString');
 
         var dateToString = localStorage.getItem('dateToString');
 //console.log('dateFrString: ' + datefrom);
@@ -149,9 +150,9 @@ function mySlickQuiz() {
 
 
         date.setDate(date.getDate() + 0);
-        dateto.setDate(dateto.getDate() + 1);
-        dateto2.setDate(dateto2.getDate() + 2);
-        dateto3.setDate(dateto3.getDate() + 3);
+        dateto.setDate(dateto.getDate() + 0);
+        dateto2.setDate(dateto2.getDate() + 1);
+        dateto3.setDate(dateto3.getDate() + 2);
         var dateToStringNow = date.format("yyyy-mm-dd");
         var dateToString24 = dateto.format("yyyy-mm-dd");
         var dateToString48 = dateto2.format("yyyy-mm-dd");
@@ -164,7 +165,8 @@ function mySlickQuiz() {
 
 
         //console.log('dateFrString: ' + dateFrString);
-        localStorage.setItem('dateFrString', dateFrString);
+        var dateFrString = localStorage.getItem('dateFrString');
+        //var setnames = localStorage.setItem('setnames', dateFrString);
         console.log('dateFrString: ' + dateFrString);
         console.log('dateToStringNow: ' + dateToStringNow);
         localStorage.setItem('dateToStringNow', dateToStringNow);
@@ -199,7 +201,8 @@ function mySlickQuiz() {
 
         //(dateStringToday <= dateToString )
 
-        var dateToString24Compare = localStorage.getItem(dateToString24);
+        // var dateToString24Compare = localStorage.getItem(dateToString24");
+        var dateToString24Compare = localStorage.getItem("dateToString24");
         console.log(dateToString24Compare);
         if (dateStringToday == dateFrString) {
             console.log('3 points' );
@@ -309,7 +312,7 @@ function mySlickQuiz() {
 
             /*// Count the number of questions */
             var dateFromString = questions.date_published;
-            // var questionDateFrom = dateFrString;
+            var questionDateFrom = dateFrString;
             var questionDateFrom = dateFromString;
             var questionDateTo = dateToString24;
 

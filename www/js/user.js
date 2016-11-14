@@ -245,6 +245,7 @@ function edittheProfile() {
 
 function showImageLoader() {
     $('#capturePhoto').show();
+    imageProfile();
 }
 
 

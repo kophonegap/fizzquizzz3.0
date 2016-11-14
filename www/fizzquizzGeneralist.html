@@ -1,56 +1,6 @@
 <html>
 <head>
     <script src="cordova.js"></script>
-    <script type="text/javascript" charset="utf-8">
-
-        function onLoad() {
-            document.addEventListener("deviceready", onDeviceReady, false);
-            $('#loader').show();
-
-        }
-
-
-
-            function onDeviceReady() {
-
-                $('#loader').hide();
-                console.log('cordova is ready');
-
-                var attempted = localStorage.getItem('attempts');
-                // if (attempted < 1) {
-                if (attempted < 1) {
-
-                    $('#playQuiz').removeAttr('disabled');
-                    window.open(base_url + "/app/views/media/video.php", "_blank", "location=no", "closebuttoncaption=Return");
-
-                    //$('#playQuiz').attr('disabled','');
-
-                } else {
-
-
-
-
-
-
-
-                    //navigator.notification.alert('Thank you for taking the quiz! See you for the next rounds.');
-
-                    //  $('#playQuiz').attr('disabled','disabled');
-                    //  window.location.replace('main.html');
-
-                }
-
-
-                $('#playQuiz').on('click', function () {
-                    $('#raysDemoHolder').hide();
-                })
-
-        }
-
-
-    </script>
-
-
     <!-- Material Design Lite -->
     <meta content='width=device-width,initial-scale=1' name='viewport'>
     <script src='https://code.getmdl.io/1.1.3/material.min.js'></script>
@@ -108,18 +58,95 @@
 
 
 
-        var checkAttempt = localStorage.getItem('checkLQuiz');
-        var checkDateFrString = localStorage.getItem('dateFrString');
-        console.log("checkAttempt:", checkAttempt);
-        console.log("checkDateFrString", checkDateFrString );
-        if (checkAttempt == checkDateFrString){
-            window.alert("Thank you for taking the quiz! See you for the next rounds.");
-            window.location.replace("main.html")
-        } else {
-            console.log("First Time");
-        }
+
 
     </script>
+
+    <script type="text/javascript" charset="utf-8">
+
+        function onLoad() {
+            document.addEventListener("deviceready", onDeviceReady, false);
+            $('#loader').show();
+
+
+
+
+        }
+
+
+
+            function onDeviceReady() {
+
+                $('#loader').hide();
+                console.log('cordova is ready');
+
+
+
+
+
+                function myFunction2() {
+                    var checkAttempt = localStorage.getItem('checkLQuiz');
+                    console.log("checkAttempt:", checkAttempt);
+                    var checkDateFrString = localStorage.getItem('dateFrString');
+                    console.log("checkDateFrString", checkDateFrString );
+                    if (checkAttempt == checkDateFrString){
+                        window.alert("Thank you for taking the quiz! See you for the next rounds.");
+                        // window.location.replace("main.html")
+                    } else {
+                        console.log("First Time");
+                        $('#playQuiz').removeAttr('disabled');
+                        window.open(base_url + "/app/views/media/video.php", "_blank", "location=no", "closebuttoncaption=Return");
+
+                    }
+                }
+
+
+                setTimeout(myFunction2, 3000);
+
+
+
+
+
+
+              /*  var attempted = localStorage.getItem('checkAttempt');
+                // if (attempted < 1) {
+                if (attempted < 1) {
+
+                    $('#playQuiz').removeAttr('disabled');
+                    window.open(base_url + "/app/views/media/video.php", "_blank", "location=no", "closebuttoncaption=Return");
+
+                    //$('#playQuiz').attr('disabled','');
+
+                } else {
+
+
+
+
+
+
+
+                    //navigator.notification.alert('Thank you for taking the quiz! See you for the next rounds.');
+
+                    //  $('#playQuiz').attr('disabled','disabled');
+                    //  window.location.replace('main.html');
+
+                }
+
+                */
+
+
+                $('#playQuiz').on('click', function () {
+                    $('#raysDemoHolder').hide();
+                })
+
+        }
+
+
+    </script>
+
+
+
+
 
 </head>
 <body id="slickQuiz" onload="onLoad()">

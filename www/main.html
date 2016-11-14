@@ -3,6 +3,8 @@
 
     <!-- <script src='quizgame/js/jquery-1.7.min.js'></script>
     Material Design Lite -->
+
+
     <meta content="width=device-width,initial-scale=1" name="viewport">
     <script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
 
@@ -42,7 +44,6 @@
     <script src="js/jquery.touchSwipe.min.js"></script>
 
 
-
     <!-- Material Design Lite
 
 
@@ -78,125 +79,147 @@
 
         function onLoad() {
             document.addEventListener("deviceready", onDeviceReady, false);
-            $('#loader').show();
+            //$('#loader').show();
+
+        }
+            // cordova is ready
+            //
+            function onDeviceReady() {
+
+
+
+                //    $('#loader').hide();
+                // console.log(navigator.notification);
+                noNet(base_url + '/json.php',
+                        function ( data ) {
+                            for (i = 0; i < data.length; i++) {
+                                //document.getElementById("result1").innerHTML += '<li> ' + data[i]['name'] + '</li>';
+                                console.log(data[i]['name']);
+                            }
+                        }
+                );
+
+                /* var myDivision = localStorage.getItem("user_division");
+                 var str = myDivision.replace(/\s/g, '');
+                 console.log('My Division is:', str);
+
+
+                 var quizlink = localStorage.getItem('fizzquizz');
+
+
+                 $('#getStarted2').on('click', function () {
+
+                 window.location.replace(quizlink);
+                 console.log('Confirm my Quiz link:', quizlink);
+
+                 });*/
+                /*  function imageProfile() {
+
+
+                 $(document).ready(function () {
+
+                 $('#user_iddddddd').val(localStorage.getItem('user_id'));
+
+
+                 var options = {
+                 // target: '#upload_loading',
+                 beforeSubmit: showRequest,
+                 // correctOrientation: true,
+                 success: showResponse
+                 };
+                 $('#myForms').ajaxForm(options);
+                 });
+
+                 function showRequest( formData, jqForm, options ) {
+                 var queryString = $.param(formData);
+                 console.log(formData);
+                 }
+
+                 function showResponse( responseText, statusText, xhr, $form ) {
+
+                 // $('#loader-mini').show();
+                 console.log(statusText);
+                 console.log(responseText);
+                 if (statusText == 'success') {
+                 // $('#page_loader_cb').fadeOut(100);
+
+                 $('#upload_input').val('');
+
+                 //  $('#upload_input').val('');
+                 console.log('upload complete');
+
+                 //   $('#loader-mini').hide(); *.
+                 /*$('#smallImage').val('');
+                 $('#largeImage').val('');*/
+                /*   if (responseText == '0') {
+                 console.log('Error or file not supported! required format :png,gif,jpeg sie: less than 3mb');
+                 } else {
+                 console.log('Upload success!');
+                 alert('Process complete');
+
+
+
+                 }
+                 }
+                 }
+
+                 } */
+
 
         }
 
-        // cordova is ready
-        //
-        function onDeviceReady() {
-
-            $('#loader').hide();
-           // console.log(navigator.notification);
-            noNet(base_url + '/json.php',
-                    function ( data ) {
-                        for (i = 0; i < data.length; i++) {
-                            //document.getElementById("result1").innerHTML += '<li> ' + data[i]['name'] + '</li>';
-                            console.log(data[i]['name']);
-                        }
-                    }
-            );
 
 
-           /* var myDivision = localStorage.getItem("user_division");
-            var str = myDivision.replace(/\s/g, '');
-            console.log('My Division is:', str);
+        function getStarted3() {
 
-
-            var quizlink = localStorage.getItem('fizzquizz');
-
-
-            $('#getStarted2').on('click', function () {
-
-                window.location.replace(quizlink);
-                console.log('Confirm my Quiz link:', quizlink);
-
-            });*/
-
-
-          /*  function imageProfile() {
-
-
-                $(document).ready(function () {
-
-                    $('#user_iddddddd').val(localStorage.getItem('user_id'));
-
-
-                    var options = {
-                        // target: '#upload_loading',
-                        beforeSubmit: showRequest,
-                        // correctOrientation: true,
-                        success: showResponse
-                    };
-                    $('#myForms').ajaxForm(options);
-                });
-
-                function showRequest( formData, jqForm, options ) {
-                    var queryString = $.param(formData);
-                    console.log(formData);
-                }
-
-                function showResponse( responseText, statusText, xhr, $form ) {
-
-                    // $('#loader-mini').show();
-                    console.log(statusText);
-                    console.log(responseText);
-                    if (statusText == 'success') {
-                        // $('#page_loader_cb').fadeOut(100);
-
-                        $('#upload_input').val('');
-
-                        //  $('#upload_input').val('');
-                        console.log('upload complete');
-
-                        //   $('#loader-mini').hide(); *.
-                        /*$('#smallImage').val('');
-                         $('#largeImage').val('');*/
-                     /*   if (responseText == '0') {
-                            console.log('Error or file not supported! required format :png,gif,jpeg sie: less than 3mb');
-                        } else {
-                            console.log('Upload success!');
-                            alert('Process complete');
-
-
-
-                        }
-                    }
-                }
-
-            } */
+            window.location.replace('fizzquizzData.html');
+            // console.log('Confirm my FizzQuizz link:', fizzquizz);
 
 
         }
+
+
+        function get_Quiz_Data() {
+
+            $.get(base_url + "/index.php/jsonSmallFormat/2016-11-10/", {callback : "?" }, "jsonp",  function(data) {
+                $('#summary').text(data.result);
+                alert(data.result);
+            });
+
+        }
+
+
 
 
         function myFunction() {
             $('#capturePhoto').hide();
-           // window.location.replace('main.html');
+            // window.location.replace('main.html');
         }
-       /* $("input[name=upload_file[]]").trigger('click', function () {
-       /// $('
+        /* $("input[name=upload_file[]]").trigger('click', function () {
+         /// $('
 
-            input#upload_input {').on('change', function () {
-            $('#uploadImage').show();
-        });
+         input#upload_input {').on('change', function () {
+         $('#uploadImage').show();
+         });
 
 
-*/
-      /*  $('#uploadImage').on('click', function () {
+         */
+        /*  $('#uploadImage').on('click', function () {
+         $('#loader-mini').show();
+         setTimeout(myFunction, 3000);
+         });
+         */
+
+        function uploadingImg() {
             $('#loader-mini').show();
             setTimeout(myFunction, 3000);
-        });
-*/
-
-        function uploadingImg(){
-            $('#loader-mini').show();
-            setTimeout(myFunction, 3000);
 
         }
+
+
+
+
     </script>
-
-
 
 
 </head>
@@ -254,7 +277,7 @@
         <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
             <a href="#fixed-tab-home" class="mdl-layout__tab is-active muidocs-icon-action-home">Home</a>
 
-            <a href="#fixed-tab-profile" class="mdl-layout__tab">Profile</a>
+            <a href="#fixed-tab-profile" onclick="get_Quiz_History();" class="mdl-layout__tab">Profile</a>
             <!-- <a href="#fixed-tab-board" class="mdl-layout__tab">Leader Board</a>-->
 
             <a href="#" class="mdl-layout__tab"
@@ -331,7 +354,7 @@
 
                             <img id="raysLogo" class="icon" src="img/canada-icon.svg">
                             <div id="rays"></div>
-                            <ul id="output2"></ul>
+                            <ul id="output2" style="visibility: hidden;"></ul>
 
                         </div>
 
@@ -343,7 +366,7 @@
                     </li>
                     <li>
 
-                        <a href="#" id="getStarted2" style="min-width: 100%; z-index: 100"
+                        <a href="#" id="getStarted2" onclick="" style="min-width: 100%; z-index: 100"
                            class="btn-text button btn btn-lg mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Get
                             Started</a>
 
@@ -384,7 +407,6 @@
                     <h5><span id="useremail"></span></h5>
 
 
-
                     <div id="capturePhoto" style="display: none;">
                         <script>imageProfile();</script>
                         <form id="myForms"
@@ -398,18 +420,24 @@
 
 
                             <div class="box">
-                                <input type="file" name="upload_file[]" id="upload_input" class="inputfile" data-multiple-caption="{count} files selected"  />
-                                <label for="upload_input"><figure><!--<svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> -->
-                                    <img class="photoIcon" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDYwIDYwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA2MCA2MDsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTJweCIgaGVpZ2h0PSI1MTJweCI+CjxnPgoJPHBhdGggZD0iTTMwLDIwLjVjLTYuNjE3LDAtMTIsNS4zODMtMTIsMTJzNS4zODMsMTIsMTIsMTJzMTItNS4zODMsMTItMTJTMzYuNjE3LDIwLjUsMzAsMjAuNXoiIGZpbGw9IiNEODAwMjciLz4KCTxwYXRoIGQ9Ik01NS4yMDEsMTUuNWgtOC41MjRsLTQtMTBIMTcuMzIzbC00LDEwSDEydi01SDZ2NUg0Ljc5OUMyLjE1MiwxNS41LDAsMTcuNjUyLDAsMjAuMjk5djI5LjM2OCAgIEMwLDUyLjMzMiwyLjE2OCw1NC41LDQuODMzLDU0LjVoNTAuMzM0YzIuNjY1LDAsNC44MzMtMi4xNjgsNC44MzMtNC44MzNWMjAuMjk5QzYwLDE3LjY1Miw1Ny44NDgsMTUuNSw1NS4yMDEsMTUuNXogTTEwLDE1LjVIOHYtMyAgIGgyVjE1LjV6IE0zMCw1MC41Yy05LjkyNSwwLTE4LTguMDc1LTE4LTE4czguMDc1LTE4LDE4LTE4czE4LDguMDc1LDE4LDE4UzM5LjkyNSw1MC41LDMwLDUwLjV6IE01MiwyNy41Yy0yLjIwNiwwLTQtMS43OTQtNC00ICAgczEuNzk0LTQsNC00czQsMS43OTQsNCw0UzU0LjIwNiwyNy41LDUyLDI3LjV6IiBmaWxsPSIjRDgwMDI3Ii8+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" />
-                                </figure> <span>Take a Photo</span></label>
+                                <input type="file" name="upload_file[]" id="upload_input" class="inputfile"
+                                       data-multiple-caption="{count} files selected"/>
+                                <label for="upload_input">
+                                    <figure>
+                                        <!--<svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> -->
+                                        <img class="photoIcon"
+                                             src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDYwIDYwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA2MCA2MDsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTJweCIgaGVpZ2h0PSI1MTJweCI+CjxnPgoJPHBhdGggZD0iTTMwLDIwLjVjLTYuNjE3LDAtMTIsNS4zODMtMTIsMTJzNS4zODMsMTIsMTIsMTJzMTItNS4zODMsMTItMTJTMzYuNjE3LDIwLjUsMzAsMjAuNXoiIGZpbGw9IiNEODAwMjciLz4KCTxwYXRoIGQ9Ik01NS4yMDEsMTUuNWgtOC41MjRsLTQtMTBIMTcuMzIzbC00LDEwSDEydi01SDZ2NUg0Ljc5OUMyLjE1MiwxNS41LDAsMTcuNjUyLDAsMjAuMjk5djI5LjM2OCAgIEMwLDUyLjMzMiwyLjE2OCw1NC41LDQuODMzLDU0LjVoNTAuMzM0YzIuNjY1LDAsNC44MzMtMi4xNjgsNC44MzMtNC44MzNWMjAuMjk5QzYwLDE3LjY1Miw1Ny44NDgsMTUuNSw1NS4yMDEsMTUuNXogTTEwLDE1LjVIOHYtMyAgIGgyVjE1LjV6IE0zMCw1MC41Yy05LjkyNSwwLTE4LTguMDc1LTE4LTE4czguMDc1LTE4LDE4LTE4czE4LDguMDc1LDE4LDE4UzM5LjkyNSw1MC41LDMwLDUwLjV6IE01MiwyNy41Yy0yLjIwNiwwLTQtMS43OTQtNC00ICAgczEuNzk0LTQsNC00czQsMS43OTQsNCw0UzU0LjIwNiwyNy41LDUyLDI3LjV6IiBmaWxsPSIjRDgwMDI3Ii8+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg=="/>
+                                    </figure>
+                                    <span>Take a Photo</span></label>
                             </div>
 
 
                             <input id="uploadImage" onclick="uploadingImg();" type="submit" value="Use Photo"
-                                   class="btn_usephoto btn-info btn-block" />
+                                   class="btn_usephoto btn-info btn-block"/>
 
-                            <input id="canceluploadImage" onclick="$('#capturePhoto').hide();" type="button" value="Cancel"
-                                   class="btn_cancelphoto btn-danger btn-block" />
+                            <input id="canceluploadImage" onclick="$('#capturePhoto').hide();" type="button"
+                                   value="Cancel"
+                                   class="btn_cancelphoto btn-danger btn-block"/>
                         </form>
                     </div>
 
@@ -451,13 +479,11 @@
                     </table>
 
 
-
-                        <table style="border: 1px solid silver;" id="output" class="responsive-table profile">
-                            <th colspan="4" style="padding: 0 5px; background: silver;"><h5>Stats</h5></th>
+                    <table style="border: 1px solid silver;" id="output" class="responsive-table profile">
 
 
 
-                        </table>
+                    </table>
 
 
                 </div>
@@ -517,23 +543,23 @@
                     <div id="update_0" style="display:none;">Something wrong happen. Please Try again.</div>
                     <div class="row">
                         <div class="col-md-12">
-                                <div class="col-md-6" style="float: left;">
-                                    <button id="btnCancel" type='button'
-                                            class="mdl-layout__tab mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored"
-                                            onclick="update_cancel();">
-                                        Cancel
-                                    </button>
-                                </div>
-                                <div class="col-md-6" style="float:left;">
-                                    <button id="btnUpdate" type='button'
-                                            class="mdl-layout__tab mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored"
-                                            onclick="update_user();">
-                                        Update
-                                    </button>
-                                </div>
+                            <div class="col-md-6" style="float: left;">
+                                <button id="btnCancel" type='button'
+                                        class="mdl-layout__tab mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored"
+                                        onclick="update_cancel();">
+                                    Cancel
+                                </button>
+                            </div>
+                            <div class="col-md-6" style="float:left;">
+                                <button id="btnUpdate" type='button'
+                                        class="mdl-layout__tab mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored"
+                                        onclick="update_user();">
+                                    Update
+                                </button>
+                            </div>
                         </div>
                     </div>
-                    <br /><br />
+                    <br/><br/>
         </section>
 
 
@@ -677,7 +703,6 @@
 
                     </div>
                     <div class="mdl-tabs__panel" id="lannisters-panel">
-
 
 
                         <h5>Overall</h5>

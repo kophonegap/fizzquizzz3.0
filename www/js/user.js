@@ -8,20 +8,46 @@ function log_out() {
 var base_url = "http://ec2-54-191-6-205.us-west-2.compute.amazonaws.com/fizzquizzserver";
 
 
+function get_Quiz_History() {
+    $('#output').empty();
+    var user_id = localStorage.getItem('user_id');
+    $('#output').html('<th colspan="4" style="padding: 0 5px; background: silver;"><h5>Stats</h5></th>');
+    $.getJSON(base_url + '/index.php/get_user_quiz_history/' + user_id, function ( results ) {
+
+
+        //$.each(result, function ( i, field ) {
+        $.each(results, function ( i, fields ) {
+
+            $("#output").append("<tr><td><label>Set</label></td><td> " + fields.datefrom + " </td><td><label>Score</label></td><td>" + fields.score_bottle + "</td></tr>");
+            //$('#user_id').text(field.id);
+            //    console.log(field.attempts);
+            //  console.log(field.datefrom);
+            //  console.log(field.score_bottle);
+            $("#output2").append("<li> " + fields.datefrom + " </li>");
+            //$('#user_id').text(field.id);
+            //    console.log(field.attempts);
+            //  console.log(field.datefrom);
+            //  console.log(field.score_bottle);
+            var checkLQuiz = $("#output2 li:nth-child(1)").text();
+            console.log("checkLQuiz", checkLQuiz);
+            localStorage.setItem('checkLQuiz', fields.datefrom);
+
+
+
+        });
+    })
+}
+
 
 $(function () {
     var user = localStorage.getItem('userlogin');
 
 
-
-
-
-
     /*if (userlogin != 'blank') {
-        window.location.replace("main.html");
-    }
+     window.location.replace("main.html");
+     }
 
-*/
+     */
 
 
     $.getJSON(base_url + '/index.php/get_user_details/' + user, function ( result ) {
@@ -40,16 +66,15 @@ $(function () {
             $('#area').val(field.area);
             $('#avatar').val(field.avatar);
 
-            if($('#avatar').val() == "" || $('#avatar').val() == null)
-            {
-                var profile_photo =  base_url + '/upload/files/' + 'daenerys.png';
-            }else {
-                var profile_photo =  base_url + '/upload/files/' + field.avatar;
+            if ($('#avatar').val() == "" || $('#avatar').val() == null) {
+                var profile_photo = base_url + '/upload/files/' + 'daenerys.png';
+            } else {
+                var profile_photo = base_url + '/upload/files/' + field.avatar;
             }
 
 
             //var profile_photo =  base_url + '/upload/files/' + field.avatar;
-           // $('#avatar').html('<div class="avatar" style="background-image: url("+ profile_photo +")');
+            // $('#avatar').html('<div class="avatar" style="background-image: url("+ profile_photo +")');
             $('#avatar').css('background-image', 'url(' + profile_photo + ')');
             $("#avatar").empty();
             //for profile
@@ -61,7 +86,6 @@ $(function () {
             $('#userunit').text(field.aunit);
             $('#userarea').text(field.area);
             $('#avatar').text(field.avatar);
-
 
 
             //$('#user_id').text(field.id);
@@ -90,18 +114,14 @@ $(function () {
 
 
 
-            get_Quiz_History();
-
 
 
             localStorage.setItem('user_id', field.id);
             localStorage.setItem('user_division', field.division);
             localStorage.setItem('user_area', field.area);
             localStorage.setItem('user_aunit', field.aunit);
-           // console.log(field.lang);
-
-
-
+            // console.log(field.lang);
+            get_Quiz_History();
 
             var myDivision = localStorage.getItem("user_division");
             var str = myDivision.replace(/\s/g, '');
@@ -113,16 +133,16 @@ $(function () {
             console.log("My FizzQuizz is:", fizzquizz);
 
 
-
             var quizlink = localStorage.getItem('fizzquizz');
 
 
-            $('#getStarted2').on('click', function () {
+            $('#getStarted2').on('click', function (e) {
+                e.preventDefault();
+                var checkLQuiz = localStorage.getItem('fizzquizz');
 
                 window.location.replace(fizzquizz);
                 console.log('Confirm my FizzQuizz link:', fizzquizz);
 
-              
 
             });
 
@@ -134,6 +154,8 @@ $(function () {
         });
     });
 });
+
+
 
 function update_cancel() {
     $('#profileContent').show();
@@ -154,15 +176,15 @@ function update_user() {
     // var privilege = $('#user_privilege').val();
 
     $.post(base_url + '/index.php/update/user', {
-        username: username,
-        password: password,
-        fname: fname,
-        lname: lname,
-        user_email: user_email
-    })
+            username: username,
+            password: password,
+            fname: fname,
+            lname: lname,
+            user_email: user_email
+        })
 
 
-    // $.post(base_url + '/update/user', {username: username, password: password})
+        // $.post(base_url + '/update/user', {username: username, password: password})
         .done(function ( data ) {
             if (data == 0) {
                 $('#update_0').show();
@@ -199,7 +221,7 @@ function update_user() {
                  $('#user_privilege').text(field.privilege);
                  */
                 //window.location.href = "user.html";
-               // $('#loader-mini').hide();
+                // $('#loader-mini').hide();
                 window.location.reload();
             }
         });
@@ -221,11 +243,7 @@ function showImageLoader() {
 }
 
 
-
-
-
 function imageProfile() {
-
 
 
     $(document).ready(function () {
@@ -234,9 +252,9 @@ function imageProfile() {
 
 
         var options = {
-           // target: '#upload_loading',
+            // target: '#upload_loading',
             beforeSubmit: showRequest,
-           // correctOrientation: true,
+            // correctOrientation: true,
             success: showResponse
         };
         $('#myForms').ajaxForm(options);
@@ -249,25 +267,25 @@ function imageProfile() {
 
     function showResponse( responseText, statusText, xhr, $form ) {
 
-       // $('#loader-mini').show();
+        // $('#loader-mini').show();
         console.log(statusText);
         console.log(responseText);
         if (statusText == 'success') {
-           // $('#page_loader_cb').fadeOut(100);
+            // $('#page_loader_cb').fadeOut(100);
 
-           $('#upload_input').val('');
+            $('#upload_input').val('');
 
-          //  $('#upload_input').val('');
+            //  $('#upload_input').val('');
             console.log('upload complete');
 
-         //   $('#loader-mini').hide();
+            //   $('#loader-mini').hide();
             /*$('#smallImage').val('');
-            $('#largeImage').val('');*/
+             $('#largeImage').val('');*/
             if (responseText == '0') {
                 console.log('Error or file not supported! required format :png,gif,jpeg sie: less than 3mb');
             } else {
                 console.log('Upload success!');
-             //   navigator.notification.alert('Process complete');
+                //   navigator.notification.alert('Process complete');
                 window.alert('Process complete');
                 //$('#capturePhoto').hide();
                 window.location.reload();
@@ -280,62 +298,24 @@ function imageProfile() {
 }
 
 
-function get_Quiz_History() {
-
-    var user_id = localStorage.getItem('user_id');
-
-    $.getJSON(base_url + '/index.php/get_user_quiz_history/' + user_id, function ( results ) {
-
-
-        //$.each(result, function ( i, field ) {
-        $.each(results, function ( i, fields ) {
-
-            $("#output").append("<tr><td><label>Set</label></td><td> " + fields.datefrom + " </td><td><label>Score</label></td><td>" + fields.score_bottle + "</td></tr>");
-            //$('#user_id').text(field.id);
-            //    console.log(field.attempts);
-            //  console.log(field.datefrom);
-            //  console.log(field.score_bottle);
-
-
-        });
-    })
-
-
-
-    $.getJSON(base_url + '/index.php/get_user_quiz_history/' + user_id, function ( results ) {
-
-
-        //$.each(result, function ( i, field ) {
-        $.each(results, function ( i, fields ) {
-
-            $("#output2").append("<li> " + fields.datefrom + " </li>");
-            //$('#user_id').text(field.id);
-            //    console.log(field.attempts);
-            //  console.log(field.datefrom);
-            //  console.log(field.score_bottle);
-            var checkLQuiz = $("#output2 li:nth-child(1)").text();
-            console.log ("checkLQuiz", checkLQuiz);
 
 
 
 
-        });
-    })
 
 
-}
+
 
 
 /*
-$('#getStarted').on('click', function () {
-    console.log("fizzquizz" + str + ".html");
-    window.location.replace("fizzquizz" + str + ".html");
+ $('#getStarted').on('click', function () {
+ console.log("fizzquizz" + str + ".html");
+ window.location.replace("fizzquizz" + str + ".html");
 
-});
-*/
+ });
+ */
 
 // bind 'myForm' and provide a simple callback function
-
 
 
 /*

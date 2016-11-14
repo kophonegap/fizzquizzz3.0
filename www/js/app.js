@@ -134,7 +134,9 @@ $.post( base_url + '/index.php/loginuser', { username: user_name_input, password
 	 		$('#login_password_error').show(); 				
 		}else if(data == 1){   
 			localStorage.setItem("userlogin", user_name_input);
+			get_Quiz_History();
 			window.location.href = "main.html";
+
 		}
   });
 

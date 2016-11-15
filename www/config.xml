@@ -7,7 +7,8 @@
     <feature name="Notification">
         <param name="wp-package" value="Notification"/>
     </feature>
-   <preference name="SplashScreenDelay" value="10000"/>
+<preference name="splashscreen" value="splash" />
+<preference name="splashScreenDelay" value="10000" />
      <gap:plugin name="org.apache.cordova.dialogs" />
     <gap:plugin name="org.apache.cordova.dialogs" />
     <preference name="fullscreen" value="true"/>
